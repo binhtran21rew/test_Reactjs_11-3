@@ -1,0 +1,56 @@
+@use '../../../scss/' as *;
+
+.markers{
+    margin: unset !important;
+    .text{
+        font-size: 20px !important;
+        margin: unset !important;
+        font-style: italic;
+        font-weight: bold;
+        overflow: hidden;
+    }
+    .content{
+        overflow: scroll;
+        .body{
+            width: 35% !important;
+    
+        }
+        .detail{
+            margin-bottom: 20px;
+        }
+        .option{
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--color-black);
+            margin-top: 20px;
+        }
+
+    }
+}
+.Main_service{
+    margin: $marginDefault;
+
+    .text{
+        font-size: 45px;
+        margin: 45px 0;
+        font-style: italic;
+        font-weight: bold;
+    }
+    .content{
+        .body{
+            width: 50%;
+    
+        }
+        .detail{
+            margin-bottom: 20px;
+        }
+        .option{
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--color-black);
+
+        }
+
+    }
+
+}
