@@ -38,18 +38,27 @@
     }
     .content{
         .body{
+            position: relative;
             width: 50%;
-    
-        }
-        .detail{
-            margin-bottom: 20px;
-        }
-        .option{
-            font-weight: bold;
-            text-transform: uppercase;
-            color: var(--color-black);
 
+            .detail{
+                margin-bottom: 20px;
+            }
+    
+            .option{
+                font-weight: bold;
+                text-transform: uppercase;
+                color: var(--color-black);
+    
+            }
+
+            .more_image{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
         }
+
 
     }
 

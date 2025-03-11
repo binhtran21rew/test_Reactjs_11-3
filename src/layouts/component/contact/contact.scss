@@ -1,0 +1,66 @@
+@use '../../../scss/' as *;
+.Contaier {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 120vh;
+    padding: 50px;
+    background: url($backgroundHeader) no-repeat center center/cover;
+    
+    .content-section {
+        width: 50%;
+        padding: 15px 25px;
+        background-color: white;
+
+        h2 {
+            font-size: 36px;
+            font-weight: normal;
+
+            i{
+              font-style: italic;
+            }
+        }
+
+        p{
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+        }
+          
+        h3 {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #d4a373;
+        }
+
+        .map{
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        iframe {
+            border: 0;
+            border-radius: 10px;
+        }
+    }
+      
+
+}
+
+
+
+
+  
+
+

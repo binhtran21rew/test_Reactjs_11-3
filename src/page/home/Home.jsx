@@ -6,14 +6,14 @@ import './style.scss'
 import {imageMain1, videoMain, imageMain2, imageMain3, letterAnimation, imageContent1, imageContent2, map, imageMain4} from '../../constant';
 
 
-import ContentWrapper from '../component/contentWrapper/ContentWrapper';
-import ItemScroll from '../component/scroll/ItemScroll';
-import MapMarker from '../component/mapMarker/MapMarker';
-import Carousel from '../component/carousel/Carousel';
+import ContentWrapper from '../../layouts/component/contentWrapper/ContentWrapper';
+import ItemScroll from '../../layouts/component/scroll/ItemScroll';
+import MapMarker from '../../layouts/component/mapMarker/MapMarker';
+import Carousel from '../../layouts/component/carousel/Carousel';
+import Contact from '../../layouts/component/contact/Contact';
+import ImageHover from '../../layouts/component/ImageHover/ImageHover';
 
-function Main() {
-
-
+function Home() {
     return (
         <main className='Main'>
             <div className='Main_title'>
@@ -94,11 +94,12 @@ function Main() {
             <ContentWrapper 
                 name="Crafting your stay"
                 detail="
-                   Hillbrook Estate offers a wealth of activities, from beach exploration to scenic farm walks. For those seeking even more adventure, we are delighted to arrange additional activities to enhance your stay.
+                Hillbrook Estate offers a wealth of activities, from beach exploration to scenic farm walks. For those seeking even more adventure, we are delighted to arrange additional activities to enhance your stay.
                 "
                 option="VIEW ALL SERVICES"
             />
-
+            
+            <ImageHover />
 
             <div className='Main_image' style={{backgroundImage: `url(${imageContent2})` }}>
                 <Slide keyframes={letterAnimation} style={{width: '80%'}}>
@@ -120,8 +121,10 @@ function Main() {
             <Carousel 
                 image={[imageMain1, imageMain2, imageMain3, imageMain4, imageMain1, imageMain2]}
             />
+
+            <Contact />
         </main>
-  )
+    )
 }
 
-export default Main;
+export default Home

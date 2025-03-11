@@ -1,0 +1,69 @@
+@use '../../scss/' as *;
+
+.Footer{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    padding:  $marginDefault;
+    background-color: $colorFooter;
+    overflow: hidden;
+
+    header{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .header{
+            font-size: 3rem;
+            font-style: italic;
+        }
+    
+        .button{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        .nav_menu{
+            top: 20px;
+            right: 40px;
+            text-align: right;
+    
+            a{
+                display: block;
+                text-decoration: none;
+                color: black;
+                font-size: 14px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+        }
+    
+    }
+    
+    .footer{
+        position: absolute;
+        bottom: 10px;
+        text-transform: uppercase;
+
+        a{
+            color: black;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+    }
+
+    .social_icons{
+        right: 40px;
+
+        img{
+            width: 20px;
+            margin-left: 10px;
+        }
+    }
+}
