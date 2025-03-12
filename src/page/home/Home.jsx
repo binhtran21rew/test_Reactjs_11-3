@@ -98,8 +98,10 @@ function Home() {
                 "
                 option="VIEW ALL SERVICES"
             />
-            
-            <ImageHover />
+            <div className="">
+                <ImageHover />
+
+            </div>
 
             <div className='Main_image' style={{backgroundImage: `url(${imageContent2})` }}>
                 <Slide keyframes={letterAnimation} style={{width: '80%'}}>

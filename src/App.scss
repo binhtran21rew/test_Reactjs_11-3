@@ -3,6 +3,7 @@
 :root{
     --color-black: black;
     --color-white: white;
+    --color-blue: aquamarine;
 }   
 
 *{
@@ -30,10 +31,21 @@ a{
 }
 
 .mt-50{
+
     margin-top: 50px;
 }
 
 .App{
     overflow: hidden;
+}
+
+.fullScreen{
+    width: 100%;
+    height: 100vh !important;
+}
+
+.halfScreen{
+    width: 100%;
+    height: 50vh !important;
 }
 

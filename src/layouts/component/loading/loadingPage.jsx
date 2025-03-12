@@ -8,7 +8,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-      onLoadingComplete(); // Notify the app that loading is done
+      onLoadingComplete();
     }, 3000);
 
     return () => clearTimeout(timeout); 

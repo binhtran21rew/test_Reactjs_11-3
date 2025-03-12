@@ -28,18 +28,26 @@
     }
 }
 .Main_service{
-    margin: $marginDefault;
+    margin: $marginDefault 0;
 
     .text{
         font-size: 45px;
-        margin: 45px 0;
+        margin: 0 0 40px;
         font-style: italic;
         font-weight: bold;
     }
     .content{
+        height: 70%;
         .body{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             position: relative;
             width: 50%;
+            &.rotate{
+                flex-direction:  column-reverse !important;
+            }
+
 
             .detail{
                 margin-bottom: 20px;
@@ -52,13 +60,7 @@
     
             }
 
-            .more_image{
-                position: absolute;
-                bottom: 0;
-                right: 0;
-            }
         }
-
 
     }
 
