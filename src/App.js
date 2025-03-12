@@ -8,6 +8,8 @@ import Footer from './layouts/Footer/Footer';
 import LoadingPage from './layouts/component/loading/loadingPage';
 import Home from "./page/home/Home";
 import TheHouse from "./page/theHouse/TheHouse";
+import TheFarm from "./page/theFarm/TheFarm";
+import Gallery from "./page/gallery/Gallery";
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -21,7 +23,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/thehouse" element={<TheHouse />} />
-            {/* <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/thefarm" element={<TheFarm />} />
+            <Route path="/gallery" element={<Gallery />} />
+
           </Routes>
           <Footer/>
         </Router>

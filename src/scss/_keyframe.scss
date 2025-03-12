@@ -35,3 +35,25 @@
     transform: translateY(0);
   }
 }
+
+@keyframes fadeTopToBottom {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shrinkBottomToTop {
+  from {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}

@@ -12,7 +12,7 @@ export const heigthFade = "100%";
 export const imageContent1="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668c8e5ccb93a03db7bddcdd_Frame%20240.webp";
 export const imageContent2="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668c8f80fdd806287deeb981_Frame%20242.webp"
 export const logoName="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/6670ee5ac4a91ed4547a4ef8_Group%20468.svg";
-
+export const imageContent5="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/667216f2bd14e6106b06cec3_f98708063790300845a07f9a31bf508b-p-2000.webp";
 const imageMarker1='https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/66a1c29790727ae83e009a14_Screenshot%202024-05-16%20at%201.54.png'
 const imageMarker2='https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/66a1c1e302a7f4d75f351d49_image%20113.png';export const map = 'https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668c6c64e6d99f4c2a90d6b0_Group%20506%201-home.webp';
 
@@ -20,7 +20,9 @@ export const linkTheHouse = '/thehouse'
 export const linkTheFarm = '/thefarm'
 export const linkContact = '/contact'
 export const linkBookNow = '/booknow'
-
+export const linkGallery = '/gallery';
+export const linkCuratedServices = '/curatedservices';
+export const linkActivities = '/activities';
 
 export const markers = [
     { id: 1, position: [100, 200], image: imageMarker1, name: 'Green Island', detail: 'A pristine oasis off the coast, perfect for exploration and adventure.'},

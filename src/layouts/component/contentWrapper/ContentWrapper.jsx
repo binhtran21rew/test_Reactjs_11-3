@@ -24,9 +24,9 @@ function ContentWrapper({...props}) {
                         </a>  
                         : ''}
                     </div>
-                    <div style={ flexEnd && rotate ? {textAlign: 'end'} : {textAlign: 'start'}}>
+                    <div style={ flexEnd || rotate ? {textAlign: 'end'} : {textAlign: 'start'}}>
                         {moreImage ? 
-                            <img src={moreImage}  width={`${widthImg ? '200px' : '100px'} `} />
+                            <img src={moreImage}  width={`${widthImg ? '300px' : '200px'} `} />
                         : ""}
                     </div>
                 </div>

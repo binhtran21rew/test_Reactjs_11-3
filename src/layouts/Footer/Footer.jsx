@@ -6,7 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import './footer.scss';
 
-import { logoName, linkTheHouse, linkTheFarm, linkContact, linkBookNow } from '../../constant';
+import { logoName, linkTheHouse, linkTheFarm, linkContact, linkBookNow, linkGallery, linkActivities, linkCuratedServices } from '../../constant';
 function Footer() {
   return (
     <div className="Footer">
@@ -21,9 +21,9 @@ function Footer() {
         <nav className="nav_menu">
             <h5>The House</h5>
             <Link to={linkTheFarm}>The Farm</Link>
-            <Link to={'#'}>Gallery</Link>
-            <Link to={'#'}>Curated Services</Link>
-            <Link to={'#'}>Activities</Link>
+            <Link to={linkGallery}>Gallery</Link>
+            <Link to={linkCuratedServices}>Curated Services</Link>
+            <Link to={linkActivities}>Activities</Link>
             <Link to={linkContact}>Contact</Link>
             <Link to={linkBookNow}>Booking</Link>
             <h5>Weddings</h5>
