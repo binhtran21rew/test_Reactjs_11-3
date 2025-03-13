@@ -24,7 +24,6 @@ import CurateService from "./page/curatedService/CurateService";
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
-
   return (
     <>
       {!loadingComplete && <LoadingPage onLoadingComplete={() => setLoadingComplete(true)} />}

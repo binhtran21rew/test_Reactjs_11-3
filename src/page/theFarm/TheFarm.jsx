@@ -6,10 +6,14 @@ import Carousel from '../../layouts/component/carousel/Carousel';
 import ImageHover from '../../layouts/component/ImageHover/ImageHover';
 import { Fade, Slide } from 'react-awesome-reveal';
 import './theFarm.scss';
+import HeroImage from '../../layouts/component/heroImage/HeroImage';
 
 function TheFarm() {
   return (
     <div className="TheFarm">
+        <section>
+            <HeroImage image={imageMain2} title="the Farms" />
+        </section>
         <div className="wrapper">
             <section>
                     <ContentWrapper 

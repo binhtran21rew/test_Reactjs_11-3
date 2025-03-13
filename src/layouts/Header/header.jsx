@@ -12,7 +12,7 @@ import { Nav } from 'react-bootstrap';
 
 
 const Header = ({...props}) => {
-  const {textPosition} = props;
+  const {textPosition, imageHeader} = props;
   const headerRef = useRef(null);
   const [scrollUp, setScrollUp] = useState(false);
   const [showNav, setShowNav] = useState(false);
@@ -87,7 +87,6 @@ const Header = ({...props}) => {
           )}
 
         </div>
-        <h1 className={`Header_top_text ${textPosition}`}>the house</h1>
     </div>
   )
 }

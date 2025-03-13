@@ -8,6 +8,7 @@ import ImageHover from '../../layouts/component/ImageHover/ImageHover';
 
 import './theHouse.scss';
 import { Fade, Slide } from 'react-awesome-reveal';
+import HeroImage from '../../layouts/component/heroImage/HeroImage';
 
 const textImagePairs = [
     { text: "Surf", img: imageMain2, title: 'Cook up a feast in the fully equipped kitchen' },
@@ -34,6 +35,7 @@ function TheHouse() {
 
   return (
     <div className='TheHouse'>
+        <HeroImage image={imageMain3} title={"the house"}/>
         <div className="wrapper">
             <section className='TheHouse_content mt-50 '>
                 <div className="TheHouse_content_title">

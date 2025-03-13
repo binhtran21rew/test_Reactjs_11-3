@@ -2,14 +2,8 @@
 
 .Header{
     width: 100%;
-    height: 100vh;
-    background-image: url($backgroundHeader);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     overflow: hidden;
 
-      
     .Header_top[data-isOpen="true"] {
         width: 20%;
         height: 20%;
@@ -145,24 +139,7 @@
             }
         }
 
-        &_text{
-            display: flex;
-            flex-direction: column-reverse;
-            height: 100%;
-            color: var(--color-white);
-            font-size: 100px;
-            text-transform: uppercase;
-            font-family: 'Editorial Old \- Ultralight, sans-serif';
 
-            &.center{
-                text-align: center;
-            }
-
-            &.end{
-                text-align: center;
-                
-            }
-        }
     }
 
 }
