@@ -10,6 +10,15 @@
     }
 }
 
+@keyframes zoomOut{
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+
+  }
+}
 @keyframes fadeZoom {
   0% {
     opacity: 0;

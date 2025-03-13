@@ -1,0 +1,68 @@
+@use "../../../scss/" as *;
+
+.GallaryImage{
+    padding: calc($marginDefault + 30px) $marginDefault;
+    background-color: #F1EBE3;
+    .title{
+        font-size: 80px;
+        text-transform: capitalize;
+        font-style: italic;
+        padding-bottom: $marginDefault;
+    }
+    .gallery_wrapper{
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: $marginDefault 0;
+        .left {
+            position: sticky;
+            top: 20px;
+            flex: 1;
+            font-size: 13px;
+            width: 30%;
+            text-transform: capitalize;
+            
+            ul{
+                li{
+                    line-height: 2.5;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+    
+        .right{
+            width: 70%;
+
+            &.hide{
+                display: none;
+            }
+              
+            .Gallery_postion{
+                display: flex;
+                flex-direction: row;
+                flex-flow: wrap;
+                justify-content: space-between;
+                .item_wrap{
+                    margin: 20px;
+                    width: 100%;
+                }
+
+                .gallery_image{
+                    margin: 20px 20px 60px 0;
+                }
+                
+            }
+              
+        }
+    }
+}
+
+  
+
+  
+
+

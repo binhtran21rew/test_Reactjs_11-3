@@ -1,39 +1,34 @@
-@use '../../../scss/' as *;
+@use "../../../scss/" as *;
 .ContainerImage {
-    margin: $marginDefault;
-    .text{
-        position: relative;
-        display: flex;
-        flex-flow: wrap;
+  margin: $marginDefault;
+  .text {
+    position: relative;
+    display: flex;
+    flex-flow: wrap;
 
-        .hover-text{
-            font-size: 28px;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
+    .hover-text {
+      font-size: 28px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
 
-            &.active {
-                color: black;
-                font-weight: bold;
-            }
-        }
-
-        .image{
-            position: absolute;
-            top: 50%;
-            transform: translate(-30%, -50%);
-            width: 250px;
-            border-radius: 8px;
-            opacity: 0;
-            animation: fadeIn 0.3s forwards ease-in-out;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            z-index: 0;
-        }
+      &.active {
+        color: black;
+        font-weight: bold;
+      }
     }
+
+    .image {
+      position: absolute;
+      top: 50%;
+      transform: translate(-30%, -50%);
+      width: 250px;
+      border-radius: 8px;
+      opacity: 0;
+      animation: fadeIn 0.3s forwards ease-in-out;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 0;
+    }
+  }
 }
-  
-  
-
-
-

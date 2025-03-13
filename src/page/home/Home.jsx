@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.scss'
@@ -12,6 +12,7 @@ import MapMarker from '../../layouts/component/mapMarker/MapMarker';
 import Carousel from '../../layouts/component/carousel/Carousel';
 import Contact from '../../layouts/component/contact/Contact';
 import ImageHover from '../../layouts/component/ImageHover/ImageHover';
+import { zoomOut } from '../../constant';
 
 function Home() {
     return (
@@ -35,7 +36,7 @@ function Home() {
                     Enjoy the <span>beauty of the Coromandel</span> <br></br> from the sanctuary of your own private retreat
                 </div>
 
-                <div style={{ padding: "50px 50px 0", textAlign: "center" }}>
+                <div style={{ padding: "50px 0", textAlign: "center" }}>
                 
                     <section className='Main_section'>
                         <ItemScroll 
@@ -44,6 +45,7 @@ function Home() {
                             detail="Experience the perfect blend of luxury and nature. Our working farm, home to 100 dairy calves, features restored ponds, orchards, and permaculture practices, inviting you to connect deeply with nature."
                             option="Learn more"
                         />
+
                         <img src={imageMain1} className='iamgeFade' width={'80%'} height={'80%'}/>
                     </section>
                     <section className='Main_section'>

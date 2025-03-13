@@ -5,6 +5,8 @@ import {FontAwesome} from '../../../component/FontAwesome';
 import './contentWrapper.scss';
 import { imageContent1 } from '../../../constant';
 
+import './contentWrapper.scss';
+
 function ContentWrapper({...props}) {
     const {name, detail, option, image, image_name, className, moreImage, flexEnd, rotate, widthImg} = props;
 
@@ -13,7 +15,7 @@ function ContentWrapper({...props}) {
 
             <div className={`content d-flex ${flexEnd ? 'flex-row-reverse' : ''}`}>
                 <div className={`body ${flexEnd ? 'ms-5' : ''}  ${rotate ? 'rotate' : ''}`}>
-                    <div className="wrapper">
+                    <div className={`${image || moreImage ? '' : 'contentWrapper'}`}>
                         <div className={`text`}>
                             {name}
                         </div>
@@ -34,7 +36,7 @@ function ContentWrapper({...props}) {
                 {image ? image.map((item, i) => {
                     return(
                         <div key={i} className={`ms-2 ${flexEnd ? 'text-start' : 'text-end'}`}>
-                            <img src={item} className='iamge' width={` ${ widthImg ? widthImg : '100% / ${image.length}'}`} height={"100%"}/>
+                            <img src={item} className='iamge' width={` ${ widthImg ? widthImg : '100% '}`} height={"100%"}/>
                             {image_name ? 
                                 <span><div className="cirle"></div>{image_name[i]}</span>
                             : ''}

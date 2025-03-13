@@ -1,23 +1,22 @@
-@use '../../../scss/' as *;
+@use "../../../scss/" as *;
 
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 50vh;
     overflow: hidden;
 
-    > div{
+    > div {
         margin-top: 10px;
     }
-    .adress{
+    .adress {
         font-size: 10px;
     }
-    .detail{
+    .detail {
         text-align: start;
     }
-    .option{
+    .option {
         font-weight: bold;
     }
-
 }

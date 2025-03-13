@@ -131,7 +131,6 @@
     &_top{
         display: flex;
         justify-content: space-between;
-        
         margin: 50px;
 
         &_link{
@@ -147,12 +146,22 @@
         }
 
         &_text{
-            position: absolute;
-            bottom: 10px;
+            display: flex;
+            flex-direction: column-reverse;
+            height: 100%;
             color: var(--color-white);
             font-size: 100px;
             text-transform: uppercase;
             font-family: 'Editorial Old \- Ultralight, sans-serif';
+
+            &.center{
+                text-align: center;
+            }
+
+            &.end{
+                text-align: center;
+                
+            }
         }
     }
 

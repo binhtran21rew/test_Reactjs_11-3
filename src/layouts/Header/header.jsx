@@ -11,7 +11,8 @@ import './style.scss';
 import { Nav } from 'react-bootstrap';
 
 
-const Header = () => {
+const Header = ({...props}) => {
+  const {textPosition} = props;
   const headerRef = useRef(null);
   const [scrollUp, setScrollUp] = useState(false);
   const [showNav, setShowNav] = useState(false);
@@ -86,7 +87,7 @@ const Header = () => {
           )}
 
         </div>
-        <h1 className='Header_top_text'>the house</h1>
+        <h1 className={`Header_top_text ${textPosition}`}>the house</h1>
     </div>
   )
 }

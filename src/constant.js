@@ -15,7 +15,12 @@ export const logoName="https://cdn.prod.website-files.com/6668dadedd368b850aa41d
 export const imageContent5="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/667216f2bd14e6106b06cec3_f98708063790300845a07f9a31bf508b-p-2000.webp";
 const imageMarker1='https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/66a1c29790727ae83e009a14_Screenshot%202024-05-16%20at%201.54.png'
 const imageMarker2='https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/66a1c1e302a7f4d75f351d49_image%20113.png';export const map = 'https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668c6c64e6d99f4c2a90d6b0_Group%20506%201-home.webp';
+export const gallery1="https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/669afcbaa8652a3e9f3e61ad_Hillbrook_4_0103.avif";
+export const gallery2="https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/669aef626680cb4396d02a80_Hillbrook_MattQue%CC%81re%CC%81e_H_0032.avif";
+export const gallery3="https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/669af2bef7b6cfe8b4b20935_Hillbrook_2_0639%201.avif";
 
+
+export const linkHome = '/';
 export const linkTheHouse = '/thehouse'
 export const linkTheFarm = '/thefarm'
 export const linkContact = '/contact'
@@ -57,3 +62,15 @@ export const letterAnimation = keyframes`
 
   }
 `;
+
+export const zoomOut = keyframes`
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+
+  }
+}
+`
+
