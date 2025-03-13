@@ -4,10 +4,7 @@
 .Main_service{
     margin: $marginDefault 0;
 
-    .text{
-        font-size: 45px;
-        margin: 0 0 40px;
-    }
+
     .content{
         height: 70%;
         .body{
@@ -20,27 +17,62 @@
             }
             .contentWrapper{
                 display: flex;
+                width: 100%;
                 flex-direction: column;
-                width: 50%;
+                .text{
+                    display: flex;
+                    width: 100%;
 
-            }
+                    .text_wrapper{
+                        display: flex;
+                        width: 50%;
+                        flex-flow: wrap;
+                        
+                        span{
+                            font-size: 40px;
+                        }
+
+                    }
+                }
+                .detail{
+                    width: 100%;
+                    span{
+                        width: 40%
+                    }
+                }
+
+                .option{
+                    a{
+                        width: 40%;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        color: var(--color-black);
+                    }
+        
+                }
+
+            }   
             .text{
-                display: flex;
-                flex-wrap: wrap;
+                font-size: 45px;
+                margin: 0 0 40px;
             }
             .detail{
                 margin-bottom: 20px;
             }
-    
             .option{
-                font-weight: bold;
-                text-transform: uppercase;
-                color: var(--color-black);
+                a{
+
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color: var(--color-black);
+                }
     
             }
+    
 
         }
 
     }
 
 }
+

@@ -22,6 +22,7 @@ function ContentWrapper({...props}) {
                         image={image}
                         moreImage={moreImage}
                         textHighlight={textHighlight}
+                        textPosition={textPosition}
                     />
                     <div style={ flexEnd || rotate ? {textAlign: 'end'} : {textAlign: 'start'}}>
                         {moreImage ? 
@@ -50,44 +51,51 @@ function ContentWrapper({...props}) {
 
 
 const CustomContent = ({...props}) => {
-    const {text, detail, option,  image, moreImage, textHighlight} = props;
+    const {text, detail, option,  image, moreImage, textHighlight, textPosition = false} = props;
 
     if(textHighlight) console.log(textHighlight, text);
-    
     
     
     return(
         <div className={`${image || moreImage ? '' : 'contentWrapper'}`}>
             <div className={`text`}>
-                {
-                    textHighlight ? (
-                        text.split(' ').map((part, id) => {
-                            console.log(part, textHighlight);
-                            
-                            return(
-                            
-                                (
+                <div className="text_wrapper">
+                    {
+                        textHighlight ? (
+                            text.split(' ').map((part, id) => {
+                                return(
+                                    
                                     textHighlight.includes(part)? (
-                                        <span key={id} style={{ fontWeight: "bold", fontStyle: 'italic', marginRight: 10 }}>
-                                           {part}
+                                        <span key={id} style={{ fontWeight: "bold", fontStyle: 'italic', marginRight: 10, height: 'auto' }}>
+                                        {part}
                                         </span>
                                     ): (
                                         <span style={{marginRight: 10}}>{part}</span>
                                     )
+                                    
                                 )
-                            )
-                        }
+                            }
 
-                        )
-                    ) : (text) 
-                }
+                            )
+                        ) : (text) 
+                    }
+
+                </div>
 
             </div>
-            <div className="detail fs-6" >{detail}</div>
+            <div className={`detail ${textPosition ? 'd-flex justify-content-end':  'd-flex justify-content-start'}`} >
+                    <span>
+                        {detail}
+
+                    </span>
+            </div>
             {option ?  
-            <a className="option" href='#'>{option}
-                <FontAwesome icon={faArrowRight} size={'1x'} color="#D4A373"/>
-            </a>  
+            <div className={`option  ${textPosition ? 'd-flex justify-content-end':  'd-flex justify-content-start'}`}>
+                <a href='#'>{option}
+                    <FontAwesome icon={faArrowRight} size={'1x'} color="#D4A373"/>
+                </a>  
+
+            </div>
             : ''}
         </div>
     )

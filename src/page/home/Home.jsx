@@ -27,7 +27,7 @@ import HeroImage from "../../layouts/component/heroImage/HeroImage";
 function Home() {
     return (
         <main className="Main">
-            <section>
+            <section className="first">
                 <HeroImage image={imageMain2} title="the houses" />
             </section>
             <section>
@@ -60,13 +60,13 @@ function Home() {
                     Your browser does not support the video tag.
                 </video>
             </section>
-            <section className="Main_content mt-50">
+            <section className="">
                 <div className="Main_content_title">
                     Enjoy the <span>beauty of the Coromandel</span> <br></br>{" "}
                     from the sanctuary of your own private retreat
                 </div>
 
-                <div style={{ padding: "50px 0", textAlign: "center" }}>
+                <div style={{ textAlign: "center" }}>
                     <section className="Main_section">
                         <ItemScroll
                             adress="45HA FARM, NATIVE FOREST, PONDS"
@@ -112,19 +112,21 @@ function Home() {
                     </section>
                 </div>
             </section>
-            <div
-                className="Main_image"
-                style={{ backgroundImage: `url(${imageMain4})` }}
-            >
-                <Slide keyframes={letterAnimation} style={{ width: "80%" }}>
-                    <div className={`text`}>
-                        <div className="">
-                            Relax or explore <br></br> your very own{" "}
-                            <span>personal playground</span>{" "}
+            <section>
+                <div
+                    className="Main_image"
+                    style={{ backgroundImage: `url(${imageMain4})` }}
+                >
+                    <Slide keyframes={letterAnimation} style={{ width: "80%" }}>
+                        <div className={`text`}>
+                            <div className="">
+                                Relax or explore <br></br> your very own{" "}
+                                <span>personal playground</span>{" "}
+                            </div>
                         </div>
-                    </div>
-                </Slide>
-            </div>
+                    </Slide>
+                </div>
+            </section>
             <section>
                 <ContentWrapper
                     name="Curated Services"

@@ -1,0 +1,11 @@
+@use '../../scss/' as *;
+
+.CurateService{
+    background-color: $backgroundMainColor;
+
+    section{
+        margin: 0;
+        padding: $marginDefault ;
+        
+    }
+}

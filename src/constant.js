@@ -18,7 +18,9 @@ const imageMarker2='https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/
 export const gallery1="https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/669afcbaa8652a3e9f3e61ad_Hillbrook_4_0103.avif";
 export const gallery2="https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/669aef626680cb4396d02a80_Hillbrook_MattQue%CC%81re%CC%81e_H_0032.avif";
 export const gallery3="https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/669af2bef7b6cfe8b4b20935_Hillbrook_2_0639%201.avif";
-
+export const imageSwiper1="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/66a1c89751092cb5d1f31b29_Hillbrook_1_0832%204.png";
+export const imageSwiper2="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668222f8853e189b3969a0aa_409faa4f76c973c34d121bf2529cff08.webp";
+export const imageSwiper3="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/66822074853e189b39673393_e2d1e1081aa0ba708d29690f0447de66.webp";
 
 export const linkHome = '/';
 export const linkTheHouse = '/thehouse'

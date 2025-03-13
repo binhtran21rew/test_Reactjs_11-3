@@ -21,6 +21,8 @@ import TheFarm from "./page/theFarm/TheFarm";
 import Gallery from "./page/gallery/Gallery";
 import Contact from "./page/contact/Contact";
 import CurateService from "./page/curatedService/CurateService";
+import Booking from "./page/booking/Booking";
+
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -37,6 +39,8 @@ function App() {
             <Route path={linkGallery} element={<Gallery />} />
             <Route path={linkContact} element={<Contact />} />
             <Route path={linkCuratedServices} element={<CurateService />} />
+            <Route path={linkBookNow} element={<Booking />} />
+
 
 
           </Routes>
