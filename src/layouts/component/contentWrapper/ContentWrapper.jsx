@@ -8,24 +8,21 @@ import { imageContent1 } from '../../../constant';
 import './contentWrapper.scss';
 
 function ContentWrapper({...props}) {
-    const {name, detail, option, image, image_name, className, moreImage, flexEnd, rotate, widthImg} = props;
+    const {name, detail, option, image, image_name, className, moreImage, flexEnd, rotate, widthImg, textPosition, textHighlight} = props;
 
     return (
         <section className={`Main_service ${className}`}>
 
             <div className={`content d-flex ${flexEnd ? 'flex-row-reverse' : ''}`}>
                 <div className={`body ${flexEnd ? 'ms-5' : ''}  ${rotate ? 'rotate' : ''}`}>
-                    <div className={`${image || moreImage ? '' : 'contentWrapper'}`}>
-                        <div className={`text`}>
-                            {name}
-                        </div>
-                        <div className="detail fs-6" >{detail}</div>
-                        {option ?  
-                        <a className="option" href='#'>{option}
-                            <FontAwesome icon={faArrowRight} size={'1x'} color="#D4A373"/>
-                        </a>  
-                        : ''}
-                    </div>
+                    <CustomContent 
+                        text={name}
+                        detail={detail}
+                        option={option}
+                        image={image}
+                        moreImage={moreImage}
+                        textHighlight={textHighlight}
+                    />
                     <div style={ flexEnd || rotate ? {textAlign: 'end'} : {textAlign: 'start'}}>
                         {moreImage ? 
                             <img src={moreImage}  width={`${widthImg ? '300px' : '200px'} `} />
@@ -48,6 +45,51 @@ function ContentWrapper({...props}) {
             </div>
 
         </section>
+    )
+}
+
+
+const CustomContent = ({...props}) => {
+    const {text, detail, option,  image, moreImage, textHighlight} = props;
+
+    if(textHighlight) console.log(textHighlight, text);
+    
+    
+    
+    return(
+        <div className={`${image || moreImage ? '' : 'contentWrapper'}`}>
+            <div className={`text`}>
+                {
+                    textHighlight ? (
+                        text.split(' ').map((part, id) => {
+                            console.log(part, textHighlight);
+                            
+                            return(
+                            
+                                (
+                                    textHighlight.includes(part)? (
+                                        <span key={id} style={{ fontWeight: "bold", fontStyle: 'italic', marginRight: 10 }}>
+                                           {part}
+                                        </span>
+                                    ): (
+                                        <span style={{marginRight: 10}}>{part}</span>
+                                    )
+                                )
+                            )
+                        }
+
+                        )
+                    ) : (text) 
+                }
+
+            </div>
+            <div className="detail fs-6" >{detail}</div>
+            {option ?  
+            <a className="option" href='#'>{option}
+                <FontAwesome icon={faArrowRight} size={'1x'} color="#D4A373"/>
+            </a>  
+            : ''}
+        </div>
     )
 }
 

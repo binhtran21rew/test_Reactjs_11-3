@@ -7,8 +7,6 @@
     .text{
         font-size: 45px;
         margin: 0 0 40px;
-        font-style: italic;
-        font-weight: bold;
     }
     .content{
         height: 70%;
@@ -20,8 +18,16 @@
             &.rotate{
                 flex-direction:  column-reverse !important;
             }
+            .contentWrapper{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
 
-
+            }
+            .text{
+                display: flex;
+                flex-wrap: wrap;
+            }
             .detail{
                 margin-bottom: 20px;
             }

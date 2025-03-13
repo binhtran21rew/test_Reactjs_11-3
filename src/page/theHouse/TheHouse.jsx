@@ -59,6 +59,7 @@ function TheHouse() {
                 Perfect for large groups or family gatherings, the Main House serves as the centerpiece of your unforgettable getaway. Booking the Main House is required to access our additional accommodations in The Stables.
                     "
                     option="VIEW ALL SERVICES"
+                    textHighlight={['Mansion']}
                 />
 
             </section>
@@ -76,12 +77,13 @@ function TheHouse() {
                 <ContentWrapper 
                     moreImage={[imageMain2]}
                     flexEnd="true"
-                    name="Curated Services"
+                    name="Two self contained executive suites"
                     detail="
                         Your comfort and preferences are our top priority. Whether you seek complete privacy or wish to explore our curated list of exclusive experiences, we are here to create a bespoke escape that perfectly suits your needs.
                     "
                     option="VIEW ALL SERVICES"
                     image={[imageMain1]}
+                    textHighlight={['self', 'contained']}
                 />
             </section>
 
