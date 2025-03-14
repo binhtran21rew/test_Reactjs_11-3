@@ -8,7 +8,7 @@
     background-color: $colorFooter;
     overflow: hidden;
 
-    header{
+    &_wrapper{
         display: flex;
         width: 100%;
         justify-content: space-between;
@@ -41,6 +41,25 @@
                 font-size: 14px;
                 margin-bottom: 10px;
                 text-transform: uppercase;
+
+                span{
+                    position: relative;
+
+                    &:hover::before{
+                        position: absolute;
+                        content: "";
+                        top: 0;
+                        left: 0;
+                        width: 10px;
+                        height: 10px;
+                        background-color: var(--color-orange);
+                        border-radius: 50%;
+                        animation: appearOut .4s ease-in-out;
+                        transform: translateX(-200%) translateY(50%);
+
+                    }
+
+                }
             }
         }
     

@@ -1,1 +1,80 @@
 @use '../../../scss/' as *;
+.Booking_form{
+    background-color: var(--color-yellow-white);
+    width: 33.33%;
+    height: 100%;
+    padding: 30px;
+    overflow: hidden;
+    margin: 10px;
+
+    .Booking_title{
+        font-size:25px;
+        font-style: italic;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+    .Booking_price{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+        height: 250px;
+        .Booking_left{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right:  1px solid rgba($color: #000000, $alpha: 0.2);
+            height: 100%;
+            width: 50%;
+
+            span{
+                font-size: 14px;
+            }
+        }
+        .Booking_right{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 50%;
+            
+            p{
+                margin: 0;
+            }
+            span{
+                font-size: 12px;
+            }
+            .Booking_top{
+                margin: 20px;
+                .price{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    ul{
+        padding: 12px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        li{
+            padding: 10px;
+            font-size: 12px;
+        }
+    }
+    .Booking_bottom{
+        .main{
+            font-size: 12px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        span{
+            font-size: 12px;
+        }
+    }
+}

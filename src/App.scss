@@ -4,12 +4,24 @@
     --color-black: black;
     --color-white: white;
     --color-blue: aquamarine;
+    --color-yellow-white: #FDF9F3;
+    --color-orange: #d4a373;
 }   
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+
+html, body {
+    height: auto; /* Fix scrolling issue */
+    overflow: visible; /* Allow scrolling */
+}
+
+[data-scroll-container] {
+    min-height: 100%; /* Ensure content height */
 }
 ul{
     list-style: none;
@@ -49,3 +61,12 @@ a{
     height: 50vh !important;
 }
 
+
+.w-60{
+    width: 60% !important;
+}
+
+
+.mb-50{
+    margin-bottom: 50px !important;
+}

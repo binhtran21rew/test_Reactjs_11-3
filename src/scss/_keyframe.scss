@@ -10,9 +10,17 @@
     }
 }
 
+@keyframes appearOut{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
 @keyframes zoomOut{
   from {
-    transform: scale(0.8);
+    transform: scale(0.2);
   }
   to {
     transform: scale(1);

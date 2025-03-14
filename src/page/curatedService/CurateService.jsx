@@ -32,7 +32,7 @@ function CurateService() {
             Perfect for large groups or family gatherings, the Main House serves as the centerpiece of your unforgettable getaway. Booking the Main House is required to access our additional accommodations in The Stables.
             "
                     option="VIEW ALL SERVICES"
-                    textHighlight={["tailored", "Hillbrook"]}
+                    textHighlight={"tailored Hillbrook"}
                     textPosition={true}
                 />
             </section>
@@ -78,7 +78,7 @@ function CurateService() {
               Become intimate with your food and join our chef in foraging, hunting and gathering, or let us create a truly memorable dining experience just for you.
               "
                     option="VIEW ALL SERVICES"
-                    textHighlight={["Feast", "culinary", 'experiences']}
+                    textHighlight={"Feast culinary experiences"}
                     textPosition={true}
                 />
             </section>

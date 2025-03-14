@@ -52,6 +52,7 @@ function TheFarm() {
                 Perfect for large groups or family gatherings, the Main House serves as the centerpiece of your unforgettable getaway. Booking the Main House is required to access our additional accommodations in The Stables.
                     "
                     option="VIEW ALL SERVICES"
+                    textPosition
                 />
 
             </section>

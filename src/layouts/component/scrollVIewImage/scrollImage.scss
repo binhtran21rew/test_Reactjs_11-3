@@ -1,0 +1,26 @@
+@use '../../../scss/' as *;
+
+.imageScroll{
+    &_wrapper{
+
+        &_body{
+            display: flex;
+            justify-content: center;
+
+            .imageScroll_image{
+                width: 50%;
+                height: 50px;
+        
+                img{
+                    width: 100%;
+                    height: 50px;
+                }
+            }
+        }
+    
+
+    }
+
+
+
+}

@@ -3,7 +3,8 @@
 .Carousel{
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 60%;
+    padding: $marginDefault 0;
     .button{
         position: absolute;
         text-align: center;
@@ -34,6 +35,16 @@
 
         .body{
             line-height: 1.2;
+
+            .cirle{
+                display: block;
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: var(--color-orange);
+                margin-right: 20px;
+            }
         }
     }
 }

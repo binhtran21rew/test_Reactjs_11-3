@@ -1,6 +1,6 @@
 @use '../../scss/' as *;
 
-.Booking{
+.Activities{
     background-color: $backgroundMainColor;
 
     section{
@@ -8,9 +8,7 @@
         padding: calc($marginDefault - 20px) ;
         
     }
-    .booking_wrapper{
-        display: flex;
-      
-    }
+
+
 
 }

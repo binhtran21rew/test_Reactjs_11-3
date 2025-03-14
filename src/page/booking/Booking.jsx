@@ -5,13 +5,14 @@ import "./booking.scss";
 import { gallery1 } from "../../constant";
 import HeroImage from "../../layouts/component/heroImage/HeroImage";
 import ContentWrapper from "../../layouts/component/contentWrapper/ContentWrapper";
+import BookingFormPrice from "../../layouts/component/bookingFormPrice/BookingFormPrice";
+import ContactForm from "../../layouts/component/contactForm/ContactForm";
+import Contact from "../../layouts/component/contact/Contact";
 
 function Booking() {
     return (
         <div className="Booking">
-            
             <HeroImage image={gallery1} title="stay with us" />
-            
 
             <section>
                 <ContentWrapper
@@ -21,122 +22,82 @@ function Booking() {
 Escape to Hillbrook Estate during the low season from April 1st to October 30th (minimum 2-night stay) or the high season 1st November to 31st March (minimum 3-night stay).
 Enjoy exclusive access to our Main House. It's the perfect retreat for your getaway.
             "
-                    option="VIEW ALL SERVICES"
-                    textHighlight={["tailored", "Hillbrook"]}
+                    textHighlight={"Hillbrook"}
                 />
             </section>
 
             <section className="booking_wrapper">
-                
-                <div className="Booking_form">
-                    <div className="Booking_title">
-                        Main House
-                    </div>
-                    <div className="Booking_price">
-                        <div className="Booking_left">
-                            <span className="name">GUESTS</span>
-                            <span className="seats">0 - 16</span>
-                        </div>
-                        .
-                        <div className="Booking_right">
-                            <span className="Booking_top">
-                                <span className="date">
-                                    <p>Apr - Oct</p>
-                                    <p>PRICE (p/n)</p>
-                                </span>
-                                <span className="price">$4000</span>
-                            </span>
-                            <span className="Booking_top">
-                                <span className="date">
-                                        <p>Nov - Mar</p>
-                                        <p>PRICE (p/n)</p>
-                                    </span>
-                                <span className="price">$4000</span>
-                            </span>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Main House with 7 bedrooms</li>
-                        <li>Exclusive use of the complete property</li>
-                        <li>Private beach walking access</li>
-                        <li>Private beach walking access</li>
-                    </ul>
-
-                    <div className="Booking_bottom"></div>
-                </div>
-                <div className="Booking_form">
-                    <div className="Booking_title">
-                        Main House
-                    </div>
-                    <div className="Booking_price">
-                        <div className="Booking_left">
-                            <span className="name">GUESTS</span>
-                            <span className="seats">0 - 16</span>
-                        </div>
-                        .
-                        <div className="Booking_right">
-                            <span className="Booking_top">
-                                <span className="date">
-                                    <p>Apr - Oct</p>
-                                    <p>PRICE (p/n)</p>
-                                </span>
-                                <span className="price">$4000</span>
-                            </span>
-                            <span className="Booking_top">
-                                <span className="date">
-                                        <p>Nov - Mar</p>
-                                        <p>PRICE (p/n)</p>
-                                    </span>
-                                <span className="price">$4000</span>
-                            </span>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Main House with 7 bedrooms</li>
-                        <li>Exclusive use of the complete property</li>
-                        <li>Private beach walking access</li>
-                        <li>Private beach walking access</li>
-                    </ul>
-
-                    <div className="Booking_bottom"></div>
-                </div>
-                <div className="Booking_form">
-                    <div className="Booking_title">
-                        Main House
-                    </div>
-                    <div className="Booking_price">
-                        <div className="Booking_left">
-                            <span className="name">GUESTS</span>
-                            <span className="seats">0 - 16</span>
-                        </div>
-                        .
-                        <div className="Booking_right">
-                            <span className="Booking_top">
-                                <span className="date">
-                                    <p>Apr - Oct</p>
-                                    <p>PRICE (p/n)</p>
-                                </span>
-                                <span className="price">$4000</span>
-                            </span>
-                            <span className="Booking_top">
-                                <span className="date">
-                                        <p>Nov - Mar</p>
-                                        <p>PRICE (p/n)</p>
-                                    </span>
-                                <span className="price">$4000</span>
-                            </span>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Main House with 7 bedrooms</li>
-                        <li>Exclusive use of the complete property</li>
-                        <li>Private beach walking access</li>
-                        <li>Private beach walking access</li>
-                    </ul>
-
-                    <div className="Booking_bottom"></div>
-                </div>
+                <BookingFormPrice
+                    name="Main House"
+                    to="0"
+                    from="16"
+                    dataTo1="Apr"
+                    dataFrom1="Oct"
+                    price1="4000"
+                    dataTo2="Apr"
+                    dataFrom2="Oct"
+                    price2="4000"
+                    listDetail={[
+                        "Main House with 7 bedrooms",
+                        "Exclusive use of the complete property",
+                        "Private beach walking access",
+                        "Breakfast provisions provided",
+                    ]}
+                    detail="Main House can accommodate up to 16 guests with 7 bedrooms. An Extra 4 guests can be accommodated in the stables. ($500 per stable per night)"
+                />
+                <BookingFormPrice
+                    name="Main House & 1 Stable"
+                    to="0"
+                    from="16"
+                    dataTo1="Apr"
+                    dataFrom1="Oct"
+                    price1="4000"
+                    dataTo2="Apr"
+                    dataFrom2="Oct"
+                    price2="4000"
+                    listDetail={[
+                        "Main House with 7 bedrooms",
+                        "Exclusive use of the complete property",
+                        "Private beach walking access",
+                        "Breakfast provisions provided",
+                    ]}
+                    detail="Main House can accommodate up to 16 guests with 7 bedrooms. An Extra 4 guests can be accommodated in the stables. ($500 per stable per night)"
+                />
+                <BookingFormPrice
+                    name="Main House & 2 Stables"
+                    to="0"
+                    from="16"
+                    dataTo1="Apr"
+                    dataFrom1="Oct"
+                    price1="4000"
+                    dataTo2="Apr"
+                    dataFrom2="Oct"
+                    price2="4000"
+                    listDetail={[
+                        "Main House with 7 bedrooms",
+                        "Exclusive use of the complete property",
+                        "Private beach walking access",
+                        "Breakfast provisions provided",
+                    ]}
+                    detail="Main House can accommodate up to 16 guests with 7 bedrooms. An Extra 4 guests can be accommodated in the stables. ($500 per stable per night)"
+                />
             </section>
+
+            <section>
+                <ContactForm
+                    topTitle={[
+                        "Book your Hillbrook escape",
+                        "Get in touch now, and we'll come back to you shortly.",
+                        "Or you can check our availability first, here.",
+                        "If you’d like to enquire about weddings, visit this page.",
+                    ]}
+                    className="d-flex justify-content-center flex-column"
+                    classNameForm="w-60"
+                />
+            </section>
+
+            <Contact />
+
         </div>
     );
 }

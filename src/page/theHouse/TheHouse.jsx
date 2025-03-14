@@ -59,7 +59,7 @@ function TheHouse() {
                 Perfect for large groups or family gatherings, the Main House serves as the centerpiece of your unforgettable getaway. Booking the Main House is required to access our additional accommodations in The Stables.
                     "
                     option="VIEW ALL SERVICES"
-                    textHighlight={['Mansion']}
+                    textHighlight={"Mansion"}
                 />
 
             </section>
@@ -83,7 +83,7 @@ function TheHouse() {
                     "
                     option="VIEW ALL SERVICES"
                     image={[imageMain1]}
-                    textHighlight={['self', 'contained']}
+                    textHighlight={'self contained'}
                 />
             </section>
 
@@ -163,17 +163,19 @@ function TheHouse() {
             <div className="image_container" style={{background: `url('${imageMain2}') no-repeat center center/cover`, width: '100%', height: '100vh'}}>
             </div>
         </section>
-        <section>
-            <ContentWrapper 
-                name="Scottish Mansion"
-                detail="
-               Welcome to the heart of Hillbrook Estate, the Main House. This 7-bedroom homestead, inspired by the elegance of a Scottish mansion, offers luxurious accommodations and sweeping views of the Pacific Ocean. 
-               Perfect for large groups or family gatherings, the Main House serves as the centerpiece of your unforgettable getaway. Booking the Main House is required to access our additional accommodations in The Stables.
-                "
-                option="VIEW ALL SERVICES"
-            />
+        <div className="wrapper">
+            <section>
+                <ContentWrapper 
+                    name="Scottish Mansion"
+                    detail="
+                Welcome to the heart of Hillbrook Estate, the Main House. This 7-bedroom homestead, inspired by the elegance of a Scottish mansion, offers luxurious accommodations and sweeping views of the Pacific Ocean. 
+                Perfect for large groups or family gatherings, the Main House serves as the centerpiece of your unforgettable getaway. Booking the Main House is required to access our additional accommodations in The Stables.
+                    "
+                    option="VIEW ALL SERVICES"
+                />
 
-        </section>
+            </section>
+        </div>
 
         <section>
             <ImageHover />

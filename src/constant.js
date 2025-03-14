@@ -21,7 +21,9 @@ export const gallery3="https://cdn.prod.website-files.com/6670af4bec8905252ff0d1
 export const imageSwiper1="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/66a1c89751092cb5d1f31b29_Hillbrook_1_0832%204.png";
 export const imageSwiper2="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668222f8853e189b3969a0aa_409faa4f76c973c34d121bf2529cff08.webp";
 export const imageSwiper3="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/66822074853e189b39673393_e2d1e1081aa0ba708d29690f0447de66.webp";
-
+export const imageSwiper4="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/66a1c609f156f839f144dcd7_Screenshot%202024-05-16%20at%201.29.jpg";
+export const imageSwiper5="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668df72fe32c65d1d3f49d6d_Screenshot%202024-05-16%20at%201.55.webp";
+export const imageMain5="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668da8be8d37ed68472b3405_image%20141.webp";
 export const linkHome = '/';
 export const linkTheHouse = '/thehouse'
 export const linkTheFarm = '/thefarm'
@@ -30,6 +32,7 @@ export const linkBookNow = '/booknow'
 export const linkGallery = '/gallery';
 export const linkCuratedServices = '/curatedservices';
 export const linkActivities = '/activities';
+export const linkWedding= '/wedding';
 
 export const markers = [
     { id: 1, position: [100, 200], image: imageMarker1, name: 'Green Island', detail: 'A pristine oasis off the coast, perfect for exploration and adventure.'},

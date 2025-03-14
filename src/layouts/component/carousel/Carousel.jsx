@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from "swiper/modules";
 
@@ -16,10 +16,7 @@ function Carousel({...props}) {
     
     return (
         <div className="Carousel">
-            <div className="button">
-                <FontAwesome icon={faArrowLeft} color="#D4A373" className="next-btn"/>
-                <FontAwesome icon={faArrowRight} color="#D4A373" className="prev-btn"/>
-            </div>
+
 
             {isImage ? (
                 <Swiper
@@ -35,11 +32,15 @@ function Carousel({...props}) {
                                     <img src={data} alt="Slide 1" className='image' />
                                     <div className="carousel_content">
                                         <div className="top">
-                                        {content[i].title}
+                                        {content[i]?.title}
 
                                         </div>
-                                        <div className="body">
-                                            {content[i].detail}
+                                        <div className={`body ${!content[i].title && 'd-flex align-items-center'}`}>
+                                            {!content[i].title && (
+                                              <span className="cirle"></span>
+
+                                            )}
+                                            {content[i]?.detail}
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -48,20 +49,27 @@ function Carousel({...props}) {
                     })}
                 </Swiper>
             ) : (
-                <Swiper
-                modules={[Navigation]}
-                    spaceBetween={50}
-                    slidesPerView={2}
-                    navigation={{ nextEl: ".next-btn", prevEl: ".prev-btn" }}
-                    >
-                    {image.map((data, i) => {
-                        return (
-                            <div key={i}>
-                                <SwiperSlide><img src={data} alt="Slide 1" className='image' /></SwiperSlide>
-                            </div>
-                        )
-                    })}
-                </Swiper>
+                <Fragment>
+                    <div className="button">
+                        <FontAwesome icon={faArrowLeft} color="#D4A373" className="next-btn"/>
+                        <FontAwesome icon={faArrowRight} color="#D4A373" className="prev-btn"/>
+                    </div>
+                    <Swiper
+                    modules={[Navigation]}
+                        spaceBetween={50}
+                        slidesPerView={2}
+                        navigation={{ nextEl: ".next-btn", prevEl: ".prev-btn" }}
+                        >
+                        {image.map((data, i) => {
+                            return (
+                                <div key={i}>
+                                    <SwiperSlide><img src={data} alt="Slide 1" className='image' /></SwiperSlide>
+                                </div>
+                            )
+                        })}
+                    </Swiper>
+                </Fragment>
+                
             )}
 
         </div>

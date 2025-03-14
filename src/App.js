@@ -10,7 +10,8 @@ import {
   linkBookNow,
   linkGallery,
   linkCuratedServices,
-  linkActivities, } from "./constant";
+  linkActivities,
+  linkWedding, } from "./constant";
 
 import Header from "./layouts/Header/header";
 import Footer from './layouts/Footer/Footer';
@@ -22,6 +23,8 @@ import Gallery from "./page/gallery/Gallery";
 import Contact from "./page/contact/Contact";
 import CurateService from "./page/curatedService/CurateService";
 import Booking from "./page/booking/Booking";
+import Activities from "./page/activities/Activities";
+import Wedding from "./page/wedding/Wedding";
 
 
 function App() {
@@ -40,6 +43,8 @@ function App() {
             <Route path={linkContact} element={<Contact />} />
             <Route path={linkCuratedServices} element={<CurateService />} />
             <Route path={linkBookNow} element={<Booking />} />
+            <Route path={linkActivities} element={<Activities/>} />
+            <Route path={linkWedding} element={<Wedding/>} />
 
 
 

@@ -60,11 +60,16 @@ function Home() {
                     Your browser does not support the video tag.
                 </video>
             </section>
+
+            <section>
+                <ContentWrapper
+                    name="
+                        Enjoy the beauty of the Coromandel from the sanctuary of your own private retreat"
+                    textHighlight={"the beauty of the Coromandel"}
+                />
+            </section>
             <section className="">
-                <div className="Main_content_title">
-                    Enjoy the <span>beauty of the Coromandel</span> <br></br>{" "}
-                    from the sanctuary of your own private retreat
-                </div>
+
 
                 <div style={{ textAlign: "center" }}>
                     <section className="Main_section">
@@ -135,7 +140,7 @@ function Home() {
                 "
                     option="VIEW ALL SERVICES"
                     image={[imageContent1, imageContent2, imageContent1]}
-                    image_name={["Private Chef", "massage", "Private Chef"]}
+                    image_name={["Private Chef", "Massages", "Private Chef"]}
                 />
             </section>
             <section>
@@ -148,6 +153,8 @@ function Home() {
                 Hillbrook Estate offers a wealth of activities, from beach exploration to scenic farm walks. For those seeking even more adventure, we are delighted to arrange additional activities to enhance your stay.
                 "
                     option="VIEW ALL SERVICES"
+                    textPosition={true}
+
                 />
             </section>
             <section>

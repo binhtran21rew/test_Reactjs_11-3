@@ -45,11 +45,7 @@
                 display: flex;
                 flex-direction: row;
                 flex-flow: wrap;
-                justify-content: space-between;
-                .item_wrap{
-                    margin: 20px;
-                    width: 100%;
-                }
+                justify-content: space-evenly;
 
                 .gallery_image{
                     margin: 20px 20px 60px 0;
