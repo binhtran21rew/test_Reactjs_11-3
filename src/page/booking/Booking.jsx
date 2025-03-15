@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import "./booking.scss";
 
@@ -10,6 +10,13 @@ import ContactForm from "../../layouts/component/contactForm/ContactForm";
 import Contact from "../../layouts/component/contact/Contact";
 
 function Booking() {
+      const [widthScreen, setWidthScreen] = useState(window.innerWidth);
+    
+      useEffect(() => {
+        const handleResize = () => setWidthScreen(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
     return (
         <div className="Booking">
             <HeroImage image={gallery1} title="stay with us" />
@@ -29,13 +36,17 @@ Enjoy exclusive access to our Main House. It's the perfect retreat for your geta
             <section className="booking_wrapper">
                 <BookingFormPrice
                     name="Main House"
+                    guest="true"
                     to="0"
                     from="16"
-                    dataTo1="Apr"
-                    dataFrom1="Oct"
+                    dateTo={['apr', 'oct']}
+                    dateFrom={['dec', 'apr']}
+                    price={['4000', '6000']}
+                    dateTo1="Apr"
+                    dateFrom1="Oct"
                     price1="4000"
-                    dataTo2="Apr"
-                    dataFrom2="Oct"
+                    dateTo2="Apr"
+                    dateFrom2="Oct"
                     price2="4000"
                     listDetail={[
                         "Main House with 7 bedrooms",
@@ -47,14 +58,12 @@ Enjoy exclusive access to our Main House. It's the perfect retreat for your geta
                 />
                 <BookingFormPrice
                     name="Main House & 1 Stable"
+                    guest="true"
                     to="0"
                     from="16"
-                    dataTo1="Apr"
-                    dataFrom1="Oct"
-                    price1="4000"
-                    dataTo2="Apr"
-                    dataFrom2="Oct"
-                    price2="4000"
+                    dateTo={['apr', 'oct']}
+                    dateFrom={['dec', 'apr']}
+                    price={['4000', '6000']}
                     listDetail={[
                         "Main House with 7 bedrooms",
                         "Exclusive use of the complete property",
@@ -65,14 +74,13 @@ Enjoy exclusive access to our Main House. It's the perfect retreat for your geta
                 />
                 <BookingFormPrice
                     name="Main House & 2 Stables"
+                    guest="true"
                     to="0"
                     from="16"
-                    dataTo1="Apr"
-                    dataFrom1="Oct"
-                    price1="4000"
-                    dataTo2="Apr"
-                    dataFrom2="Oct"
-                    price2="4000"
+                    dateTo={['apr', 'oct']}
+                    dateFrom={['dec', 'apr']}
+                    price={['4000', '6000']}
+                    
                     listDetail={[
                         "Main House with 7 bedrooms",
                         "Exclusive use of the complete property",
@@ -92,7 +100,7 @@ Enjoy exclusive access to our Main House. It's the perfect retreat for your geta
                         "If you’d like to enquire about weddings, visit this page.",
                     ]}
                     className="d-flex justify-content-center flex-column"
-                    classNameForm="w-60"
+                    classNameForm={`${widthScreen < 780 ? 'w-100' : 'w-60'}`}
                 />
             </section>
 

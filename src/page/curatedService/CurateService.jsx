@@ -39,6 +39,7 @@ function CurateService() {
 
             <section>
                 <Carousel
+                    isImage = {true}
                     image={[imageMain1, imageMain2, imageMain4]}
                     content={[
                         {

@@ -1,101 +1,137 @@
 @use '../../../scss/' as *;
 
+.ContentWrapper{
+    @include sreen_small{
+        .Content_title{
 
-.Main_service{
-    margin: $marginDefault 0;
-
-
-    .content{
-        height: 70%;
-        .body{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            &.rotate{
-                flex-direction:  column-reverse !important;
-            }
-            .contentWrapper{
-                display: flex;
-                width: 100%;
-                flex-direction: column;
-                .text{
-                    display: flex;
-                    width: 100%;
-                    text-align: center;
-                
-                    .text_wrapper{
-                        display: flex;
-                        width: 50%;
-                        flex-flow: wrap;
-                        
-                        span{
-                            font-size: 40px;
-                        }
-
-                    }
-                }
-                .detail{
-                    width: 100%;
-                    span{
-                        font-size: 14px;
-                        line-height: 1.3;
-                        width: 40%
-                    }
-                }
-
-                .option{
-                    a{
-                        width: 40%;
-                        font-weight: bold;
-                        text-transform: uppercase;
-                        color: var(--color-black);
-                    }
-        
-                }
-
-            }   
-            .text{
-                font-size: 45px;
-                margin: 0 0 40px;
-            }
-            .detail{
-                
-                margin-bottom: 20px;
-            }
-            .option{
-                a{
-
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    color: var(--color-black);
-                }
-    
-            }
-    
-
-        }
-        .contentService_left{
-            .image_name{
-                display: flex;
-                align-items: center;
-                .cirle{
-                    display: block;
-                    content: "";
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    background-color: var(--color-orange);
-                    margin-right: 20px;
-
-                }
-
+            &_moreImage{
+                display: none;
             }
 
-
-            
+            .ContentWrapper_left{
+                margin-bottom: 100px;
+            }
         }
     }
 
+    @include sreen_medium{
+        .CustomContent{
+            &_text{
+                font-size: 30px;
+            }
+            // &_moreImage{
+            //     display: none;
+            // }
+
+            // .ContentWrapper_left{
+            //     margin-bottom: 100px;
+            // }
+
+            &_detail{
+                font-size: 15px;
+            }
+        }
+    }
 }
+// .Main_service{
+//     margin: $marginDefault 0;
+
+
+//     .content{
+//         height: 100%;
+//         .body{
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: space-between;
+//             position: relative;
+//             &.rotate{
+//                 flex-direction:  column-reverse !important;
+//             }
+//             .contentWrapper{
+//                 display: flex;
+//                 width: 100%;
+//                 flex-direction: column;
+//                 .text{
+//                     display: flex;
+//                     width: 100%;
+//                     text-align: center;
+                
+//                     .text_wrapper{
+//                         display: flex;
+//                         width: 50%;
+//                         flex-flow: wrap;
+                        
+//                         span{
+//                             font-size: 40px;
+//                         }
+
+//                     }
+//                 }
+//                 .detail{
+//                     width: 100%;
+//                     span{
+//                         font-size: 14px;
+//                         line-height: 1.3;
+//                         width: 40%
+//                     }
+//                 }
+
+//                 .option{
+//                     a{
+//                         width: 40%;
+//                         font-weight: bold;
+//                         text-transform: uppercase;
+//                         color: var(--color-black);
+//                     }
+        
+//                 }
+
+//             }   
+//             .text{
+//                 font-size: 45px;
+//                 margin: 0 0 40px;
+//             }
+//             .detail{
+                
+//                 margin-bottom: 20px;
+//             }
+//             .option{
+//                 a{
+
+//                     font-weight: bold;
+//                     text-transform: uppercase;
+//                     color: var(--color-black);
+//                 }
+    
+//             }
+    
+
+//         }
+//         .contentService_left{
+//             .Content_image{
+//                 object-fit: cover;
+//             }
+//             .image_name{
+//                 display: flex;
+//                 align-items: center;
+
+//                 .cirle{
+//                     display: block;
+//                     content: "";
+//                     width: 10px;
+//                     height: 10px;
+//                     border-radius: 50%;
+//                     background-color: var(--color-orange);
+//                     margin-right: 20px;
+
+//                 }
+
+//             }
+
+
+            
+//         }
+//     }
+
+// }
 

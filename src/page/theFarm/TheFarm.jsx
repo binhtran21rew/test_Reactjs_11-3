@@ -9,20 +9,22 @@ import './theFarm.scss';
 import HeroImage from '../../layouts/component/heroImage/HeroImage';
 
 function TheFarm() {
+
+
   return (
     <div className="TheFarm">
-        <section>
-            <HeroImage image={imageMain2} title="the Farms" />
-        </section>
-        <div className="wrapper">
+        <HeroImage image={imageMain2} title="the Farms" />
+        <div className="container">
             <section>
-                    <ContentWrapper 
-                        name="Regenerating native forest and scenic paddocks"
-                        detail="
-                            Explore our gallery to experience the beauty and charm of Hillbrook Estate. From stunning interiors to picturesque landscapes, our photos showcase the unique features and unforgettable moments awaiting you.
-                        "
-                        option="VIEW ALL SERVICES"
-                    />
+                <ContentWrapper 
+                    name="Regenerating native forest and scenic paddocks"
+                    detail="
+
+Hillbrook Estate is not just a luxury retreat; it's also a working farm where around 100 young dairy calves graze in our lush, green paddocks, all while enjoying the breathtaking views. Guests have private access to a stunning white sandy Coromandel beach, just a 15-minute walk from the Main House through an ancient pohutukawa forest. This pristine beach boasts a fantastic surf break and excellent fishing opportunities, making it a perfect spot for relaxation and adventure.                    "
+                    option="VIEW ALL SERVICES"
+                    textHighlight={"native forest scenic"}
+                    textPosition
+                />
             </section>
 
             <section className='ChangeImage'>
@@ -30,7 +32,7 @@ function TheFarm() {
                 </div>
             </section>
 
-            <section>
+            <section className='image_container'>
                 <ContentWrapper 
                     name="Scottish Mansion"
                     detail="
@@ -44,7 +46,7 @@ function TheFarm() {
                 />
 
             </section>
-            <section>
+            <section className='vh-75'>
                 <ContentWrapper 
                     name="Scottish Mansion"
                     detail="
@@ -52,20 +54,19 @@ function TheFarm() {
                 Perfect for large groups or family gatherings, the Main House serves as the centerpiece of your unforgettable getaway. Booking the Main House is required to access our additional accommodations in The Stables.
                     "
                     option="VIEW ALL SERVICES"
-                    textPosition
                 />
 
             </section>
         </div>
 
-        <section style={{height: '100%'}}>
+        <section>
             <Carousel 
                 image={[imageMain1, imageMain2, imageMain3, imageMain4, imageMain1, imageMain2]}
             />
         </section>
 
-        <div className="wrapper">
-            <section>
+        <div className="container">
+            <section className='image_container'>
                 <ContentWrapper 
                     name="Restored ponds, native trees, lively ecosystem"
                     detail="
@@ -77,7 +78,7 @@ function TheFarm() {
                 />
 
             </section>
-            <section>
+            <section  className='image_container'>
                 <ContentWrapper 
                     name="Explore the walking tracks"
                     detail="
@@ -89,17 +90,19 @@ function TheFarm() {
                 />
 
             </section>
-            <section>
-                <div className='Main_image' style={{backgroundImage: `url(${imageContent5})` }}>
-                    <Slide keyframes={letterAnimation} style={{width: '80%'}}>
-                        <div className={`text`}>
-                            <div className="">Relax or explore  <br></br> your
-                            very own <span>personal playground</span> </div>
-                        </div>
-                    </Slide>
-                </div>
-            </section>
         </div>
+
+        <section>
+            <div className='Main_image' style={{backgroundImage: `url(${imageContent5})` }}>
+                <Slide keyframes={letterAnimation} style={{width: '80%'}}>
+                    <div className={`text`}>
+                        <div className="">Relax or explore  <br></br> your
+                        very own <span>personal playground</span> </div>
+                    </div>
+                </Slide>
+            </div>
+        </section>
+
 
     </div>
   )

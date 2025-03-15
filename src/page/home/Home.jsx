@@ -23,6 +23,7 @@ import Contact from "../../layouts/component/contact/Contact";
 import ImageHover from "../../layouts/component/ImageHover/ImageHover";
 import { zoomOut } from "../../constant";
 import HeroImage from "../../layouts/component/heroImage/HeroImage";
+import BoxContent from "../../layouts/component/boxContent/BoxContent";
 
 function Home() {
     return (
@@ -31,28 +32,21 @@ function Home() {
                 <HeroImage image={imageMain2} title="the houses" />
             </section>
             <section>
-                <div className="Main_title">
-                    <span style={{ marginLeft: "16.6667%" }}>
-                        Your <h2 className="ms-3">luxury escape</h2>
-                    </span>
-                    <span style={{ marginLeft: "33.3333%" }}>
-                        to disconnect
-                    </span>
-                    <span style={{ marginLeft: "50%" }}>and reconnect</span>
-                    <span
-                        style={{ marginLeft: "50%" }}
-                        className="fs-6 mt-3 lh-2"
-                    >
+                <BoxContent 
+                    text={["Your", "luxury escape", "to disconnect and reconnect"]}
+                    textPosition={"16.6"}
+                    option="book now"
+                    textHighlight="luxury escape"
+                    detail="                       
                         Hillbrook Estate & Farm is a luxury coastal property and
                         working farm situated just north of Whangamata on New
                         Zealand's Coromandel coast. Available for exclusive
                         rental, our estate is the perfect setting for your next
-                        luxury escape.
-                        <a href="" className="mt-3 text-dark">
-                            BOOK NOW
-                        </a>
-                    </span>
-                </div>
+                        luxury escape."
+                    splitPosition={[1,3]}
+                />
+
+
             </section>
             <section>
                 <video className="Main_video" controls>

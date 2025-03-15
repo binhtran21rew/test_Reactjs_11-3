@@ -17,6 +17,9 @@ import {
     linkGallery,
     linkActivities,
     linkCuratedServices,
+    linkVendor,
+    linkEnquiries,
+    linkWedding,
 } from "../../constant";
 
 function Footer() {
@@ -60,18 +63,16 @@ function Footer() {
                     <Link to={linkBookNow}>
                         <span>Booking</span>
                     </Link>
-                    <Link to={linkBookNow}>
+                    <Link to={linkWedding}>
                         <span>Weddings</span>
                     </Link>
-                    <Link to={"#"}>
+                    <Link to={linkVendor}>
                         <span>Vendors</span>
                     </Link>
-                    <Link to={"#"}>
+                    <Link to={linkEnquiries}>
                         <span>Enquiries</span>
                     </Link>
-                    <Link to={"#"}>
-                        <span>Gallery</span>
-                    </Link>
+
                     <div className="social_icons">
                         <FontAwesome icon={faInstagram} />
                         <FontAwesome icon={faFacebook} />

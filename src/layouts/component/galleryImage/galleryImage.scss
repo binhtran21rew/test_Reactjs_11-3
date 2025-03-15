@@ -1,8 +1,7 @@
 @use "../../../scss/" as *;
 
 .GallaryImage{
-    padding: calc($marginDefault + 30px) $marginDefault;
-    background-color: #F1EBE3;
+    background-color: $backgroundMainColor;
     .title{
         font-size: 80px;
         text-transform: capitalize;
@@ -13,7 +12,11 @@
         display: flex;
         align-items: flex-start;
         gap: 20px;
-        padding: $marginDefault 0;
+        @include sreen_small{
+            display: block;
+            padding: 0;
+
+        }
         .left {
             position: sticky;
             top: 20px;
@@ -21,7 +24,12 @@
             font-size: 13px;
             width: 30%;
             text-transform: capitalize;
-            
+            @include sreen_small{
+                position: relative;
+                display: block;
+                padding: 0;
+    
+            }
             ul{
                 li{
                     line-height: 2.5;
@@ -46,9 +54,17 @@
                 flex-direction: row;
                 flex-flow: wrap;
                 justify-content: space-evenly;
-
+                @include sreen_small{
+                    display: block;
+        
+                }
                 .gallery_image{
                     margin: 20px 20px 60px 0;
+                    @include sreen_small{
+                        width: 100%;
+                        height: 100%;
+                        margin: 10px;
+                    }
                 }
                 
             }

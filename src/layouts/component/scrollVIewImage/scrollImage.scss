@@ -6,7 +6,17 @@
         &_body{
             display: flex;
             justify-content: center;
+            .Scroll_body{
+                font-size:  36px;
+                text-transform: capitalize;
+                strong{
+                    font-style: italic;
+                }
 
+                .option{
+                    font-size: 12px;
+                }
+            }
             .imageScroll_image{
                 width: 50%;
                 height: 50px;

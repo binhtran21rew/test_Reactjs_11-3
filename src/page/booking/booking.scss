@@ -10,7 +10,9 @@
     }
     .booking_wrapper{
         display: flex;
-      
+        @include sreen_small{
+            display: block;
+        }
     }
 
 }

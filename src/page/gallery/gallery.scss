@@ -1,1 +1,16 @@
 @use '../../scss/' as *;
+
+
+.Gallery{
+
+    background-color: $backgroundMainColor;
+    .container{
+        padding-top: 150px;
+
+        @include sreen_small{
+            min-width: 1040px;
+
+        }
+    }
+
+}

@@ -16,19 +16,18 @@ function Carousel({...props}) {
     
     return (
         <div className="Carousel">
-
-
             {isImage ? (
                 <Swiper
-                modules={[Navigation]}
+                    modules={[Navigation]}
                     allowTouchMove={false}
                     spaceBetween={image.length * 10}
                     slidesPerView={image.length}
+                    className='customSwipper'
                     >
                     {image.map((data, i) => {
                         return (
-                            <div key={i} className="binh">
-                                <SwiperSlide>
+                            <div key={i}>
+                                <SwiperSlide className='customSlide'>
                                     <img src={data} alt="Slide 1" className='image' />
                                     <div className="carousel_content">
                                         <div className="top">

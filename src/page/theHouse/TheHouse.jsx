@@ -36,7 +36,7 @@ function TheHouse() {
   return (
     <div className='TheHouse'>
         <HeroImage image={imageMain3} title={"the house"}/>
-        <div className="wrapper">
+        <div className="container">
             <section className='TheHouse_content mt-50 '>
                 <div className="TheHouse_content_title">
                 50-hectare <span>luxury estate</span> <br></br>  overlooking Coromandel’s Pacific shores
@@ -51,7 +51,7 @@ function TheHouse() {
                 </ul>
             </section>
 
-            <section>
+            <section className='vh-50'>
                 <ContentWrapper 
                     name="Scottish Mansion"
                     detail="
@@ -72,8 +72,8 @@ function TheHouse() {
 
         </section>
 
-        <div className="wrapper">
-            <section>
+        <div className="container mb-5">
+            <section className='image_container'>
                 <ContentWrapper 
                     moreImage={[imageMain2]}
                     flexEnd="true"
@@ -96,7 +96,6 @@ function TheHouse() {
         </section>
 
         <section className='ChangeImage'>
-
             <div className="image_container" style={{background: `url('${clickImage}') no-repeat center center/cover`, width: '100%', height: '100vh'}}>
                 <div className="wrapper">
                     {textImagePairs.map((item, index) => (
@@ -113,8 +112,8 @@ function TheHouse() {
             </div>
         </section>
 
-        <div className="wrapper">
-            <section>
+        <div className="container mb-5">
+            <section className='image_container'>
                 <ContentWrapper 
                     moreImage={[imageMain2]}
                     widthImg="80%"
@@ -126,28 +125,28 @@ function TheHouse() {
                     image={[imageMain1]}
                 />
             </section>
-
-            <section>
+            <section className='image_container'>
                 <ContentWrapper 
+                    rotate
+                    flexEnd
                     moreImage={[imageMain2]}
-                    name="Curated Services"
                     widthImg="80%"
-                    flexEnd= 'true'
-                    rotate='true'
+                    name="Curated Services"
+
                     detail="
                         Your comfort and preferences are our top priority. Whether you seek complete privacy or wish to explore our curated list of exclusive experiences, we are here to create a bespoke escape that perfectly suits your needs.
                     "
                     option="VIEW ALL SERVICES"
+                    textHighlight="Services"
                     image={[imageMain1]}
                 />
             </section>
-
-            <section>
+            <section className='image_container'>
                 <ContentWrapper 
+                    rotate
                     moreImage={[imageMain2]}
-                    name="Curated Services"
                     widthImg="80%"
-                    rotate='true'
+                    name="Curated Services"
                     detail="
                         Your comfort and preferences are our top priority. Whether you seek complete privacy or wish to explore our curated list of exclusive experiences, we are here to create a bespoke escape that perfectly suits your needs.
                     "
@@ -159,17 +158,15 @@ function TheHouse() {
         
 
         <section className='ChangeImage'>
-
             <div className="image_container" style={{background: `url('${imageMain2}') no-repeat center center/cover`, width: '100%', height: '100vh'}}>
             </div>
         </section>
-        <div className="wrapper">
-            <section>
+        <div className="container vh-50">
+            <section className='image_container'>
                 <ContentWrapper 
                     name="Scottish Mansion"
                     detail="
-                Welcome to the heart of Hillbrook Estate, the Main House. This 7-bedroom homestead, inspired by the elegance of a Scottish mansion, offers luxurious accommodations and sweeping views of the Pacific Ocean. 
-                Perfect for large groups or family gatherings, the Main House serves as the centerpiece of your unforgettable getaway. Booking the Main House is required to access our additional accommodations in The Stables.
+               Hillbrook Estate offers a wealth of activities, from beach exploration to scenic farm walks. For those seeking even more adventure, we are delighted to arrange additional activities to enhance your stay.
                     "
                     option="VIEW ALL SERVICES"
                 />

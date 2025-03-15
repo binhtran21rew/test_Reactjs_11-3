@@ -5,6 +5,20 @@
     width: 100%;
     height: 60%;
     padding: $marginDefault 0;
+    @include sreen_small{
+        padding: 10px;
+        .customSwipper{
+            .swiper-wrapper{
+                display: flex;
+                flex-flow: wrap;
+                justify-content: center;
+                .swiper-slide{
+                    width: 40% !important;
+                }
+            }
+        }
+    }
+
     .button{
         position: absolute;
         text-align: center;

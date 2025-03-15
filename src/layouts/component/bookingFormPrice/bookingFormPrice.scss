@@ -1,19 +1,38 @@
 @use '../../../scss/' as *;
 .Booking_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     background-color: var(--color-yellow-white);
-    width: 33.33%;
-    height: 100%;
+    width: 100%;
     padding: 30px;
-    overflow: hidden;
     margin: 10px;
+    min-height: 800px;
+
 
     .Booking_title{
         font-size:25px;
         font-style: italic;
         font-weight: bold;
         margin-bottom: 25px;
+
+        @include sreen_medium{
+            font-size: 20px;
+        }
     }
+
     .Booking_price{
+        .formDate{
+            .Booking_left{
+                &:last-child{
+                    border-right:  unset;
+                }
+                .price{
+                    font-size: 24px;
+                }
+                
+            }
+        }
         display: flex;
         flex-direction: row;
         text-align: center;
@@ -32,6 +51,10 @@
 
             span{
                 font-size: 14px;
+                text-transform: capitalize;
+                @include sreen_medium{
+                    font-size: 10px;
+                }
             }
         }
         .Booking_right{
@@ -44,9 +67,16 @@
             
             p{
                 margin: 0;
+                @include sreen_medium{
+                    font-size: 10px;
+                }
             }
             span{
-                font-size: 12px;
+                font-size: 14px;
+                text-transform: capitalize;
+                @include sreen_medium{
+                    font-size: 10px;
+                }
             }
             .Booking_top{
                 margin: 20px;
@@ -63,8 +93,24 @@
         justify-content: center;
 
         li{
-            padding: 10px;
+            position: relative;
+            padding: 10px 30px;
             font-size: 12px;
+            @include sreen_medium{
+                font-size: 10px;
+            }
+            &::before{
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 8px;
+                height: 8px;
+                border: 1px solid var(--color-orange);
+                background-color: var(--color-orange);
+                border-radius: 50%;
+                transform: translateY(200%);
+            }
         }
     }
     .Booking_bottom{
@@ -72,9 +118,15 @@
             font-size: 12px;
             line-height: 1.2;
             margin-bottom: 10px;
+            @include sreen_medium{
+                font-size: 10px;
+            }
         }
         span{
             font-size: 12px;
+            @include sreen_medium{
+                font-size: 10px;
+            }
         }
     }
 }

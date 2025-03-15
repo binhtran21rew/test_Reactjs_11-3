@@ -1,52 +1,74 @@
-import React from 'react'
+import React, { Fragment } from "react";
 
-import './bookingFormPrice.scss';
-function BookingFormPrice({...props}) {
+import "./bookingFormPrice.scss";
+function BookingFormPrice({ ...props }) {
+  const { name, guest, to, from, dateTo, dateFrom, price, detail, option, listDetail} = props;
   return (
     <div className="Booking_form">
-        <div className="Booking_title">
-            {props.name}
-        </div>
-        <div className="Booking_price">
+      <div className="Booking_title text-center">{name}</div>
+      <div className="Booking_price">
+        {guest ? (
+          <Fragment>
             <div className="Booking_left">
-                <span className="name">GUESTS</span>
-                <span className="seats">{props.to} - {props.from}</span>
+              <span className="name">GUESTS</span>
+              <span className="seats">
+                {to} - {from}
+              </span>
             </div>
-            .
+
             <div className="Booking_right">
-                <span className="Booking_top">
-                    <span className="date">
-                        <p>{props.dataTo1} - {props.dataFrom1}</p>
-                        <p>PRICE (p/n)</p>
-                    </span>
-                    <span className="price">${props.price1}</span>
-                </span>
-                <span className="Booking_top">
-                    <span className="date">
-                        <p>{props.dataTo2} - {props.dataFrom2}</p>
-                        <p>PRICE (p/n)</p>
-                    </span>
-                    <span className="price">${props.price2}</span>
-                </span>
-            </div>
-        </div>
-        <ul>
-            {props.listDetail?.map((item, i) => {
-              return(
-                <li>{item}</li>
-              )
-            })}
+                {dateTo.map((item, id) => {
+                    
+                    return(
+                        <span key={id} className="Booking_top">
+                            <span className="date">
+                            <p>
+                                {item} - {dateFrom[id]}
+                            </p>
+                            <p>PRICE (p/n)</p>
+                            </span>
+                            <span className="price">${price[id]}</span>
+                        </span>
 
-        </ul>
-
-        <div className="Booking_bottom">
-            <div className="main">
-                *{props.detail}
+                    )
+                })}
             </div>
-            <span>Rates are in NZD and include taxes</span>
-        </div>
+          </Fragment>
+        ) : (
+          <div className="w-100 h-100 d-flex formDate">
+                {dateTo.map((item, id) => {
+                    
+                    return(
+                        <span key={id} className="Booking_left">
+                            <span className="date">
+                            <p>
+                                {item} - {dateFrom[id]}
+                            </p>
+                            </span>
+                            <span className="price">${price[id]}</span>
+                        </span>
+
+                    )
+                })}
+          </div>
+        )}
+      </div>
+      <ul>
+        {listDetail?.map((item, i) => {
+          return <li>{item}</li>;
+        })}
+      </ul>
+
+      <div className="Booking_bottom">
+        <div className="main">*{detail}</div>
+        {option ? (
+            <span>{option}</span> 
+        ): (
+            <span> Rates are in NZD and include taxes </span>
+        )}
+      </div>
     </div>
-  )
+  );
 }
 
-export default BookingFormPrice
+export default BookingFormPrice;
