@@ -1,1 +1,43 @@
 @use "../../../scss/" as *;
+.Image_Slide{
+
+    &_image{
+        display: flex;
+        flex-direction: column;
+
+        height: 140vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        
+        &_item{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .Slide_image_text{
+                @include sreen_small{
+                    font-size: 28px;
+
+                }
+                font-size: 48px;
+
+                color: var(--color-white);
+                span{
+                    font-style: italic;
+                    font-weight: bold;
+                }
+            }
+
+        }
+        .Slide_image_option{
+            @include sreen_small{
+                font-size: 14px;
+
+            }
+        }
+    }
+}

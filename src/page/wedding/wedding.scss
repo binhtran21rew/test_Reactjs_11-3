@@ -2,9 +2,17 @@
 
 .Wedding{
     background-color: $backgroundMainColor;
-    section {
+    @include sreen_small{
 
+        .container{
+            width: 100%;
+            .Wedding_form{
 
+                &_item{
+                    display: block !important;
+                }
+            }
+        }
     }
     .wrapper{
         width: 100%;

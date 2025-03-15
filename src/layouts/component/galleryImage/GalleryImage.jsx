@@ -1,84 +1,109 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from "react";
 
-import './galleryImage.scss';
+import "./galleryImage.scss";
+import DropDown from "../dropDown/DropDown";
+import FilterNav from "../filterNav/FilterNav";
 
-
-import { gallery1, gallery2, gallery3, imageMain1, imageMain2 } from '../../../constant';
-import { li } from 'motion/react-client';
-const optionGallery = [
-    {id: 1, text: 'all', images: [imageMain1, gallery1, gallery2, imageMain1, gallery1, gallery2,imageMain1, gallery1, gallery2, imageMain1, gallery1, gallery2]},
-    {id: 2, text: 'the main house', images: [gallery1, gallery2, imageMain1, gallery1, gallery2]},
-    {id: 3, text: 'the stables', images: [gallery3, imageMain2, gallery2, imageMain1, gallery1]},
-    {id: 4, text: 'the property', images: [gallery2,imageMain1, gallery1, gallery2]},
-    {id: 5, text: 'the beach', images: [imageMain1, gallery1, gallery2, imageMain1]},
-]
-function GalleryImage() {
+function GalleryImage({ ...props }) {
+    const [widthScreen, setWidthScreen] = useState(window.innerWidth);
+    const { list } = props;
     const [imageId, setImageId] = useState();
+
+    useEffect(() => {
+        const handleResize = () => setWidthScreen(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const handleClick = (id) => {
         setImageId(id);
+    };
+
+    const renderList = () => {
+        if(widthScreen < 780){
+            return(
+                <FilterNav 
+                    list={list}
+                    onClick={handleClick}
+                />
+            )
+        } else{
+            return(
+                <ul>
+                    {list.map((item, id) => {
+                        return (
+                            <li onClick={() => handleClick(item.id)}>
+                                {item.text}
+                            </li>
+                        );
+                    })}
+                </ul>
+            )
+        }
     }
     return (
         <div className="GallaryImage">
-            <div className="title">
-            our Gallery
-            </div>
+            <div className="title">our Gallery</div>
             <div className="gallery_wrapper">
+                <div className="left">
 
+                {renderList()}
 
-            <div className="left">
-                <ul>
-                    {
-                        optionGallery.map((item, id) => {
-                            return(
-                                <li onClick={() => handleClick(item.id)}>{item.text}</li>
-                            )
-                        })
-                    }
+                </div>
 
-                </ul>
-            </div>
-
-            {
-                optionGallery.map((item, id) => {
-                    return(
-                        <div className={`right ${imageId === item.id ? '' : 'hide'} `}>
-                            <ImagePosition 
+                {list.map((item, id) => {
+                    return (
+                        <div
+                            className={`right ${
+                                imageId === item.id ? "" : "hide"
+                            } `}
+                        >
+                            <ImagePosition
                                 images={item.images}
-                                widths={[100, 70, 20, 40, 60, 30, 100, 100, 20, 30, 60, 30]}
+                                widths={[
+                                    100, 70, 20, 40, 60, 30, 100, 100, 20, 30,
+                                    60, 30,
+                                ]}
                             />
                         </div>
+                    );
+                })}
 
-                    )
-                })
-            }
-
-            {!imageId &&
-                <div className={`right`}>
-                    <ImagePosition 
-                        images={optionGallery[0].images}
-                        widths={[100, 70, 20, 40, 60, 30, 100, 100, 20, 30, 60, 30]}
-                    />
-                </div>
-            
-            }
-            </div> 
+                {!imageId && (
+                    <div className={`right`}>
+                        <ImagePosition
+                            images={list[0].images}
+                            widths={[
+                                100, 70, 20, 40, 60, 30, 100, 100, 20, 30, 60,
+                                30,
+                            ]}
+                        />
+                    </div>
+                )}
+            </div>
         </div>
-    
-    )
+    );
 }
 
-const ImagePosition = ({...props}) => {
-    const {images, widths} = props;
+const ImagePosition = ({ ...props }) => {
+    const { images, widths } = props;
 
-    return(
+    return (
         <div className="Gallery_postion">
             {images?.map((data, id) => {
                 return (
-                    <img key={id} src={data} alt={data} className={`gallery_image`} width={`${widths[id]}%`} height={'100%'} />
-                )
+                    <img
+                        key={id}
+                        src={data}
+                        alt={data}
+                        className={`gallery_image`}
+                        width={`${widths[id]}%`}
+                        height={"100%"}
+                    />
+                );
             })}
         </div>
-    )
-}
+    );
+};
 
-export default GalleryImage
+export default GalleryImage;

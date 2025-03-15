@@ -143,7 +143,7 @@ const CustomContent = ({ ...props }) => {
   return textPosition ? (
     <div className="CustomContent row d-flex flex-column w-100 h-100">
       <div className="col-md-6  d-flex h-50 w-50 justify-content-center">
-        <div className="d-flex flex-wrap w-50">
+        <div className="d-flex flex-wrap w-75">
           {textHighlight ? (
             text.split(" ").map((part, id) => {
               return textHighlight.split(" ").includes(part) ? (

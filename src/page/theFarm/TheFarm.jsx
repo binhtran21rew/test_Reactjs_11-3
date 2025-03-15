@@ -7,6 +7,7 @@ import ImageHover from '../../layouts/component/ImageHover/ImageHover';
 import { Fade, Slide } from 'react-awesome-reveal';
 import './theFarm.scss';
 import HeroImage from '../../layouts/component/heroImage/HeroImage';
+import ImageSlide from '../../layouts/component/imageSlide/ImageSlide';
 
 function TheFarm() {
 
@@ -93,14 +94,11 @@ Hillbrook Estate is not just a luxury retreat; it's also a working farm where ar
         </div>
 
         <section>
-            <div className='Main_image' style={{backgroundImage: `url(${imageContent5})` }}>
-                <Slide keyframes={letterAnimation} style={{width: '80%'}}>
-                    <div className={`text`}>
-                        <div className="">Relax or explore  <br></br> your
-                        very own <span>personal playground</span> </div>
-                    </div>
-                </Slide>
-            </div>
+            <ImageSlide
+                image={imageContent5}
+                text="Relax or explore your very own personal playground"
+                textHightlight="personal playground"
+            />
         </section>
 
 

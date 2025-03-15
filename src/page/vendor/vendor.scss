@@ -1,0 +1,34 @@
+@use '../../scss/' as *;
+
+
+.Vendor{
+    background-color: $backgroundMainColor;
+
+    @include sreen_large{
+        .container{
+            .image_container {
+                width: 100%;
+                height: 100vh;
+            }
+        }
+    }
+
+    @include sreen_medium{
+        .container{
+            max-width: 1040px;
+            .image_container {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    @include sreen_small{
+        .container{
+            .image_container {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

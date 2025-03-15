@@ -1,0 +1,36 @@
+@use "../../../scss/" as *;
+
+
+
+.Dropdown{
+    .accordion{
+        background-color: $backgroundMainColor !important;
+        .accordion-button {
+            background-color: $backgroundMainColor !important; 
+
+        }
+
+          
+        .accordion-item{
+            background-color: $backgroundMainColor !important;
+        }
+    }
+    .btn-outline-dark:hover {
+        background-color: unset !important;
+    }
+    .btn{
+        border: unset !important;
+      }
+    .btn-outline-dark {
+        background-color: unset !important;
+        color: #333 !important;
+        border: unset !important;
+      }
+
+}
+
+  
+
+  
+
+  

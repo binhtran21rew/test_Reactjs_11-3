@@ -28,7 +28,9 @@
                 position: relative;
                 display: block;
                 padding: 0;
-    
+                margin: 20px 0;
+                z-index: 5;
+                width: 100%;
             }
             ul{
                 li{
@@ -39,12 +41,42 @@
                     }
                 }
 
+
             }
+
+            .filter-nav {
+                background-color: #f6f0ea; /* Light beige background */
+                padding: 10px 20px;
+              }
+              
+              .filter-text {
+                font-size: 16px;
+                color: #222; /* Dark text */
+              }
+              
+              .filter-button {
+                width: 36px;
+                height: 36px;
+                background-color: rgba(0, 0, 0, 0.1); /* Light transparent circle */
+                border-radius: 50%;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+              }
+              
+              .filter-button:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+              }
         }
     
         .right{
             width: 70%;
-
+            @include sreen_small{
+                width: 98%;
+    
+            }
             &.hide{
                 display: none;
             }

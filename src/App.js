@@ -11,7 +11,8 @@ import {
   linkGallery,
   linkCuratedServices,
   linkActivities,
-  linkWedding, } from "./constant";
+  linkWedding,
+  linkVendor, } from "./constant";
 
 import Header from "./layouts/Header/header";
 import Footer from './layouts/Footer/Footer';
@@ -25,6 +26,7 @@ import CurateService from "./page/curatedService/CurateService";
 import Booking from "./page/booking/Booking";
 import Activities from "./page/activities/Activities";
 import Wedding from "./page/wedding/Wedding";
+import Vendor from "./page/vendor/Vendor";
 
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
             <Route path={linkBookNow} element={<Booking />} />
             <Route path={linkActivities} element={<Activities/>} />
             <Route path={linkWedding} element={<Wedding/>} />
+            <Route path={linkVendor} element={<Vendor/>} />
 
 
 

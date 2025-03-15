@@ -24,6 +24,7 @@ import ImageHover from "../../layouts/component/ImageHover/ImageHover";
 import { zoomOut } from "../../constant";
 import HeroImage from "../../layouts/component/heroImage/HeroImage";
 import BoxContent from "../../layouts/component/boxContent/BoxContent";
+import ImageSlide from "../../layouts/component/imageSlide/ImageSlide";
 
 function Home() {
     return (
@@ -32,8 +33,12 @@ function Home() {
                 <HeroImage image={imageMain2} title="the houses" />
             </section>
             <section>
-                <BoxContent 
-                    text={["Your", "luxury escape", "to disconnect and reconnect"]}
+                <BoxContent
+                    text={[
+                        "Your",
+                        "luxury escape",
+                        "to disconnect and reconnect",
+                    ]}
                     textPosition={"16.6"}
                     option="book now"
                     textHighlight="luxury escape"
@@ -43,10 +48,8 @@ function Home() {
                         Zealand's Coromandel coast. Available for exclusive
                         rental, our estate is the perfect setting for your next
                         luxury escape."
-                    splitPosition={[1,3]}
+                    splitPosition={[1, 3]}
                 />
-
-
             </section>
             <section>
                 <video className="Main_video" controls>
@@ -63,8 +66,6 @@ function Home() {
                 />
             </section>
             <section className="">
-
-
                 <div style={{ textAlign: "center" }}>
                     <section className="Main_section">
                         <ItemScroll
@@ -112,19 +113,11 @@ function Home() {
                 </div>
             </section>
             <section>
-                <div
-                    className="Main_image"
-                    style={{ backgroundImage: `url(${imageMain4})` }}
-                >
-                    <Slide keyframes={letterAnimation} style={{ width: "80%" }}>
-                        <div className={`text`}>
-                            <div className="">
-                                Relax or explore <br></br> your very own{" "}
-                                <span>personal playground</span>{" "}
-                            </div>
-                        </div>
-                    </Slide>
-                </div>
+                <ImageSlide
+                    image={imageMain2}
+                    text="Relax or explore your very own personal playground"
+                    textHightlight="personal playground"
+                />
             </section>
             <section>
                 <ContentWrapper
@@ -148,7 +141,6 @@ function Home() {
                 "
                     option="VIEW ALL SERVICES"
                     textPosition={true}
-
                 />
             </section>
             <section>
@@ -157,19 +149,11 @@ function Home() {
                 </div>
             </section>
             <section>
-                <div
-                    className="Main_image"
-                    style={{ backgroundImage: `url(${imageContent2})` }}
-                >
-                    <Slide keyframes={letterAnimation} style={{ width: "80%" }}>
-                        <div className={`text`}>
-                            <div className="">
-                                Relax or explore <br></br> your very own{" "}
-                                <span>personal playground</span>{" "}
-                            </div>
-                        </div>
-                    </Slide>
-                </div>
+                <ImageSlide
+                    image={imageMain2}
+                    text="Relax or explore your very own personal playground"
+                    textHightlight="personal playground"
+                />
             </section>
             <section>
                 <ContentWrapper

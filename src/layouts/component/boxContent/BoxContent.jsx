@@ -16,8 +16,6 @@ function BoxContent({...props}) {
     })} */}
     {
         text.map((part, id) => {
-            console.log(textHighlight.split(" ").includes(part), text)
-
             return textHighlight.split(" ").includes(part) ? (
                 
                 <span

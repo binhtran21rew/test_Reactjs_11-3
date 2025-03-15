@@ -16,6 +16,7 @@ import {
 } from "../../constant";
 import ContentWrapper from "../../layouts/component/contentWrapper/ContentWrapper";
 import Carousel from "../../layouts/component/carousel/Carousel";
+import ImageSlide from "../../layouts/component/imageSlide/ImageSlide";
 function CurateService() {
     return (
         <div className="CurateService">
@@ -58,19 +59,13 @@ function CurateService() {
                 />
             </section>
 
-            <div
-                className="Main_image"
-                style={{ backgroundImage: `url(${imageMain4})` }}
-            >
-                <Slide keyframes={zoomOut} style={{ width: "80%" }}>
-                    <div className={`text`}>
-                        <div className="">
-                            Relax or explore <br></br> your very own{" "}
-                            <span>personal playground</span>{" "}
-                        </div>
-                    </div>
-                </Slide>
-            </div>
+
+
+            <ImageSlide
+                image={imageMain4}
+                text="Relax or explore your very own personal playground"
+                textHightlight="personal playground"
+            />
 
             <section>
                 <ContentWrapper
@@ -133,19 +128,12 @@ function CurateService() {
                 />
             </section>
 
-            <div
-                className="Main_image"
-                style={{ backgroundImage: `url(${imageMain4})` }}
-            >
-                <Slide keyframes={zoomOut} style={{ width: "80%" }}>
-                    <div className={`text`}>
-                        <div className="">
-                            Relax or explore <br></br> your very own{" "}
-                            <span>personal playground</span>{" "}
-                        </div>
-                    </div>
-                </Slide>
-            </div>
+
+            <ImageSlide
+                image={imageMain4}
+                text="Relax or explore your very own personal playground"
+                textHightlight="personal playground"
+            />
             
         </div>
     );
