@@ -22,7 +22,23 @@ const postion = [
 ]
 
 function ScrollImage({...props}) {
+    const [widthScreen, setWidthScreen] = useState(window.innerWidth);
+    const [heithScreen, setHeigthScreen] = useState(window.innerWidth);
 
+    useEffect(() => {
+        const handleResize = () => setWidthScreen(window.innerWidth);
+        const handleHeight = () => setHeigthScreen(window.innerHeight);
+        window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleHeight);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("resize", handleHeight);
+
+        };
+    }, []);
+
+    
     const{images} = props;
     const containerRef = useRef(null);
     const imageRefs = useRef([]);

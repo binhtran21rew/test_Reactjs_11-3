@@ -7,7 +7,7 @@ import HeroImage from "../../layouts/component/heroImage/HeroImage";
 import ContentWrapper from "../../layouts/component/contentWrapper/ContentWrapper";
 import BookingFormPrice from "../../layouts/component/bookingFormPrice/BookingFormPrice";
 import ContactForm from "../../layouts/component/contactForm/ContactForm";
-import Contact from "../../layouts/component/contact/Contact";
+import ContactImage from "../../layouts/component/contact/ContactImage";
 
 function Booking() {
       const [widthScreen, setWidthScreen] = useState(window.innerWidth);
@@ -104,7 +104,7 @@ Enjoy exclusive access to our Main House. It's the perfect retreat for your geta
                 />
             </section>
 
-            <Contact />
+            <ContactImage />
 
         </div>
     );

@@ -1,21 +1,20 @@
 @use "../../../scss/" as *;
 
-.GallaryImage{
+.GallaryImage {
     background-color: $backgroundMainColor;
-    .title{
+    .title {
         font-size: 80px;
         text-transform: capitalize;
         font-style: italic;
         padding-bottom: $marginDefault;
     }
-    .gallery_wrapper{
+    .gallery_wrapper {
         display: flex;
         align-items: flex-start;
         gap: 20px;
-        @include sreen_small{
+        @include sreen_small {
             display: block;
             padding: 0;
-
         }
         .left {
             position: sticky;
@@ -24,7 +23,7 @@
             font-size: 13px;
             width: 30%;
             text-transform: capitalize;
-            @include sreen_small{
+            @include sreen_small {
                 position: relative;
                 display: block;
                 padding: 0;
@@ -32,29 +31,28 @@
                 z-index: 5;
                 width: 100%;
             }
-            ul{
-                li{
+
+            ul {
+                li {
                     line-height: 2.5;
 
-                    &:hover{
+                    &:hover {
                         cursor: pointer;
                     }
                 }
-
-
             }
 
             .filter-nav {
                 background-color: #f6f0ea; /* Light beige background */
                 padding: 10px 20px;
-              }
-              
-              .filter-text {
+            }
+
+            .filter-text {
                 font-size: 16px;
                 color: #222; /* Dark text */
-              }
-              
-              .filter-button {
+            }
+
+            .filter-button {
                 width: 36px;
                 height: 36px;
                 background-color: rgba(0, 0, 0, 0.1); /* Light transparent circle */
@@ -64,49 +62,132 @@
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
-              }
-              
-              .filter-button:hover {
-                background-color: rgba(0, 0, 0, 0.2);
-              }
-        }
-    
-        .right{
-            width: 70%;
-            @include sreen_small{
-                width: 98%;
-    
             }
-            &.hide{
+
+            .filter-button:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .right {
+            width: 70%;
+            @include sreen_small {
+                width: 98%;
+            }
+            &.hide {
                 display: none;
             }
-              
-            .Gallery_postion{
+
+            .Gallery_postion {
+                &_item {
+                    position: relative;
+                    margin: 20px 0;
+                    .Gallery_item_body {
+                        .item_body {
+                            &:first-child {
+                                margin: 20px 0;
+
+                                span {
+                                    @include sreen_medium {
+                                        font-size: 18px;
+                                    }
+                                    font-size: 28px;
+                                }
+                            }
+
+                            &:last-child {
+                                margin: 20px 0;
+                                span {
+                                    position: relative;
+                                    font-size: 15px;
+                                    margin: 20px 0;
+                                    text-transform: capitalize;
+
+                                    &::before {
+                                        position: absolute;
+                                        content: " ";
+                                        width: 100%;
+                                        height: 1px;
+                                        bottom: -5px;
+                                        background-color: black;
+                                    }
+                                }
+                            }
+
+                            line-height: 1.2;
+                            span {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .Gallery_item_tags {
+                        @include sreen_small{
+                            top: 25px;
+                        }
+                        position: absolute;
+                        left: 2;
+                        padding: 0 20px;
+
+                        .item_tags:first-child {
+
+                            span {
+                                @include sreen_small{
+                                    font-size: 16px;
+                                }
+                                color: var(--color-black);
+                                border: 1px solid  $backgroundMainColor;
+                                padding: 5px 10px;
+                                font-size: 12px;
+                                background-color:  $backgroundMainColor;
+                                border-radius: 8px;
+                                text-align: center;
+                                align-items: center;
+
+                                &::before {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .item_tags {
+                            span {
+                                @include sreen_medium {
+                                    font-size: 10px;
+                                }
+                                @include sreen_small{
+                                    font-size: 16px;
+                                }
+                                position: relative;
+                                color: var(--color-white);
+
+                                &::before {
+                                    position: absolute;
+                                    content: " ";
+                                    width: 100%;
+                                    height: 1px;
+                                    bottom: -1px;
+                                    background-color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+
                 display: flex;
                 flex-direction: row;
                 flex-flow: wrap;
                 justify-content: space-evenly;
-                @include sreen_small{
+                @include sreen_small {
                     display: block;
-        
                 }
-                .gallery_image{
+                .gallery_image {
                     margin: 20px 20px 60px 0;
-                    @include sreen_small{
+                    @include sreen_small {
                         width: 100%;
                         height: 100%;
                         margin: 10px;
                     }
                 }
-                
             }
-              
         }
     }
 }
-
-  
-
-  
-
-

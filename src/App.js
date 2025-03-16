@@ -12,7 +12,9 @@ import {
   linkCuratedServices,
   linkActivities,
   linkWedding,
-  linkVendor, } from "./constant";
+  linkVendor,
+  linkEnquiries,
+  linkWeddingGallery, } from "./constant";
 
 import Header from "./layouts/Header/header";
 import Footer from './layouts/Footer/Footer';
@@ -27,6 +29,8 @@ import Booking from "./page/booking/Booking";
 import Activities from "./page/activities/Activities";
 import Wedding from "./page/wedding/Wedding";
 import Vendor from "./page/vendor/Vendor";
+import Enquiries from "./page/enquiries/Enquiries";
+import WeddingGallery from "./page/weddingGallery/WeddingGallery";
 
 
 function App() {
@@ -48,6 +52,8 @@ function App() {
             <Route path={linkActivities} element={<Activities/>} />
             <Route path={linkWedding} element={<Wedding/>} />
             <Route path={linkVendor} element={<Vendor/>} />
+            <Route path={linkEnquiries} element={<Enquiries/>} />
+            <Route path={linkWeddingGallery} element={<WeddingGallery/>} />
 
 
 

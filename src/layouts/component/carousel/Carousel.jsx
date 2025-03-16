@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from "swiper/modules";
 
@@ -12,12 +12,19 @@ import 'swiper/css/pagination';
 import './carousel.scss';
 
 function Carousel({...props}) {
-    const { image, isImage = false, content } = props;
-    
+    const { image, isImage = false, content, slidesPerView, selectedIndex } = props;
+    const swiperRef = useRef(null);
+
+    useEffect(() => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.slideTo(selectedIndex);
+        }
+    }, [selectedIndex]);
     return (
         <div className="Carousel">
             {isImage ? (
                 <Swiper
+                    ref={swiperRef}
                     modules={[Navigation]}
                     allowTouchMove={false}
                     spaceBetween={image.length * 10}
@@ -55,14 +62,15 @@ function Carousel({...props}) {
                     </div>
                     <Swiper
                     modules={[Navigation]}
+                        ref={swiperRef}
                         spaceBetween={50}
-                        slidesPerView={2}
+                        slidesPerView={slidesPerView ? slidesPerView : 2}
                         navigation={{ nextEl: ".next-btn", prevEl: ".prev-btn" }}
                         >
                         {image.map((data, i) => {
                             return (
                                 <div key={i}>
-                                    <SwiperSlide><img src={data} alt="Slide 1" className='image' /></SwiperSlide>
+                                    <SwiperSlide><img src={data} alt="Slide 1" className='image' style={{objectFit: slidesPerView && 'contain'}}/></SwiperSlide>
                                 </div>
                             )
                         })}

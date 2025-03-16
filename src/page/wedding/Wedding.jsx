@@ -97,8 +97,6 @@ Intimately exclusive celebrations"
                     />
                 </section>
                 <ContentWrapper
-                    flexEnd="true"
-                    rotate="true"
                     name="Your dream wedding in style, with love, Hillbrook."
                     option="VIEW ALL"
                     detail="Your comfort and preferences are our top priority. Whether you seek complete privacy or wish to explore our curated list of exclusive experiences, we are here to create a bespoke escape that perfectly suits your needs."

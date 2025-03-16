@@ -1,0 +1,22 @@
+@use '../../scss/' as *;
+
+.Weddinggallery{
+
+    background-color: $backgroundMainColor;
+    .container{
+        padding-top: 150px;
+
+        @include sreen_small{
+            min-width: 100%;
+
+        }
+
+        .title {
+            font-size: 80px;
+            text-transform: capitalize;
+            font-style: italic;
+            padding-bottom: $marginDefault;
+        }
+    }
+
+}

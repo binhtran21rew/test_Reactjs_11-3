@@ -19,7 +19,7 @@ const center = {
   lng: -122.4194,
 };
 
-function Contact() {
+function ContactImage() {
   return (
     <div className='Contaier'>
       <div className="content-section">
@@ -60,4 +60,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default ContactImage

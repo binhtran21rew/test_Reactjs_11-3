@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-
 import "./dropDown.scss";
 
 function DropDown({ ...props }) {

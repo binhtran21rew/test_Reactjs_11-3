@@ -14,6 +14,13 @@
         .center{
             text-align: center;
         }
+        @include sreen_small {
+            font-size: 40px;
+            text-align: center;
+        }
+        @include sreen_medium {
+            font-size: 60px;
+        }
         display: flex;
         flex-direction: column-reverse;
         height: 100%;

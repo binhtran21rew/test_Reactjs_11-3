@@ -41,6 +41,7 @@ function ContentWrapper({ ...props }) {
         moreImage={moreImage}
         textHighlight={textHighlight}
         textPosition={textPosition}
+        widthScreen={widthScreen}
       />
     </div>
   ) : (
@@ -74,6 +75,7 @@ function ContentWrapper({ ...props }) {
                 image={image}
                 moreImage={moreImage}
                 textHighlight={textHighlight}
+                widthScreen={widthScreen}
               />
             </div>
 
@@ -138,12 +140,13 @@ const CustomContent = ({ ...props }) => {
     moreImage,
     textHighlight,
     textPosition,
+    widthScreen
   } = props;
 
   return textPosition ? (
-    <div className="CustomContent row d-flex flex-column w-100 h-100">
-      <div className="col-md-6  d-flex h-50 w-50 justify-content-center">
-        <div className="d-flex flex-wrap w-75">
+    <div className={`CustomContent row ${widthScreen < 780 ? "" : "d-flex flex-column w-100 h-100" }  `}>
+      <div className={`col-md-6 ${widthScreen < 780 ? "w-100" : "d-flex h-50 w-50 justify-content-center"} `}>
+        <div className={`d-flex ${widthScreen < 780 ? "w-100 flex-wrap" : "flex-wrap w-75"}`}>
           {textHighlight ? (
             text.split(" ").map((part, id) => {
               return textHighlight.split(" ").includes(part) ? (
@@ -178,8 +181,8 @@ const CustomContent = ({ ...props }) => {
           )}
         </div>
       </div>
-      <div className="col-md-6 d-flex flex-wrap w-100 justify-content-end">
-        <div className="row d-flex flex-column align-items-center w-50">
+      <div className={`col-md-6 ${widthScreen < 780 ? "w-100" : 'd-flex flex-wrap w-100 justify-content-end'} pt-3`}>
+        <div className={`row d-flex ${widthScreen < 780 ? "w-100" : "w-50 align-items-center"} flex-column `}>
           {detail && (
             <div className="col-10 mb-5 CustomContent_detail">
               <span>{detail}</span>

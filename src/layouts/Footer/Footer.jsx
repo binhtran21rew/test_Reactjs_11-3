@@ -20,6 +20,7 @@ import {
     linkVendor,
     linkEnquiries,
     linkWedding,
+    linkWeddingGallery,
 } from "../../constant";
 
 function Footer() {
@@ -71,6 +72,9 @@ function Footer() {
                     </Link>
                     <Link to={linkEnquiries}>
                         <span>Enquiries</span>
+                    </Link>
+                    <Link to={linkWeddingGallery}>
+                        <span>Weddding Gallery</span>
                     </Link>
 
                     <div className="social_icons">

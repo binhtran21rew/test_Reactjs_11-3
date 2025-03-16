@@ -19,12 +19,12 @@ import ContentWrapper from "../../layouts/component/contentWrapper/ContentWrappe
 import ItemScroll from "../../layouts/component/scroll/ItemScroll";
 import MapMarker from "../../layouts/component/mapMarker/MapMarker";
 import Carousel from "../../layouts/component/carousel/Carousel";
-import Contact from "../../layouts/component/contact/Contact";
 import ImageHover from "../../layouts/component/ImageHover/ImageHover";
 import { zoomOut } from "../../constant";
 import HeroImage from "../../layouts/component/heroImage/HeroImage";
 import BoxContent from "../../layouts/component/boxContent/BoxContent";
 import ImageSlide from "../../layouts/component/imageSlide/ImageSlide";
+import ContactImage from "../../layouts/component/contact/ContactImage";
 
 function Home() {
     return (
@@ -176,7 +176,7 @@ function Home() {
                     ]}
                 />
 
-                <Contact />
+                <ContactImage />
             </section>
         </main>
     );

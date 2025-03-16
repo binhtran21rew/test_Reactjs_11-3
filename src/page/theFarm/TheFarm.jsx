@@ -66,7 +66,7 @@ Hillbrook Estate is not just a luxury retreat; it's also a working farm where ar
             />
         </section>
 
-        <div className="container">
+        <div className="container mb-5">
             <section className='image_container'>
                 <ContentWrapper 
                     name="Restored ponds, native trees, lively ecosystem"
@@ -76,6 +76,7 @@ Hillbrook Estate is not just a luxury retreat; it's also a working farm where ar
                     "
                     image={[imageMain3]}
                     flexEnd={true}
+                    rotate={true}
                 />
 
             </section>

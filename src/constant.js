@@ -27,6 +27,9 @@ export const imageMain5="https://cdn.prod.website-files.com/6668dadedd368b850aa4
 export const imageWedding1="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668da784b8d46e9b97c868b0_N%26T-116.webp";
 export const imageWedding2="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668da784852a53c10c859489_image%20141.webp";
 export const imageWedding3="https://cdn.prod.website-files.com/6668dadedd368b850aa41ded/668da784f91394a811038609_N%26T-192.webp"
+export const imageWedding4="https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/67d22b7a663d52d4d8568e9b_A.%20McVinnie%20-%20Whisk%20Catering%20Jan-58.webp";
+export const imageWedding5="https://cdn.prod.website-files.com/6670af4bec8905252ff0d180/67d22d1e9a9ac17a6392c9df_Abby-Storm-6.webp";
+
 export const linkHome = '/';
 export const linkTheHouse = '/thehouse'
 export const linkTheFarm = '/thefarm'
@@ -38,7 +41,7 @@ export const linkActivities = '/activities';
 export const linkWedding= '/wedding';
 export const linkVendor= '/vendor';
 export const linkEnquiries='/enquiries';
-
+export const linkWeddingGallery = '/weddingGallery';
 export const markers = [
     { id: 1, position: [100, 200], image: imageMarker1, name: 'Green Island', detail: 'A pristine oasis off the coast, perfect for exploration and adventure.'},
     { id: 2, position: [300, 500], image: imageContent1, name: 'Peninsular Hikes', detail: 'Enjoy the coastal landscape of the stunning Coromandel Peninsula walking tracks.' },

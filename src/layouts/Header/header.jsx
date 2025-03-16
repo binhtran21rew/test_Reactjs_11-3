@@ -1,139 +1,221 @@
-import React, {useState, useEffect, useRef, Fragment} from 'react'
-import {Link, Links} from 'react-router-dom';
-import { AnimationOnScroll } from 'react-animation-on-scroll';
+import React, { useState, useEffect, useRef, Fragment } from "react";
+import { Link } from "react-router-dom";
+import { Nav, Button } from "react-bootstrap";
 import { faBars, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
 
+import { FontAwesome } from "../../component/FontAwesome";
+import {
+    logoImg,
+    linkTheHouse,
+    linkTheFarm,
+    linkContact,
+    linkBookNow,
+    logoName,
+    linkGallery,
+    linkCuratedServices,
+    linkActivities,
+} from "../../constant";
+import "./style.scss";
 
-import {FontAwesome} from '../../component/FontAwesome';
-import { logoImg, linkTheHouse, linkTheFarm, linkContact, linkBookNow, logoName} from '../../constant';
-import './style.scss';
-import { Nav } from 'react-bootstrap';
+const Header = ({ ...props }) => {
+    const { textPosition, imageHeader } = props;
+    const headerRef = useRef(null);
+    const [scrollUp, setScrollUp] = useState(false);
+    const [showNav, setShowNav] = useState(false);
 
+    let lastScrollTop = 0;
 
-const Header = ({...props}) => {
-  const {textPosition, imageHeader} = props;
-  const headerRef = useRef(null);
-  const [scrollUp, setScrollUp] = useState(false);
-  const [showNav, setShowNav] = useState(false);
+    useEffect(() => {
+        const shrinkHeader = () => {
+            const position1 = document.body.scrollTop;
+            const position2 = document.documentElement.scrollTop;
+            if (position1 > 600 || position2 > 600) {
+                headerRef.current.classList.remove("shrink");
+            } else {
+                headerRef.current.classList.add("shrink");
+            }
+        };
 
-  let lastScrollTop = 0;
+        const handleScroll = () => {
+            const position1 = document.body.scrollTop;
+            const position2 = document.documentElement.scrollTop;
+            let scrollTop =
+                window.pageYOffset || document.documentElement.scrollTop;
 
-  useEffect(() => {
-    const shrinkHeader = () => {
-      const position1 = document.body.scrollTop;
-      const position2 = document.documentElement.scrollTop;
-      if( (position1 > 600) || (position2 >  600)){
-        headerRef.current.classList.remove('shrink')
-      } else{        
-        headerRef.current.classList.add('shrink');        
+            if (
+                scrollTop < lastScrollTop &&
+                (position1 > 600 || position2 > 600)
+            ) {
+                headerRef.current.classList.add("showMenu");
+                setScrollUp(true);
+            } else {
+                headerRef.current.classList.remove("showMenu");
+                setScrollUp(false);
+            }
 
-      }
-    }
+            lastScrollTop = scrollTop;
+        };
 
-    const handleScroll = () => {
-      const position1 = document.body.scrollTop;
-      const position2 = document.documentElement.scrollTop;
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        window.addEventListener("scroll", shrinkHeader);
+        window.addEventListener("scroll", handleScroll);
 
-      if (scrollTop < lastScrollTop && ((position1 > 600) || (position2 >  600))) {
-        headerRef.current.classList.add('showMenu')
-        setScrollUp(true);
-      } else {
-        headerRef.current.classList.remove('showMenu');
-        setScrollUp(false);
-      }
+        return () => {
+            window.removeEventListener("scroll", shrinkHeader);
+            window.removeEventListener("scroll", handleScroll);
+            setScrollUp(false);
+        };
+    }, []);
 
-      lastScrollTop = scrollTop;
-      
-    };
-
-    
-    window.addEventListener('scroll', shrinkHeader);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-        window.removeEventListener('scroll', shrinkHeader);
-        window.removeEventListener("scroll", handleScroll);
-        setScrollUp(false);
-    }
-}, []);
-
-// const [isClicked, setIsClicked] = useState(false);
-  return (
-    <div ref={headerRef} className='Header shrink'>
-        {/* <motion.div
-          layout
-          data-isOpen={isClicked}
-          initial={{ borderRadius: 20 }}
-          className="Header_top"
-          onClick={() => setIsClicked(!isClicked)}
-        >
-        </motion.div> */}
-        <div className={`Header_top  ${showNav ?  '' : 'nav'}`}>
-          <Link to={'/'} className='Header_logo'>
-            <img src={logoImg} width={50} height={50}/>
-          </Link>
-          {scrollUp ? (
-                <NavTop showNav={showNav} setShowNav={setShowNav}/>
-              ) : (
-            <div className="Header_top_link">
-              <Link to={linkTheHouse} className='header_top_link'>the house</Link>
-              <Link to={linkTheFarm} className='header_top_link'>the farm</Link>
-              <Link to={linkContact} className='header_top_link'>contact</Link>
-              <Link to={linkBookNow} className='header_top_link'>book now</Link>
+    return (
+        <div ref={headerRef} className="Header shrink">
+            <div className={`Header_top`}>
+                <Link to={"/"} className="Header_logo">
+                    <img src={logoImg} width={50} height={50} />
+                </Link>
+                {scrollUp ? (
+                    <NavTop />
+                ) : (
+                    <div className="Header_top_link">
+                        <Link to={linkTheHouse} className="header_top_link">
+                            the house
+                        </Link>
+                        <Link to={linkTheFarm} className="header_top_link">
+                            the farm
+                        </Link>
+                        <Link to={linkContact} className="header_top_link">
+                            contact
+                        </Link>
+                        <Link to={linkBookNow} className="header_top_link">
+                            book now
+                        </Link>
+                    </div>
+                )}
             </div>
-            
-          )}
-
         </div>
-    </div>
-  )
-}
+    );
+};
 
-const NavTop = ({...props}) => {
-  const {showNav, setShowNav} = props;
-  
-  const handleShowNav = () => {
-    setShowNav(false);
-    
-  }
+const NavTop = ({ ...props }) => {
+    const [isOpen, setIsOpen] = useState(false);
 
-  const handleCloseNav = () => {
-    setShowNav(true)
-  }
+    return (
+        <div>
+            <div
+                className="position-fixed top-0 end-0 p-3 d-flex flex-column "
+                style={{
+                    background: "#E8D9D0",
+                    zIndex: 1050,
+                    width: isOpen ? "500px" : "200px",
+                    height: isOpen ? "100%" : "80px",
+                    transition:
+                        "width 0.4s ease-in-out, height 0.4s ease-in-out",
+                }}
+            >
+                <div className="row d-flex flex-column h-100 justify-content-between">
+                    <div>
+                        <div
+                            className={`col-md-12 ${isOpen && 'd-flex justify-content-between'}  ${
+                                isOpen && "pe-5 pb-5"
+                            }`}
+                        >
+                            {isOpen && (
+                                <Link to={"/"} className="Header_logo">
+                                    <img src={logoImg} width={50} height={50} />
+                                </Link>
+                            )}
+                            <div className="">
+                                <span className="me-auto fw-bold ">
+                                    BOOK NOW
+                                </span>
+                                <Button
+                                    variant="link"
+                                    className="fs-3 text-dark"
+                                    onClick={() => setIsOpen(!isOpen)}
+                                >
+                                    {isOpen ? (
+                                        <FontAwesome
+                                            icon={faCircleXmark}
+                                            size="1x"
+                                            color="#000"
+                                            className="icon"
+                                        />
+                                    ) : (
+                                        <FontAwesome
+                                            icon={faBars}
+                                            size="1x"
+                                            color="#000"
+                                            className="icon"
+                                        />
+                                    )}
+                                </Button>
+                            </div>
+                        </div>
 
-  return (
-    <div className="NavTop">
-
-      <div className="top">
-        <div className="top_wrapper">
-          <Link to={"/#"} className="link">Book now</Link>
-          {showNav ? (
-            <FontAwesome onClick={handleShowNav} icon={faCircleXmark} color="#000" className="icon"/>
-          ) : (
-            <FontAwesome onClick={handleCloseNav} icon={faBars} color="#000" className="icon"/>
-          )}
+                        {isOpen && (
+                            <div className="col-md-12">
+                                <div className="row text-end pe-5 d-flex flex-column g-3">
+                                    <Link
+                                        to={linkTheHouse}
+                                        className="fs-5 fw-bold text-dark "
+                                    >
+                                        THE HOUSE
+                                    </Link>
+                                    <Link
+                                        to={linkTheFarm}
+                                        className="text-dark"
+                                    >
+                                        THE FARM
+                                    </Link>
+                                    <Link
+                                        to={linkGallery}
+                                        className="text-dark"
+                                    >
+                                        GALLERY
+                                    </Link>
+                                    <Link
+                                        to={linkCuratedServices}
+                                        className="text-dark"
+                                    >
+                                        CURATED SERVICES
+                                    </Link>
+                                    <Link
+                                        to={linkActivities}
+                                        className="text-dark"
+                                    >
+                                        ACTIVITIES
+                                    </Link>
+                                    <Link
+                                        to={linkContact}
+                                        className="text-dark"
+                                    >
+                                        CONTACT
+                                    </Link>
+                                    <Link
+                                        to={linkBookNow}
+                                        className="fs-5 fw-bold text-dark"
+                                    >
+                                        BOOKING
+                                    </Link>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                    {isOpen && (
+                        <div className="col-md-12">
+                            <div>
+                                <img
+                                    src={logoName}
+                                    alt="logoName"
+                                    width={"95%"}
+                                    height={"100%"}
+                                />
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
-      </div>
+    );
+};
 
-      <div className={`NavTop_wrapper ${showNav ? 'show' : ''}`}>
-        <Link to={'/'} className='logo'>
-            <img src={logoImg} width={50} height={50}/>
-        </Link>
-        <div className="Nav_link">
-            <Link to={linkTheHouse} className='Nav_link_item'>the house</Link>
-            <Link to={linkTheFarm} className='Nav_link_item'>the farm</Link>
-            <Link to={linkContact} className='Nav_link_item'>contact</Link>
-            <Link to={linkBookNow} className='Nav_link_item'>book now</Link>
-        </div>
-        <div className="bottom">
-          <img src={logoName} alt="logoName" width={'95%'} height={'100%'}/>
-        </div>
-
-      </div>
-    </div>
-  )
-}
-
-export default Header
+export default Header;
