@@ -55,7 +55,7 @@ function BookingFormPrice({ ...props }) {
       </div>
       <ul>
         {listDetail?.map((item, i) => {
-          return <li>{item}</li>;
+          return <li key={i}>{item}</li>;
         })}
       </ul>
 

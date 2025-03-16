@@ -1,0 +1,14 @@
+@use '../../scss/' as *;
+
+.Term{
+    background-color: $backgroundMainColor;
+    .container{
+        padding-top: 150px;
+        max-width: 900px !important;
+
+        @include sreen_small{
+            min-width: 100%;
+
+        }
+    }
+}

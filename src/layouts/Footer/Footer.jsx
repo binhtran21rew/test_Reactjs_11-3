@@ -21,6 +21,8 @@ import {
     linkEnquiries,
     linkWedding,
     linkWeddingGallery,
+    linkTerm,
+    linkPolicy,
 } from "../../constant";
 
 function Footer() {
@@ -91,8 +93,8 @@ function Footer() {
                     width={"95%"}
                     height={"100%"}
                 />
-                <Link to={"#"}>Terms</Link>
-                <Link to={"#"}>Privacy Policy</Link>
+                <Link to={linkTerm}>Terms</Link>
+                <Link to={linkPolicy}>Privacy Policy</Link>
             </footer>
         </div>
     );

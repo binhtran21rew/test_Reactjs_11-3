@@ -14,7 +14,9 @@ import {
   linkWedding,
   linkVendor,
   linkEnquiries,
-  linkWeddingGallery, } from "./constant";
+  linkWeddingGallery,
+  linkTerm,
+  linkPolicy, } from "./constant";
 
 import Header from "./layouts/Header/header";
 import Footer from './layouts/Footer/Footer';
@@ -31,6 +33,8 @@ import Wedding from "./page/wedding/Wedding";
 import Vendor from "./page/vendor/Vendor";
 import Enquiries from "./page/enquiries/Enquiries";
 import WeddingGallery from "./page/weddingGallery/WeddingGallery";
+import Term from "./page/term/Term";
+import Policy from "./page/policy/Policy";
 
 
 function App() {
@@ -54,6 +58,9 @@ function App() {
             <Route path={linkVendor} element={<Vendor/>} />
             <Route path={linkEnquiries} element={<Enquiries/>} />
             <Route path={linkWeddingGallery} element={<WeddingGallery/>} />
+            <Route path={linkTerm} element={<Term/>} />
+            <Route path={linkPolicy} element={<Policy/>} />
+
 
 
 

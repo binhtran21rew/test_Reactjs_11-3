@@ -40,7 +40,7 @@ function ContactForm({...props}) {
                 {
                     props.topTitle?.map((item, id) => {
                         return (
-                            <span>{item}</span>
+                            <span key={id}>{item}</span>
                                 
                         )
                     })

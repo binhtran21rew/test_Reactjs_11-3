@@ -42,6 +42,8 @@ export const linkWedding= '/wedding';
 export const linkVendor= '/vendor';
 export const linkEnquiries='/enquiries';
 export const linkWeddingGallery = '/weddingGallery';
+export const linkTerm = '/term';
+export const linkPolicy = '/policy';
 export const markers = [
     { id: 1, position: [100, 200], image: imageMarker1, name: 'Green Island', detail: 'A pristine oasis off the coast, perfect for exploration and adventure.'},
     { id: 2, position: [300, 500], image: imageContent1, name: 'Peninsular Hikes', detail: 'Enjoy the coastal landscape of the stunning Coromandel Peninsula walking tracks.' },

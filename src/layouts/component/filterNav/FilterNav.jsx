@@ -33,7 +33,7 @@ function FilterNav({...props}) {
           <ul>
           {list.map((item, id) => {
                 return (
-                    <li onClick={() => onClick(item.id)}>
+                    <li key={id} onClick={() => onClick(item.id)}>
                         {item.text}
                     </li>
                 );

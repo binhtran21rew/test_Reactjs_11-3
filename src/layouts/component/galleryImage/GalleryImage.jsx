@@ -32,7 +32,7 @@ function GalleryImage({ ...props }) {
                 <ul>
                     {list.map((item, id) => {
                         return (
-                            <li onClick={() => handleClick(item.id)}>
+                            <li key={id} onClick={() => handleClick(item.id)}>
                                 {item.text}
                             </li>
                         );
@@ -54,6 +54,7 @@ function GalleryImage({ ...props }) {
                 {list.map((item, id) => {
                     return (
                         <div
+                            key={id}
                             className={`right ${
                                 imageId === item.id ? "" : "hide"
                             } `}
