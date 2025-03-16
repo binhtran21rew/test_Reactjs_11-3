@@ -97,17 +97,30 @@ On the property, you can enjoy leisurely activities and explore the scenic surro
                     ]}
                 />
             </section>
-            <section>
-                <ScrollImage
-                    images={[
-                        imageSwiper1,
-                        imageSwiper2,
-                        imageSwiper3,
-                        imageSwiper4,
-                        imageSwiper5,
-                    ]}
-                />
-            </section>
+            <div className="container">
+                <section>
+                    
+                    <ScrollImage
+                    text="Curated services experiences at hillbrook"
+                    textHightlight="experiences"
+                    option="DISCOVER MORE"
+                        images={[
+                            imageSwiper1,
+                            imageSwiper2,
+                            imageSwiper3,
+                            imageSwiper4,
+                            imageSwiper5,
+                        ]}
+                        listPosition={[    
+                            {top: 0, left: 0},
+                            {top: 62, left: 0},
+                            {top: 0, left: 83},
+                            {top: 22, left: 29},
+                            {top: 54, left: 70},]}
+                    />
+
+                </section>
+            </div>
 
             <ImageSlide
                 image={imageSwiper1}

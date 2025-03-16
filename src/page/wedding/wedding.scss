@@ -5,7 +5,7 @@
     @include sreen_small{
 
         .container{
-            width: 100%;
+            min-width: 100%;
             .Wedding_form{
 
                 &_item{

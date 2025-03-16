@@ -8,7 +8,9 @@
         padding: calc($marginDefault - 20px) ;
         
     }
-
+    .container{
+        min-width: 100%;
+    }
 
 
 }

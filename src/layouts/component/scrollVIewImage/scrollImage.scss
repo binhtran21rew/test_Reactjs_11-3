@@ -1,14 +1,21 @@
 @use '../../../scss/' as *;
 
 .imageScroll{
+    overflow: hidden;
     &_wrapper{
-
         &_body{
             display: flex;
             justify-content: center;
             .Scroll_body{
                 font-size:  36px;
                 text-transform: capitalize;
+                .title{
+                    @include sreen_small{
+                        span{
+                            font-size: 30px;
+                        }
+                    }
+                }
                 strong{
                     font-style: italic;
                 }
@@ -16,14 +23,15 @@
                 .option{
                     font-size: 12px;
                 }
-            }
-            .imageScroll_image{
-                width: 50%;
-                height: 50px;
-        
-                img{
-                    width: 100%;
+                .imageScroll_image{
+                    position: absolute;
+                    width: 50%;
                     height: 50px;
+            
+                    img{
+                        width: 100%;
+                        height: 50px;
+                    }
                 }
             }
         }

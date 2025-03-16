@@ -1,104 +1,178 @@
 import React, { useState, useEffect, useRef } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { FontAwesome } from "../../../component/FontAwesome";
-import ContentWrapper from "../../../layouts/component/contentWrapper/ContentWrapper";
-import "./scrollImage.scss";
 
+import "./scrollImage.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const postion = [
-    {top: 465.193, left: 980},
-    {top: 0, left: 54},
-    {top: 100, left: 345},
-    {top: 482, left: 157},
-    {top: 0, left: 940.136},
-
-]
-
-function ScrollImage({...props}) {
-    const [widthScreen, setWidthScreen] = useState(window.innerWidth);
-    const [heithScreen, setHeigthScreen] = useState(window.innerWidth);
+function ScrollImage({ ...props }) {
+    const { images, listPosition, text, option, textHightlight } = props;
+    const [positions, setPositions] = useState([]);
+    const elementsRef = useRef([]);
+    const containerRef = useRef(null);
+    const animationFrame = useRef(null);
 
     useEffect(() => {
-        const handleResize = () => setWidthScreen(window.innerWidth);
-        const handleHeight = () => setHeigthScreen(window.innerHeight);
-        window.addEventListener("resize", handleResize);
-        window.addEventListener("resize", handleHeight);
+        const updatePositions = () => {
+            if (animationFrame.current) {
+                cancelAnimationFrame(animationFrame.current);
+            }
+            animationFrame.current = requestAnimationFrame(() => {
+                const newPositions = elementsRef.current.map((el) => {
+                    if (!el) return 0;
+                    const rect = el.getBoundingClientRect();
+                    return rect.top * 0.2;
+                });
+                setPositions(newPositions);
+            });
+        };
+
+        window.addEventListener("scroll", updatePositions);
+        updatePositions();
 
         return () => {
-            window.removeEventListener("resize", handleResize);
-            window.removeEventListener("resize", handleHeight);
-
+            window.removeEventListener("scroll", updatePositions);
+            if (animationFrame.current) {
+                cancelAnimationFrame(animationFrame.current);
+            }
         };
     }, []);
 
-    
-    const{images} = props;
-    const containerRef = useRef(null);
-    const imageRefs = useRef([]);
-
     useGSAP(() => {
-        const container = containerRef.current;
-        const newHeight = `100vh`; // 👈 Longer scroll effect
-        gsap.set(container, { height: newHeight });
-        gsap.from(".imageScope", {
+        const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: container,
-                start: "top", // Start when the top of the container reaches the top of the viewport
-                end: "+=200%", // End when the bottom of the container reaches the top
-                scrub: 5, // Smooth scroll effect
-                pin: true, // Makes the image sticky
+                trigger: containerRef.current,
+                start: "top top",
+                end: "+=100%",
+                scrub: 2,
+                pin: true,
                 pinSpacing: true,
                 anticipatePin: 1,
             },
-            opacity: 1,
-            scale: 1,
-            ease: "power1.out",
         });
+        tl.from(".imageScope_item", {
+            overflow: "hidden",
+            transform: `translate3d(0px, ${positions.map(
+                (data) => data || 0
+            )}%, 0px)`,
+            duration: 1,
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
     }, []);
 
     return (
-        <div className="imageScroll" style={{height: '100vh'}} ref={containerRef}>
+        <div
+            className="imageScroll"
+            style={{ height: "100vh" }}
+            ref={containerRef}
+        >
             <div className="imageScroll_wrapper h-100">
                 <div className="imageScroll_wrapper_body imageScope h-100 text-center">
-                  <div className="Scroll_body d-flex flex-column justify-content-center h-100">
-                    <div className="title z-3">
-                       <strong>
-                        Curated services
-                        </strong>  & 
-                        <br></br>
-                        <strong>
-                            experiences
-                        </strong>
-                         at hillbrook
-                    </div>
-                    <div className="option">DISCOVER MORE
-                        <FontAwesome icon={faArrowRight} size={"1x"} color="#D4A373" />
+                    <div className="Scroll_body d-flex flex-column justify-content-center h-100 w-100">
+                        <div className="title d-flex flex-wrap justify-content-center z-3">
+                            {textHightlight ? (
+                                text.split(" ").map((part, id) => {
+                                    return textHightlight
+                                        .split(" ")
+                                        .includes(part) ? (
+                                        <span
+                                            key={id}
+                                            style={{
+                                                fontWeight: "bold",
+                                                fontStyle: "italic",
+                                                marginRight: 5,
+                                                height: "auto",
+                                                zIndex: 999,
+                                            }}
+                                            className="fs-40"
+                                        >
+                                            {part}
+                                        </span>
+                                    ) : (
+                                        <span
+                                            style={{
+                                                marginRight: 5,
+                                                zIndex: 999,
+                                            }}
+                                            className="fs-40"
+                                        >
+                                            {part}
+                                        </span>
+                                    );
+                                })
+                            ) : (
+                                <div
+                                    style={{ marginRight: 5 }}
+                                    className="fs-40"
+                                >
+                                    {text}
+                                </div>
+                            )}
+                        </div>
+                        {option && (
+                            <div className="option" style={{ zIndex: 999 }}>
+                                <a href="#" className="text-dark fw-bold">
+                                    {option}
+                                    <FontAwesome
+                                        icon={faArrowRight}
+                                        size={"1x"}
+                                        color="#D4A373"
+                                    />
+                                </a>
+                            </div>
+                        )}
 
-                    </div>
-                  </div>
-                  <div className="imageScroll_image w-100 h-100" style={{position: 'absolute'}}>
-                        {images.map((src, index) => (
-                        <img
-                            key={index}
-                            src={src}
-                            alt={`Random ${index}`}
-                            style={{
-                            position: 'absolute',
-                            top: `${postion[index]?.top}px`,
-                            left: `${postion[index]?.left}px`,
-                            borderRadius: "10px",
-                            width: "250px",
-                            height: "250px"
-                            }}
-                        />
-                        ))}
+                        {/* <div className="title z-3">
+                            <strong>Curated services</strong> & <br />
+                            <strong>experiences</strong> at hillbrook
+                        </div>
+                        <div className="option">
+                            DISCOVER MORE
+                            <FontAwesome
+                                icon={faArrowRight}
+                                size={"1x"}
+                                color="#D4A373"
+                            />
+                        </div> */}
+
+                        <div className="imageScroll_image w-100 h-100">
+                            {images.map((src, index) => (
+                                <motion.img
+                                    className="imageScope_item"
+                                    ref={(el) =>
+                                        (elementsRef.current[index] = el)
+                                    }
+                                    key={index}
+                                    src={src}
+                                    alt={`Random ${index}`}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.5 }}
+                                    style={{
+                                        position: "absolute",
+                                        top: `${listPosition[index]?.top}%`,
+                                        left: `${listPosition[index]?.left}%`,
+                                        borderRadius: "10px",
+                                        width: "250px",
+                                        height: "250px",
+                                        transition: "transform 0.1s ease-out",
+                                        transform: `translate3d(0px, ${
+                                            positions[index] || 0
+                                        }px, 0px)`,
+                                    }}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

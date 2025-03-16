@@ -7,6 +7,8 @@ import {
     imageWedding1,
     imageWedding2,
     imageWedding3,
+    imageSwiper4,
+    imageSwiper5,
 } from "../../constant";
 import ContentWrapper from "../../layouts/component/contentWrapper/ContentWrapper";
 import Carousel from "../../layouts/component/carousel/Carousel";
@@ -19,6 +21,7 @@ import BoxContent from "../../layouts/component/boxContent/BoxContent";
 import BookingFormPrice from "../../layouts/component/bookingFormPrice/BookingFormPrice";
 import ImageSlide from "../../layouts/component/imageSlide/ImageSlide";
 import DropDown from "../../layouts/component/dropDown/DropDown";
+import ScrollImage from "../../layouts/component/scrollVIewImage/ScrollImage";
 function Wedding() {
     return (
         <div className="Wedding">
@@ -240,7 +243,30 @@ Intimately exclusive celebrations"
                 ]}
             />
             </section>
+            <div className="container">
+                <section>
+                    
+                    <ScrollImage
+                    text="Secure your dream wedding at this exclusive coastal sanctuary"
+                    textHightlight="dream wedding exclusive"
+                    option="DISCOVER MORE"
+                        images={[
+                            imageWedding3,
+                            imageSwiper4,
+                            imageSwiper5,
+                            imageSwiper4,
+                            imageWedding2,
+                        ]}
+                        listPosition={[    
+                            {top: 0, left: 0},
+                            {top: 62, left: 0},
+                            {top: 0, left: 83},
+                            {top: 22, left: 29},
+                            {top: 54, left: 70},]}
+                    />
 
+                </section>
+            </div>
         </div>
     );
 }
