@@ -4,7 +4,7 @@
 .Vendor{
     background-color: $backgroundMainColor;
 
-    @include sreen_large{
+    @include screen_large{
         .container{
             .image_container {
                 width: 100%;
@@ -13,7 +13,7 @@
         }
     }
 
-    @include sreen_medium{
+    @include screen_medium{
         .container{
             max-width: 1040px;
             .image_container {
@@ -23,7 +23,7 @@
         }
     }
 
-    @include sreen_small{
+    @include screen_small{
         .container{
             .image_container {
                 width: 100%;

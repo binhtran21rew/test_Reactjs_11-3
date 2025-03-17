@@ -70,22 +70,22 @@ const Header = ({ ...props }) => {
         <div ref={headerRef} className="Header shrink">
             <div className={`Header_top`}>
                 <Link to={"/"} className="Header_logo">
-                    <img src={logoImg} width={50} height={50} />
+                    <img src={logoImg} />
                 </Link>
                 {scrollUp ? (
                     <NavTop />
                 ) : (
                     <div className="Header_top_link">
-                        <Link to={linkTheHouse} className="header_top_link">
+                        <Link to={linkTheHouse} className="header_top_link_item">
                             the house
                         </Link>
-                        <Link to={linkTheFarm} className="header_top_link">
+                        <Link to={linkTheFarm} className="header_top_link_item">
                             the farm
                         </Link>
-                        <Link to={linkContact} className="header_top_link">
+                        <Link to={linkContact} className="header_top_link_item">
                             contact
                         </Link>
-                        <Link to={linkBookNow} className="header_top_link">
+                        <Link to={linkBookNow} className="header_top_link_item">
                             book now
                         </Link>
                     </div>
@@ -101,7 +101,7 @@ const NavTop = ({ ...props }) => {
     return (
         <div>
             <div
-                className="position-fixed top-0 end-0 p-3 d-flex flex-column "
+                className="NavTop position-fixed top-0 end-0 p-3 d-flex flex-column "
                 style={{
                     background: "#E8D9D0",
                     zIndex: 1050,
@@ -115,12 +115,12 @@ const NavTop = ({ ...props }) => {
                     <div>
                         <div
                             className={`col-md-12 ${isOpen && 'd-flex justify-content-between'}  ${
-                                isOpen && "pe-5 pb-5"
+                                isOpen && "NavTopWidth pb-5"
                             }`}
                         >
                             {isOpen && (
                                 <Link to={"/"} className="Header_logo">
-                                    <img src={logoImg} width={50} height={50} />
+                                    <img src={logoImg} />
                                 </Link>
                             )}
                             <div className="">
@@ -153,10 +153,10 @@ const NavTop = ({ ...props }) => {
 
                         {isOpen && (
                             <div className="col-md-12">
-                                <div className="row text-end pe-5 d-flex flex-column g-3">
+                                <div className="row text-end NavTopLink d-flex flex-column g-3">
                                     <Link
                                         to={linkTheHouse}
-                                        className="fs-5 fw-bold text-dark "
+                                        className="fw-bold text-dark "
                                     >
                                         THE HOUSE
                                     </Link>
@@ -192,7 +192,7 @@ const NavTop = ({ ...props }) => {
                                     </Link>
                                     <Link
                                         to={linkBookNow}
-                                        className="fs-5 fw-bold text-dark"
+                                        className="fw-bold text-dark"
                                     >
                                         BOOKING
                                     </Link>

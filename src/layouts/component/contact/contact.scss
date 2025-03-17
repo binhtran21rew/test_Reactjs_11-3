@@ -8,15 +8,26 @@
     padding: 50px;
     background: url($backgroundHeader) no-repeat center center/cover;
     
+    @include screen_mobile{
+        justify-content: center;
+        height: 100vh;
+    }
     .content-section {
+        height: 100%;
         width: 50%;
         padding: 15px 25px;
         background-color: white;
-
+        @include screen_mobile{
+            height: 70%;
+            width: 100%;
+            padding: 10px;
+        }
         h2 {
             font-size: 36px;
             font-weight: normal;
-
+            @include screen_mobile{
+                font-size: 24px;
+            }
             i{
               font-style: italic;
             }
@@ -25,6 +36,9 @@
         p{
             font-size: 18px;
             line-height: 1.2;
+            @include screen_mobile{
+                font-size: 12px;
+            }
         }
 
         ul {
@@ -33,10 +47,16 @@
             li {
                 font-size: 18px;
                 margin-bottom: 5px;
+                @include screen_mobile{
+                    font-size: 12px;
+                }
             }
         }
           
         h3 {
+            @include screen_mobile{
+                font-size: 14px;
+            }
             margin-top: 20px;
             font-size: 16px;
             font-weight: bold;

@@ -11,7 +11,7 @@ function Contact() {
             <section>
                 <HeroImage image={imageMain3} title="contact us" />
             </section>
-            {/* <div className="container"> */}
+            <div className="container">
                 <section>
                     <div className="title">
                         <span>Got questions?</span>
@@ -71,7 +71,7 @@ function Contact() {
                         ></iframe>
                     </div>
                 </section>
-            {/* </div> */}
+            </div>
 
         </div>
     );

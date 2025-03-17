@@ -17,7 +17,7 @@ function DropDown({ ...props }) {
             <div className="accordion-item" key={index}>
               <h2 className="accordion-header" id={`heading${index}`}>
                 <button
-                  className="accordion-button collapsed"
+                  className="Dropdown_title accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target={`#collapse${index}`}
@@ -43,7 +43,7 @@ function DropDown({ ...props }) {
             <div className="accordion-item" key={index + faqItems.length}>
               <h2 className="accordion-header" id={`heading${index + faqItems.length}`}>
                 <button
-                  className="accordion-button collapsed"
+                  className="Dropdown_title accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target={`#collapse${index + faqItems.length}`}
@@ -55,7 +55,7 @@ function DropDown({ ...props }) {
               </h2>
               <div
                 id={`collapse${index + faqItems.length}`}
-                className="accordion-collapse collapse"
+                className=" accordion-collapse collapse"
                 aria-labelledby={`heading${index + faqItems.length}`}
                 data-bs-parent="#faqAccordion"
               >

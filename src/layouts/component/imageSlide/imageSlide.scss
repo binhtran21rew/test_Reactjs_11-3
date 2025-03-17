@@ -19,8 +19,13 @@
             justify-content: center;
 
             .Slide_image_text{
-                @include sreen_small{
+                @include screen_small{
                     font-size: 28px;
+
+                }
+
+                @include screen_mobile{
+                    font-size: 20px;
 
                 }
                 font-size: 48px;
@@ -34,7 +39,7 @@
 
         }
         .Slide_image_option{
-            @include sreen_small{
+            @include screen_small{
                 font-size: 14px;
 
             }

@@ -4,11 +4,15 @@
     background-color: $backgroundMainColor;
     .container{
         padding-top: 150px;
-        max-width: 900px !important;
 
-        @include sreen_small{
-            min-width: 100%;
+        @include screen_small{
+            max-width: 100%;
 
         }
+        @include screen_mobile{
+            max-width: 100%;
+
+        }
+        
     }
 }

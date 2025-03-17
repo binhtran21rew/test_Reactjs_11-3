@@ -158,14 +158,14 @@ const CustomContent = ({ ...props }) => {
                     marginRight: 5,
                     height: "auto",
                   }}
-                  className="fs-40 CustomContent_text"
+                  className="CustomContent_text"
                 >
                   {part}
                 </div>
               ) : (
                 <div
                   style={{ marginRight: 5 }}
-                  className="fs-40 CustomContent_text"
+                  className="CustomContent_text"
                 >
                   {part}
                 </div>
@@ -174,7 +174,7 @@ const CustomContent = ({ ...props }) => {
           ) : (
             <div
               style={{ marginRight: 5 }}
-              className="fs-40 CustomContent_text"
+              className="CustomContent_text"
             >
               {text}
             </div>
@@ -201,7 +201,7 @@ const CustomContent = ({ ...props }) => {
     </div>
   ) : (
     <div className="row d-flex flex-column w-100 h-100">
-      <div className="col-md-4 flex-row flex-wrap mb-3 w-100 d-flex ">
+      <div className="CustomContent_wrapper col-md-4 flex-row flex-wrap mb-3 w-100 d-flex ">
         {textHighlight ? (
           text.split(" ").map((part, id) => {
             return textHighlight.split(" ").includes(part) ? (
@@ -213,30 +213,30 @@ const CustomContent = ({ ...props }) => {
                   marginRight: 5,
                   height: "auto",
                 }}
-                className="fs-40"
+                className="CustomContent_text"
               >
                 {part}
               </span>
             ) : (
-              <span style={{ marginRight: 5 }} className="fs-40">
+              <span style={{ marginRight: 5 }} className="CustomContent_text">
                 {part}
               </span>
             );
           })
         ) : (
-          <div style={{ marginRight: 5 }} className="fs-40">
+          <div style={{ marginRight: 5 }} className="CustomContent_text">
             {text}
           </div>
         )}
       </div>
       <div className="col-md-8 w-100 ">
         {detail && (
-          <div className="fs-6 mb-3">
+          <div className="CustomContent_detail  mb-3">
             <span>{detail}</span>
           </div>
         )}
         {option && (
-          <div>
+          <div className="CustomContent_option">
             <a href="#" className="text-dark fw-bold">
               {option}
               <FontAwesome icon={faArrowRight} size={"1x"} color="#D4A373" />

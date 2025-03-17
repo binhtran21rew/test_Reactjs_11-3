@@ -6,7 +6,7 @@
     .container{
         padding-top: 150px;
 
-        @include sreen_small{
+        @include screen_small{
             min-width: 100%;
 
         }
@@ -16,6 +16,10 @@
             text-transform: capitalize;
             font-style: italic;
             padding-bottom: $marginDefault;
+
+            @include screen_mobile{
+                font-size: 50px;
+            }
         }
     }
 

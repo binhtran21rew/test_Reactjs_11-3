@@ -12,7 +12,7 @@
             display: flex;
             width: 100%;
             height: 100vh;
-            @include sreen_small{
+            @include screen_small{
                 flex-direction: column;
                 align-items: unset;
 
@@ -23,14 +23,14 @@
                 color: #000;
                 padding: 0 25px;
 
-                @include sreen_small{
+                @include screen_small{
                     padding: 20px 0;
 
                 }
                 h1{
                     font-size: 36px;
                     margin-bottom: 10px;
-                    @include sreen_small{
+                    @include screen_small{
                         font-size: 20px;
                         margin: 20px 0;
                     }
@@ -39,7 +39,7 @@
                 p{
                     font-size: 16px;
                     line-height: 1.5;
-                    @include sreen_small{
+                    @include screen_small{
                         font-size: 12px;
                     }
                 }

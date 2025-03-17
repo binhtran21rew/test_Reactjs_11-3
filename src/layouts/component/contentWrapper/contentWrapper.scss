@@ -1,7 +1,57 @@
 @use '../../../scss/' as *;
 
 .ContentWrapper{
-    @include sreen_small{
+    .Content_title{
+        justify-content: center;
+        @include screen_medium{
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .ContentWrapper_left{
+
+            .CustomContent_wrapper{
+                justify-content: center;
+                .CustomContent_text{
+                    @include screen_medium{
+                        font-size: 28px;
+                    }
+                    @include screen_mobile{
+                        font-size: 18px;
+                    }
+                    font-size: 40px;
+                }
+
+
+            }
+        }
+
+    }
+    .CustomContent_detail{
+        span{
+            font-style: 20px;
+            @include screen_medium{
+                font-size: 10px;
+            }
+            @include screen_mobile{
+                font-size: 12px;
+            }
+
+        }
+    }
+    .CustomContent_option{
+        a{
+            font-style: 12px;
+            @include screen_medium{
+                font-size: 10px;
+            }
+            @include screen_mobile{
+                font-size: 12px;
+            }
+
+        }
+    }
+    @include screen_small{
         .Content_title{
 
             &_moreImage{
@@ -14,24 +64,6 @@
         }
     }
 
-    @include sreen_medium{
-        .CustomContent{
-            &_text{
-                font-size: 30px;
-            }
-            // &_moreImage{
-            //     display: none;
-            // }
-
-            // .ContentWrapper_left{
-            //     margin-bottom: 100px;
-            // }
-
-            &_detail{
-                font-size: 15px;
-            }
-        }
-    }
 }
 // .Main_service{
 //     margin: $marginDefault 0;

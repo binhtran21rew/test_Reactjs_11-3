@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     padding: $marginDefault 0;
-    @include sreen_small{
+    @include screen_small{
         padding: 10px;
         .customSwipper{
             .swiper-wrapper{
@@ -14,7 +14,12 @@
                 justify-content: center;
                 .swiper-slide{
                     width: 40% !important;
+                    @include screen_mobile{
+                        width: 100% !important;
+                        margin-right: 0 !important;
+                    }
                 }
+
             }
         }
     }
@@ -28,10 +33,23 @@
         z-index: 2;
 
         .next-btn,.prev-btn{
+            @include screen_mobile{
+                padding: 0;
+
+            }
             padding: 6px;
+
         }
     }
     .image{
+        @include screen_medium{
+            height: 15vh;
+
+        }
+        @include screen_mobile{
+            height: 300px;
+        }
+        
         width: 100%;
         height: 50vh;
         background-size: cover;

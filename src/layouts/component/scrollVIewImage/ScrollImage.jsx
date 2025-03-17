@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-
+ 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -11,59 +11,49 @@ import { FontAwesome } from "../../../component/FontAwesome";
 import "./scrollImage.scss";
 
 gsap.registerPlugin(ScrollTrigger);
+const getY = (element) => {
+    const height = element.clientHeight;
+    const maxScrollSpeed = -300;
+    const minScrollSpeed = 10;
+    const referenceHeight = 500;
 
+    const speedFactor = maxScrollSpeed + (height / referenceHeight) * (minScrollSpeed - maxScrollSpeed);
+    
+    return speedFactor;
+}
 function ScrollImage({ ...props }) {
     const { images, listPosition, text, option, textHightlight } = props;
     const [positions, setPositions] = useState([]);
-    const elementsRef = useRef([]);
+    const imageRef= useRef([]);
     const containerRef = useRef(null);
-    const animationFrame = useRef(null);
 
-    useEffect(() => {
-        const updatePositions = () => {
-            if (animationFrame.current) {
-                cancelAnimationFrame(animationFrame.current);
-            }
-            animationFrame.current = requestAnimationFrame(() => {
-                const newPositions = elementsRef.current.map((el) => {
-                    if (!el) return 0;
-                    const rect = el.getBoundingClientRect();
-                    return rect.top * 0.2;
-                });
-                setPositions(newPositions);
-            });
-        };
-
-        window.addEventListener("scroll", updatePositions);
-        updatePositions();
-
-        return () => {
-            window.removeEventListener("scroll", updatePositions);
-            if (animationFrame.current) {
-                cancelAnimationFrame(animationFrame.current);
-            }
-        };
-    }, []);
-
+    
     useGSAP(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top top",
-                end: "+=100%",
+                end: "+=200%",
                 scrub: 2,
                 pin: true,
                 pinSpacing: true,
                 anticipatePin: 1,
             },
         });
-        tl.from(".imageScope_item", {
-            overflow: "hidden",
-            transform: `translate3d(0px, ${positions.map(
-                (data) => data || 0
-            )}%, 0px)`,
-            duration: 1,
-        });
+        imageRef.current.forEach((section, index) => {
+            
+            tl.to(section, {
+                y: getY(section),
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 2,
+                }
+            })
+        })
+
 
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -73,10 +63,10 @@ function ScrollImage({ ...props }) {
     return (
         <div
             className="imageScroll"
-            style={{ height: "100vh" }}
+            style={{ height: "h-100" }}
             ref={containerRef}
         >
-            <div className="imageScroll_wrapper h-100">
+            <div className="imageScroll_wrapper">
                 <div className="imageScroll_wrapper_body imageScope h-100 text-center">
                     <div className="Scroll_body d-flex flex-column justify-content-center h-100 w-100">
                         <div className="title d-flex flex-wrap justify-content-center z-3">
@@ -86,7 +76,7 @@ function ScrollImage({ ...props }) {
                                         .split(" ")
                                         .includes(part) ? (
                                         <span
-                                            key={id}
+                                            key={`${id}.${part}`}
                                             style={{
                                                 fontWeight: "bold",
                                                 fontStyle: "italic",
@@ -94,7 +84,7 @@ function ScrollImage({ ...props }) {
                                                 height: "auto",
                                                 zIndex: 999,
                                             }}
-                                            className="fs-40"
+                                            className="text_item"
                                         >
                                             {part}
                                         </span>
@@ -104,7 +94,7 @@ function ScrollImage({ ...props }) {
                                                 marginRight: 5,
                                                 zIndex: 999,
                                             }}
-                                            className="fs-40"
+                                            className="text_item"
                                         >
                                             {part}
                                         </span>
@@ -113,7 +103,7 @@ function ScrollImage({ ...props }) {
                             ) : (
                                 <div
                                     style={{ marginRight: 5 }}
-                                    className="fs-40"
+                                    className="text_item"
                                 >
                                     {text}
                                 </div>
@@ -131,26 +121,12 @@ function ScrollImage({ ...props }) {
                                 </a>
                             </div>
                         )}
-
-                        {/* <div className="title z-3">
-                            <strong>Curated services</strong> & <br />
-                            <strong>experiences</strong> at hillbrook
-                        </div>
-                        <div className="option">
-                            DISCOVER MORE
-                            <FontAwesome
-                                icon={faArrowRight}
-                                size={"1x"}
-                                color="#D4A373"
-                            />
-                        </div> */}
-
                         <div className="imageScroll_image w-100 h-100">
                             {images.map((src, index) => (
                                 <motion.img
                                     className="imageScope_item"
                                     ref={(el) =>
-                                        (elementsRef.current[index] = el)
+                                        (imageRef.current[index] = el)
                                     }
                                     key={index}
                                     src={src}
@@ -163,8 +139,6 @@ function ScrollImage({ ...props }) {
                                         top: `${listPosition[index]?.top}%`,
                                         left: `${listPosition[index]?.left}%`,
                                         borderRadius: "10px",
-                                        width: "250px",
-                                        height: "250px",
                                         transition: "transform 0.1s ease-out",
                                         transform: `translate3d(0px, ${
                                             positions[index] || 0

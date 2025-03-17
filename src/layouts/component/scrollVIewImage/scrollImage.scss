@@ -3,6 +3,10 @@
 .imageScroll{
     overflow: hidden;
     &_wrapper{
+        height: 100vh;
+        @include screen_mobile{               
+            height: 75vh ;
+        }
         &_body{
             display: flex;
             justify-content: center;
@@ -10,9 +14,26 @@
                 font-size:  36px;
                 text-transform: capitalize;
                 .title{
-                    @include sreen_small{
+                    @include screen_small{
                         span{
                             font-size: 30px;
+                        }
+                    }
+                    
+
+                    .text_item{
+                        font-size: 40px;
+
+                        @include screen_small{
+                            
+                                font-size: 25px;
+                            
+                        }
+
+                        @include screen_mobile{
+                           
+                                font-size: 15px;
+                            
                         }
                     }
                 }
@@ -27,7 +48,20 @@
                     position: absolute;
                     width: 50%;
                     height: 50px;
-            
+                    .imageScope_item{
+
+                        @include screen_small{
+                            width: 150px;
+                            height: 150px;
+                        }
+                        
+                        @include screen_mobile{
+                            width: 86px;
+                            height: 86px;
+                        }
+                        width: 250px;
+                        height: 250px;
+                    }
                     img{
                         width: 100%;
                         height: 50px;

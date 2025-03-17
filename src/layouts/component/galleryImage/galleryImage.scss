@@ -7,12 +7,16 @@
         text-transform: capitalize;
         font-style: italic;
         padding-bottom: $marginDefault;
+
+        @include screen_mobile{
+            font-size: 50px;
+        }
     }
     .gallery_wrapper {
         display: flex;
         align-items: flex-start;
         gap: 20px;
-        @include sreen_small {
+        @include screen_small {
             display: block;
             padding: 0;
         }
@@ -23,7 +27,7 @@
             font-size: 13px;
             width: 30%;
             text-transform: capitalize;
-            @include sreen_small {
+            @include screen_small {
                 position: relative;
                 display: block;
                 padding: 0;
@@ -71,7 +75,7 @@
 
         .right {
             width: 70%;
-            @include sreen_small {
+            @include screen_small {
                 width: 98%;
             }
             &.hide {
@@ -88,7 +92,7 @@
                                 margin: 20px 0;
 
                                 span {
-                                    @include sreen_medium {
+                                    @include screen_medium {
                                         font-size: 18px;
                                     }
                                     font-size: 28px;
@@ -121,7 +125,7 @@
                         }
                     }
                     .Gallery_item_tags {
-                        @include sreen_small{
+                        @include screen_small{
                             top: 25px;
                         }
                         position: absolute;
@@ -131,7 +135,7 @@
                         .item_tags:first-child {
 
                             span {
-                                @include sreen_small{
+                                @include screen_small{
                                     font-size: 16px;
                                 }
                                 color: var(--color-black);
@@ -150,10 +154,10 @@
                         }
                         .item_tags {
                             span {
-                                @include sreen_medium {
+                                @include screen_medium {
                                     font-size: 10px;
                                 }
-                                @include sreen_small{
+                                @include screen_small{
                                     font-size: 16px;
                                 }
                                 position: relative;
@@ -176,12 +180,12 @@
                 flex-direction: row;
                 flex-flow: wrap;
                 justify-content: space-evenly;
-                @include sreen_small {
+                @include screen_small {
                     display: block;
                 }
                 .gallery_image {
                     margin: 20px 20px 60px 0;
-                    @include sreen_small {
+                    @include screen_small {
                         width: 100%;
                         height: 100%;
                         margin: 10px;

@@ -2,11 +2,92 @@
 
 .Wedding{
     background-color: $backgroundMainColor;
-    @include sreen_small{
+    section{
+        padding-bottom: 25px;
+    }
+    @include screen_medium{
 
         .container{
-            min-width: 100%;
+            max-width: 100%;
+
+        }
+    }
+    @include screen_small{
+
+        .container{
+            max-width: 100%;
             .Wedding_form{
+                &_text{
+                    span{
+
+                        font-size: 30px;
+                    }
+                }
+                &_option{
+                    span{
+                        font-size: 18px;
+                    }
+                }
+                &_body{
+                    span{
+
+                        font-size: 24px;
+                    }
+                }
+                    @include screen_medium{
+                        span{
+                            font-size: 24px;
+
+                        }
+                    }
+                    @include screen_mobile{
+                        span{
+                            font-size: 24px;
+
+                        }
+                    }
+
+                    @include screen_medium{
+                        &_text{
+                            span{
+        
+                                font-size: 24px;
+                            }
+                        }
+                        &_option{
+                            span{
+                                font-size: 18px;
+                            }
+                        }
+                        &_body{
+                            span{
+        
+                                font-size: 14px;
+                            }
+                        }
+
+                    @include screen_medium{
+                        &_text{
+                            span{
+        
+                                font-size: 20px;
+                            }
+                        }
+                        &_option{
+                            span{
+                                font-size: 14px;
+                            }
+                        }
+                        &_body{
+                            span{
+        
+                                font-size: 12px;
+                                line-height: 1;
+                            }
+                        }
+                    }
+
+            }
 
                 &_item{
                     display: block !important;

@@ -66,59 +66,24 @@ function Home() {
                 />
             </section>
             <section className="">
-                <div style={{ textAlign: "center" }}>
-                    <section className="Main_section">
-                        <ItemScroll
-                            adress="45HA FARM, NATIVE FOREST, PONDS"
-                            name="farm"
-                            detail="Experience the perfect blend of luxury and nature. Our working farm, home to 100 dairy calves, features restored ponds, orchards, and permaculture practices, inviting you to connect deeply with nature."
-                            option="Learn more"
-                        />
+                <ItemScroll
+                    adress={["45HA FARM, NATIVE FOREST, PONDS", "STUNNING SECLUDED BEACH", "45HA FARM, NATIVE FOREST, PONDS"]}
+                    name={["farm", "beach", "location"]}
+                    detail={
+                        ["Experience the perfect blend of luxury and nature. Our working farm, home to 100 dairy calves, features restored ponds, orchards, and permaculture practices, inviting you to connect deeply with nature.",
+                            "Being just 10 minutes north of Whangamata, Hillbrook offers the perfect balance of seclusion and convenience, providing easy access to local attractions while ensuring a peaceful retreat.",
+                            "Being just 10 minutes north of Whangamata, Hillbrook offers the perfect balance of seclusion and convenience, providing easy access to local attractions while ensuring a peaceful retreat."
+                        ]}
+                    option={["Learn more","Learn more"]}
+                    images={[imageContent1, imageContent2, imageMain1]}
+                />
 
-                        <img
-                            src={imageMain1}
-                            className="iamgeFade"
-                            width={"80%"}
-                            height={"80%"}
-                        />
-                    </section>
-                    <section className="Main_section">
-                        <ItemScroll
-                            adress="45HA FARM, NATIVE FOREST, PONDS"
-                            name="farm"
-                            detail="Experience the perfect blend of luxury and nature. Our working farm, home to 100 dairy calves, features restored ponds, orchards, and permaculture practices, inviting you to connect deeply with nature."
-                            option="Learn more"
-                        />
-                        <img
-                            src={imageMain2}
-                            className="iamgeFade"
-                            width={"80%"}
-                            height={"80%"}
-                        />
-                    </section>
-                    <section className="Main_section">
-                        <ItemScroll
-                            adress="45HA FARM, NATIVE FOREST, PONDS"
-                            name="farm"
-                            detail="Experience the perfect blend of luxury and nature. Our working farm, home to 100 dairy calves, features restored ponds, orchards, and permaculture practices, inviting you to connect deeply with nature."
-                            option="Learn more"
-                        />
-                        <img
-                            src={imageMain3}
-                            className="iamgeFade"
-                            width={"80%"}
-                            height={"80%"}
-                        />
-                    </section>
-                </div>
             </section>
-            <section>
                 <ImageSlide
                     image={imageMain2}
                     text="Relax or explore your very own personal playground"
                     textHightlight="personal playground"
                 />
-            </section>
             <section>
                 <ContentWrapper
                     name="Curated Services"

@@ -2,14 +2,22 @@
 
 .ContactForm {
     flex: 1;
+    @include screen_mobile{
+        padding-top: 80px;
+        
+    }
     &_title{
+
+
         display: flex;
         flex-direction: column;
 
         span:first-child{
+            @include screen_mobile{
+                font-size: 28px;
+                
+            }
             width: 100%;
-
-            font-size: 3rem;
             font-style: italic;
             margin-bottom: 10px;
         }
@@ -23,6 +31,7 @@
         }
     }
     .sendForm {
+
         display: flex;
         background-color: $bgColorNav;
         height: 80px;
@@ -31,10 +40,15 @@
         font-weight: bold;
     }
     form {
+
         display: flex;
         flex-direction: column;
     }
     .formGroup {
+        @include screen_mobile{
+            display: block;
+            
+        }
         display: flex;
         justify-content: space-between;
         gap: 20px;

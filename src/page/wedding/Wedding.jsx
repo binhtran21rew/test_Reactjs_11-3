@@ -31,11 +31,9 @@ function Wedding() {
             <div className="container">
                 <section>
                     <BoxContent
-                        text={[
-                            "Your",
-                            "luxury escape",
-                            "to disconnect and reconnect",
-                        ]}
+                        text={
+                            "Your luxury escape to disconnect and reconnect"
+                        }
                         textPosition={"16.6"}
                         option="book now"
                         textHighlight="luxury escape"
@@ -74,7 +72,6 @@ Intimately exclusive celebrations"
 
                 <section>
                     <ContentWrapper
-                        // rotate="true"
                         flexEnd
                         name="Two self contained executive suites"
                         detail="
@@ -116,8 +113,8 @@ Intimately exclusive celebrations"
                     <div class="row">
                         <div class="col-md-3 text-white d-flex ">
                             <div class="row flex-column w-100">
-                                <div class="col-md-6 w-100">
-                                    <span className="fs-30 text-dark">
+                                <div class="Wedding_form_text col-md-6 w-100">
+                                    <span className="text-dark">
                                         Our{" "}
                                         <strong className="fst-italic">
                                             {" "}
@@ -125,7 +122,7 @@ Intimately exclusive celebrations"
                                         </strong>
                                     </span>
                                 </div>
-                                <div class="col-md-6 w-100 mt-3">
+                                <div class="Wedding_form_body col-md-6 w-100 mt-3">
                                     <span className="text-dark">
                                         Whether you envision a grand celebration
                                         or an intimate gathering, our packages
@@ -138,7 +135,7 @@ Intimately exclusive celebrations"
                                     </span>
                                     <br></br>
                                     <div className="mt-3"></div>
-                                    <span className="text-dark">
+                                    <span className="Wedding_form_option text-dark">
                                         Download Brochure
                                     </span>
                                 </div>
@@ -243,7 +240,7 @@ Intimately exclusive celebrations"
                 ]}
             />
             </section>
-            <div className="container">
+            {/* <div className="container"> */}
                 <section>
                     
                     <ScrollImage
@@ -266,7 +263,7 @@ Intimately exclusive celebrations"
                     />
 
                 </section>
-            </div>
+            {/* </div> */}
         </div>
     );
 }

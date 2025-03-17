@@ -60,10 +60,6 @@ function App() {
             <Route path={linkWeddingGallery} element={<WeddingGallery/>} />
             <Route path={linkTerm} element={<Term/>} />
             <Route path={linkPolicy} element={<Policy/>} />
-
-
-
-
           </Routes>
           <Footer/>
         </Router>

@@ -1,4 +1,4 @@
-
+@use '../../../scss/' as *;
 
 .ImageShowSrcoll{
     .blur-bg {
@@ -7,4 +7,12 @@
       .modal-body{
         z-index: 999;
       }
+
+    .ImageShowScroll_modal{
+
+      @include screen_mobile{
+        justify-content: center;
+
+      }
+    }
 }

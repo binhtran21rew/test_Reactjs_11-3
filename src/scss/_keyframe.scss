@@ -75,11 +75,13 @@
   }
 }
 
-@keyframes rotate360 {
+
+@keyframes blurDisappear {
   from {
-    transform: rotate(0deg);
+      opacity: 0;
   }
+
   to {
-    transform: rotate(360deg);
+      opacity: 1;
   }
 }

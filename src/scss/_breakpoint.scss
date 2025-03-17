@@ -1,19 +1,25 @@
 @use './variables' as *;
 
 
-@mixin sreen_large{
+@mixin screen_large{
     @media only screen and (min-width: $width-midium) {
         @content;
     }
 }
-@mixin sreen_medium {
+@mixin screen_medium {
     @media only screen and (max-width: $width-midium) {
         @content;
     }
 }
 
-@mixin sreen_small {
+@mixin screen_small {
     @media only screen and (max-width: $width-small) {
+        @content;
+    }
+}
+
+@mixin screen_mobile {
+    @media only screen and (max-width: $width-mobile) {
         @content;
     }
 }

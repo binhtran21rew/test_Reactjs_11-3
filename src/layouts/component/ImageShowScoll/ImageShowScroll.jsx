@@ -63,7 +63,7 @@ function ImageShowSrcoll({ ...props }) {
                                 aria-label="Close"
                             ></button>
                         </div>
-                        <div className="modal-body d-flex flex-column align-items-center">
+                        <div className="ImageShowScroll_modal modal-body d-flex flex-column align-items-center">
                           <div className="w-100">
                               <Carousel 
                                 image={images} 

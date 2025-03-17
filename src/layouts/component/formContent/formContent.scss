@@ -1,0 +1,45 @@
+@use '../../../scss/' as *;
+
+.FormContent{
+    &_text{
+        font-size: 35px;
+        @include screen_medium{
+            font-size: 32px;
+        }
+        @include screen_small{
+            font-size: 22px;
+        }
+        @include screen_mobile{
+            font-size: 22px;
+        }
+    }
+
+    &_list{
+        h4{
+            font-size: 28px;
+
+            @include screen_medium{
+                font-size: 28px;
+            }
+            @include screen_small{
+                font-size: 22px;
+            }
+            @include screen_mobile{
+                font-size: 22px;
+            }
+        }
+
+        li{
+            font-size: 20px;
+            @include screen_medium{
+                font-size: 18px;
+            }
+            @include screen_small{
+                font-size: 12px;
+            }
+            @include screen_mobile{
+                font-size: 12px;
+            }
+        }
+    }
+}

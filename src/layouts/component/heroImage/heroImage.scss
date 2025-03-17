@@ -14,12 +14,15 @@
         .center{
             text-align: center;
         }
-        @include sreen_small {
+        @include screen_small {
             font-size: 40px;
             text-align: center;
         }
-        @include sreen_medium {
+        @include screen_medium {
             font-size: 60px;
+        }
+        @include screen_mobile {
+            font-size: 25px;
         }
         display: flex;
         flex-direction: column-reverse;

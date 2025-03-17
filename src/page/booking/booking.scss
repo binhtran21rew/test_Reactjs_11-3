@@ -7,10 +7,15 @@
         margin: 0;
         padding: calc($marginDefault - 20px) ;
         
+
+        @include screen_mobile{
+            padding: 0 20px ;
+
+        }
     }
     .booking_wrapper{
         display: flex;
-        @include sreen_small{
+        @include screen_small{
             display: block;
         }
     }

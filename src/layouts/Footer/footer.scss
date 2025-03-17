@@ -7,7 +7,10 @@
     padding:  $marginDefault;
     background-color: $colorFooter;
     overflow: hidden;
+    @include screen_mobile{
+        height: 80vh;
 
+    }
     &_wrapper{
         display: flex;
         width: 100%;
@@ -18,7 +21,7 @@
             font-size: 3rem;
             font-style: italic;
 
-            @include sreen_small{
+            @include screen_small{
                 font-size: 1.5rem;
 
             }
@@ -34,7 +37,7 @@
             border-radius: 5px;
             cursor: pointer;
 
-            @include sreen_small{
+            @include screen_small{
                 font-size: 10px;
 
             }
@@ -48,7 +51,7 @@
             right: 40px;
             text-align: right;
 
-            @include sreen_large{
+            @include screen_large{
                 justify-content: flex-start;
 
             }
@@ -62,7 +65,7 @@
                 text-transform: uppercase;
 
                 
-                @include sreen_small{
+                @include screen_small{
                     font-size: 10px;
 
                 }

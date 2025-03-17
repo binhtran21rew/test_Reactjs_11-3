@@ -3,6 +3,12 @@
 
 
 .Dropdown{
+    &_title{
+        @include screen_mobile{
+            font-size: 15px !important;
+
+        }
+    }
     .accordion{
         background-color: $backgroundMainColor !important;
         .accordion-button {

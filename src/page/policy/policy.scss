@@ -6,7 +6,7 @@
         padding-top: 150px;
         max-width: 900px !important;
 
-        @include sreen_small{
+        @include screen_small{
             min-width: 100%;
 
         }

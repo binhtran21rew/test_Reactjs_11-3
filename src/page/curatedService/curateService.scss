@@ -7,7 +7,7 @@
         margin: 0;
         padding: $marginDefault ;
         
-        @include sreen_small{
+        @include screen_small{
             padding: 0;
         }
     }

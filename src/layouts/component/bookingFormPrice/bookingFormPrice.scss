@@ -10,13 +10,24 @@
     min-height: 800px;
 
 
+    @include screen_mobile{
+        min-height: 600px;
+        width: unset;
+
+    }
     .Booking_title{
+        text-align: center;
         font-size:25px;
         font-style: italic;
         font-weight: bold;
         margin-bottom: 25px;
 
-        @include sreen_medium{
+        @include screen_medium{
+            font-size: 20px;
+            text-align: start;
+        }
+
+        @include screen_mobile{
             font-size: 20px;
         }
     }
@@ -27,8 +38,15 @@
                 &:last-child{
                     border-right:  unset;
                 }
-                .price{
+                .price, .date{
                     font-size: 24px;
+                    @include screen_medium{
+                        font-size: 20px;
+                    }
+            
+                    @include screen_mobile{
+                        font-size: 18px;
+                    }
                 }
                 
             }
@@ -40,6 +58,13 @@
         border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
         border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
         height: 250px;
+        @include screen_medium{
+            height: 200px;
+        }
+
+        @include screen_mobile{
+            height: 180px;
+        }
         .Booking_left{
             display: flex;
             flex-direction: column;
@@ -52,8 +77,11 @@
             span{
                 font-size: 14px;
                 text-transform: capitalize;
-                @include sreen_medium{
+                @include screen_medium{
                     font-size: 10px;
+                }
+                @include screen_mobile{
+                    font-size: 8px;
                 }
             }
         }
@@ -67,15 +95,21 @@
             
             p{
                 margin: 0;
-                @include sreen_medium{
+                @include screen_medium{
                     font-size: 10px;
+                }
+                @include screen_mobile{
+                    font-size: 8px;
                 }
             }
             span{
                 font-size: 14px;
                 text-transform: capitalize;
-                @include sreen_medium{
+                @include screen_medium{
                     font-size: 10px;
+                }
+                @include screen_mobile{
+                    font-size: 8px;
                 }
             }
             .Booking_top{
@@ -96,8 +130,11 @@
             position: relative;
             padding: 10px 30px;
             font-size: 12px;
-            @include sreen_medium{
+            @include screen_medium{
                 font-size: 10px;
+            }
+            @include screen_mobile{
+                font-size: 8px;
             }
             &::before{
                 position: absolute;
@@ -114,18 +151,24 @@
         }
     }
     .Booking_bottom{
+        &_option{
+            font-size: 12px;
+            @include screen_medium{
+                font-size: 12px;
+            }
+            @include screen_mobile{
+                font-size: 12px;
+            }
+        }
         .main{
             font-size: 12px;
             line-height: 1.2;
             margin-bottom: 10px;
-            @include sreen_medium{
+            @include screen_medium{
                 font-size: 10px;
             }
-        }
-        span{
-            font-size: 12px;
-            @include sreen_medium{
-                font-size: 10px;
+            @include screen_mobile{
+                font-size: 8px;
             }
         }
     }

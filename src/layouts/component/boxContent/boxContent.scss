@@ -1,18 +1,68 @@
 @use '../../../scss/' as *;
 
 .BoxContent{
-    font-size: 80px ;
-    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 30px calc($marginDefault + 15px) ;
+    @include screen-mobile{
+        margin: 0;
+    }
 
-    span:first-child{
+    .BoxContent_text{
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        h2{
-            font-style: italic;
-            margin: 0;
+        flex-wrap: wrap;
+
+        @include screen-small{
+            width: 100% !important;
+        }
+        @include screen-mobile{
+            justify-content: center;
+        }
+
+        .text{
+            margin-left: 12px;
+
+            @include screen-medium{
+            
+                font-size: 35px;
+            }
+            @include screen-mobile{
+                font-size: 18px;
+            }
+            font-size: 48px;
+        }
+
+    }
+
+
+    &_detail{
+        margin-left: 50%;
+        font-size: 16px;
+        @include screen-mobile{
+            font-size: 10px;
+            margin-left: 0 !important;
         }
     }
+
+    &_option{
+        display: flex;
+        
+        margin-left: 50%;
+        align-items: center;
+        span{
+        font-size: 16px;
+
+        }
+        @include screen-mobile{
+            span{
+                font-size: 10px;
+
+            }
+            margin-left: 0 !important;
+        }
+    }
+
     span:last-child{
         a{
             font-weight: bold;
@@ -23,5 +73,4 @@
         flex-direction: column;
 
     }
-    margin: 30px calc($marginDefault + 15px) ;
 }

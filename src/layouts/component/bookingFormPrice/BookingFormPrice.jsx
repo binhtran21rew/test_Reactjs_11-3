@@ -5,7 +5,7 @@ function BookingFormPrice({ ...props }) {
   const { name, guest, to, from, dateTo, dateFrom, price, detail, option, listDetail} = props;
   return (
     <div className="Booking_form">
-      <div className="Booking_title text-center">{name}</div>
+      <div className="Booking_title">{name}</div>
       <div className="Booking_price">
         {guest ? (
           <Fragment>
@@ -62,7 +62,7 @@ function BookingFormPrice({ ...props }) {
       <div className="Booking_bottom">
         <div className="main">*{detail}</div>
         {option ? (
-            <span>{option}</span> 
+            <div className="Booking_bottom_option">{option}</div> 
         ): (
             <span> Rates are in NZD and include taxes </span>
         )}
