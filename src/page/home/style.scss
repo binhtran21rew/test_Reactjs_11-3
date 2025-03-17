@@ -5,7 +5,15 @@
     height: auto;
     background-color: $backgroundMainColor;
     overflow: hidden;
-
+    @include screen_mobile{
+        section{
+            &.first{
+                padding: 0 !important;
+            }
+            padding: 10px !important;
+    
+        }
+    }
     section{
         &.first{
             padding: 0;

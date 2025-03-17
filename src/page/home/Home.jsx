@@ -34,11 +34,8 @@ function Home() {
             </section>
             <section>
                 <BoxContent
-                    text={[
-                        "Your",
-                        "luxury escape",
-                        "to disconnect and reconnect",
-                    ]}
+                    text={
+                        "Your luxury escape to disconnect and reconnect"}
                     textPosition={"16.6"}
                     option="book now"
                     textHighlight="luxury escape"
@@ -65,7 +62,6 @@ function Home() {
                     textHighlight={"the beauty of the Coromandel"}
                 />
             </section>
-            <section className="">
                 <ItemScroll
                     adress={["45HA FARM, NATIVE FOREST, PONDS", "STUNNING SECLUDED BEACH", "45HA FARM, NATIVE FOREST, PONDS"]}
                     name={["farm", "beach", "location"]}
@@ -78,7 +74,6 @@ function Home() {
                     images={[imageContent1, imageContent2, imageMain1]}
                 />
 
-            </section>
                 <ImageSlide
                     image={imageMain2}
                     text="Relax or explore your very own personal playground"

@@ -148,7 +148,7 @@ const CustomContent = ({ ...props }) => {
       <div className={`col-md-6 ${widthScreen < 780 ? "w-100" : "d-flex h-50 w-50 justify-content-center"} `}>
         <div className={`d-flex ${widthScreen < 780 ? "w-100 flex-wrap" : "flex-wrap w-75"}`}>
           {textHighlight ? (
-            text.split(" ").map((part, id) => {
+            text?.split(" ").map((part, id) => {
               return textHighlight.split(" ").includes(part) ? (
                 <div
                   key={id}

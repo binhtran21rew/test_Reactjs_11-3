@@ -1,35 +1,167 @@
 @use "../../../scss/" as *;
 
 .ItemScroll{
+    padding-left: 25px;
+    @include screen_small{
+        padding-left: 10px !important;
+    }
     overflow: hidden;
 
     &_content{
-        .ItemScroll_item{
+        height: 100vh;
+        @include screen_small{
+            flex-direction: column ;
+            height: 100% !important;
+        }
+        @include screen_mobile{
+            flex-direction: column ;
+            height: 100% !important;
+        }
+        .ItemScroll_item_left{
+            .address{
+                font-size: 18px;
+            }
 
+            .name{
+                margin-top: 10px;
+                font-size: 32px ;
+
+            }
+            .detail{
+
+                margin-top: 10px;
+                font-size: 24px ;
+
+            }
+            .option{
+                margin-top: 10px;
+                font-size: 18px ;
+            }
             @include screen_medium{
-                &.col-md-4{
-                    width: 50%;
+                
+                width: 40% !important;
+                .address{
+                    font-size: 13px;
                 }
-    
-                &.col-md-8{
-                    width: 100%;
+
+                .name{
+                    margin-top: 6px;
+                    font-size: 24px ;
+
+                }
+                .detail{
+
+                    margin-top: 6px;
+                    font-size: 14px ;
+
+                }
+                .option{
+                    margin-top: 6px;
+                    font-size: 12px ;
                 }
 
             }
+            @include screen_small{
+                
+                width: 70% !important;
+                padding: 20px 0;
+                .address{
+                    font-size: 13px;
+                }
 
+                .name{
+                    margin-top: 6px;
+                    font-size: 24px ;
+
+                }
+                .detail{
+
+                    margin-top: 6px;
+                    font-size: 14px ;
+
+                }
+                .option{
+                    margin-top: 6px;
+                    font-size: 12px ;
+                }
+            }
+            @include screen_small{
+                width: 100% !important;
+                height: 100% !important;
+                .address{
+                    font-size: 8px;
+                }
+
+                .name{
+                    margin-top: 6px;
+                    font-size: 24px ;
+
+                }
+                .detail{
+
+                    margin-top: 6px;
+                    font-size: 12px;
+                    line-height: 1.5;
+
+                }
+                .option{
+                    margin-top: 6px;
+                    font-size: 12px ;
+                }
+            }
             @include screen_mobile{
+                width: 100% !important;
+                height: 100% !important;
+                .address{
+                    font-size: 8px;
+                }
 
+                .name{
+                    margin-top: 6px;
+                    font-size: 24px ;
 
+                }
+                .detail{
+
+                    margin-top: 6px;
+                    font-size: 12px;
+                    line-height: 1.5;
+
+                }
+                .option{
+                    margin-top: 6px;
+                    font-size: 12px ;
+                }
             }
 
-            &_image{
+        }
+
+        .ItemScroll_item_right{
+            @include screen_large{
+                width: 66%;
+            }
+            @include screen_medium{
+                width: 100% !important;
+            }
+            @include screen_mobile{
+                width: 100% !important;
+            }
+            width: 100%;
+
+            .ItemScroll_item_image{
                 width: 100%;
                 height: 100%;
-
+                overflow: hidden;
                 .image{
                     width: 100%;
                     height: 100%;
-                    
+                    @include screen_small{
+                        height: 50vh !important;
+                    }
+                    @include screen_mobile{
+                        height: 50vh !important;
+                    }
+                
                 }
             }
         }
