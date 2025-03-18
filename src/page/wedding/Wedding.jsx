@@ -21,7 +21,7 @@ import BoxContent from "../../layouts/component/boxContent/BoxContent";
 import BookingFormPrice from "../../layouts/component/bookingFormPrice/BookingFormPrice";
 import ImageSlide from "../../layouts/component/imageSlide/ImageSlide";
 import DropDown from "../../layouts/component/dropDown/DropDown";
-import ScrollImage from "../../layouts/component/scrollVIewImage/ScrollImage";
+import ScrollViewImage from "../../layouts/component/scrollVIewImage/ScrollViewImage";
 function Wedding() {
     return (
         <div className="Wedding">
@@ -243,7 +243,7 @@ Intimately exclusive celebrations"
             {/* <div className="container"> */}
                 <section>
                     
-                    <ScrollImage
+                    <ScrollViewImage
                     text="Secure your dream wedding at this exclusive coastal sanctuary"
                     textHightlight="dream wedding exclusive"
                     option="DISCOVER MORE"

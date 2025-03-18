@@ -14,5 +14,24 @@
         justify-content: center;
 
       }
+      @include screen_small{
+        justify-content: center;
+
+      }
+
+      .image{
+        @include screen_medium{
+          height: 50vh !important;
+  
+        }
+        @include screen_mobile{
+          height: 25vh !important;
+  
+        }
+        @include screen_small{
+          height: 50vh !important;
+  
+        }
+      }
     }
 }

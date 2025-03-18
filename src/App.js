@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, } from "react-router-dom";
 import './App.scss'
 
 import {
@@ -39,11 +39,16 @@ import Policy from "./page/policy/Policy";
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    
+  }, []);
   return (
     <>
-      {!loadingComplete && <LoadingPage onLoadingComplete={() => setLoadingComplete(true)} />}
-      {loadingComplete &&  
+      {/* {!loadingComplete && <LoadingPage onLoadingComplete={() => setLoadingComplete(true)} />}
+      {loadingComplete &&   */}
         <Router>
+          <PageTransition />
           <Header textPosition={'center'}/>
           <Routes>
             <Route path={linkHome} element={<Home />} />
@@ -63,10 +68,24 @@ function App() {
           </Routes>
           <Footer/>
         </Router>
-      }
+      {/* } */}
     </>
 
   );
 }
+
+function PageTransition() {
+  const [loading, setLoading] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, [location.pathname]); 
+
+  return loading ? <LoadingPage /> : null;
+}
+
 
 export default App;

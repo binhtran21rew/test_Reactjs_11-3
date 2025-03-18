@@ -17,8 +17,8 @@ import {
     imageSwiper5,
     letterAnimation,
 } from "../../constant";
-import ScrollImage from "../../layouts/component/scrollVIewImage/ScrollImage";
 import ImageSlide from "../../layouts/component/imageSlide/ImageSlide";
+import ScrollViewImage from "../../layouts/component/scrollVIewImage/ScrollViewImage";
 
 function Activities() {
     return (
@@ -100,7 +100,7 @@ On the property, you can enjoy leisurely activities and explore the scenic surro
             <div className="container">
                 <section>
                     
-                    <ScrollImage
+                    <ScrollViewImage
                     text="Curated services experiences at hillbrook"
                     textHightlight="experiences"
                     option="DISCOVER MORE"

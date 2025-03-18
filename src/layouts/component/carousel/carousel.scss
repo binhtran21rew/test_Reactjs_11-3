@@ -43,7 +43,11 @@
     }
     .image{
         @include screen_medium{
-            height: 15vh;
+            height: 30vh;
+
+        }
+        @include screen_small{
+            height: 30vh;
 
         }
         @include screen_mobile{

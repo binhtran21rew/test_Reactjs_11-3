@@ -1,33 +1,93 @@
 @use '../../../scss/' as *;
 
-.Map_container{
-    margin: 50px $marginDefault;
 
-    .markers{
-        margin: unset !important;
-        .text{
-            font-size: 20px !important;
-            margin: unset !important;
-            font-style: italic;
-            font-weight: bold;
-            overflow: hidden;
-        }
-        .content{
-            overflow: scroll;
-            .body{
-                width: 35% !important;
+.Map_container{
+    width: 100%;
+    height: 100vh;
+
+    @include screen_medium{
+        height: 75vh;
+
+    }
+
+    @include screen_small{
+        height: 50vh;
+    }
+
+    @include screen_mobile{
+        height: 70vh;
+    }
+    .markers_wrapper{
         
+        .leaflet-popup-content-wrapper{
+            width: 100% !important;
+            height: 100% !important;
+
+            .leaflet-popup-content{
+                width: 100% !important;
+                height: 100% !important;
+
+                @include screen_small{
+                    margin: 8px 4px !important;
+                }
             }
-            .detail{
-                margin-bottom: 20px;
+        }
+        @include screen_large{
+            width: 350px !important;
+            height: 150px !important;
+            .markers_wrapper_image{
+                width: 150px;
+                height: 120px;
+                object-fit: cover;
             }
-            .option{
-                font-weight: bold;
-                text-transform: uppercase;
-                color: var(--color-black);
-                margin-top: 20px;
+            .marker_text{
+                padding-bottom: 20px;
             }
     
+        }
+        @include screen_medium{
+            width: 250px !important;
+            height: 150px !important;
+            .markers_wrapper_image{
+                width: 100px;
+                height: 120px;
+                object-fit: cover;
+            }
+            .marker_text{
+                padding-bottom: 20px;
+
+            }
+            .marker_detail{
+                font-size: 10px;
+            }
+        }
+        @include screen_small{
+            &_row{
+                width: 50%;
+
+                .markers_wrapper_col{
+
+                    &:first-child{
+                        width: 40%;
+
+                    }
+                    width: 60%;
+                }
+            }
+            width: 250px !important;
+            height: 100px !important;
+            .markers_wrapper_image{
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+            }
+            .marker_text{
+                font-size: 12px;
+                padding-bottom: 20px;
+            }
+            .marker_detail{
+                font-size: 10px;
+            }
         }
     }
 }

@@ -19,55 +19,11 @@ import "./theHouse.scss";
 import { Fade, Slide } from "react-awesome-reveal";
 import HeroImage from "../../layouts/component/heroImage/HeroImage";
 import ImageSlide from "../../layouts/component/imageSlide/ImageSlide";
+import { useLocation } from "react-router-dom";
+import BoxClickImage from "../../layouts/component/boxClickImage/BoxClickImage";
 
-const textImagePairs = [
-    {
-        text: "Surf",
-        img: imageMain2,
-        title: "Cook up a feast in the fully equipped kitchen",
-    },
-    {
-        text: "Swim",
-        img: imageMain1,
-        title: "Soak up the scenery from the hot tub",
-    },
-    {
-        text: "Fram Walk",
-        img: imageMain3,
-        title: "Cook up a feast in thefully equipped kitchen",
-    },
-    {
-        text: "Beach hikes",
-        img: imageMain4,
-        title: "Relax in the comfort of the living room",
-    },
-    {
-        text: "Lawn Games",
-        img: imageContent1,
-        title: "Soak up the scenery from the hot tub",
-    },
-    {
-        text: "Kayak",
-        img: imageContent2,
-        title: "Cook up a feast in the fully equipped kitchen",
-    },
-    {
-        text: "Mountain Bike Park",
-        img: imageContent1,
-        title: "Relax in the comfort of the living room",
-    },
-];
 
 function TheHouse() {
-    const [clickImage, setClickImage] = useState(textImagePairs[0].img);
-    const [textActive, setTextActive] = useState(null);
-    const [selected, setSelected] = useState(null);
-
-    const handleClickImage = (item, id) => {
-        setTextActive(id);
-        setClickImage(item.img);
-        setSelected(item.text);
-    };
 
     return (
         <div className="TheHouse">
@@ -88,7 +44,7 @@ function TheHouse() {
                     </ul>
                 </section>
 
-                <section className="vh-50">
+                <section>
                     <ContentWrapper
                         name="Scottish Mansion"
                         detail="
@@ -97,6 +53,7 @@ function TheHouse() {
                     "
                         option="VIEW ALL SERVICES"
                         textHighlight={"Mansion"}
+                        textPosition
                     />
                 </section>
             </div>
@@ -143,41 +100,47 @@ function TheHouse() {
                 />
             </section>
 
-            <section className="ChangeImage">
-                <div
-                    className="image_container"
-                    style={{
-                        background: `url('${clickImage}') no-repeat center center/cover`,
-                        width: "100%",
-                        height: "100vh",
-                    }}
-                >
-                    <div className="wrapper">
-                        {textImagePairs.map((item, index) => (
-                            <div
-                                key={index}
-                                className="item_image"
-                                onClick={() => handleClickImage(item, index)}
-                            >
-                                <p
-                                    className={`image_text ${
-                                        textActive === index ? "active" : ""
-                                    } `}
-                                >
-                                    {item.text}
-                                </p>
-                                {selected === item.text ? (
-                                    <Fade className="fadeText">
-                                        {item.title}
-                                    </Fade>
-                                ) : (
-                                    ""
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <BoxClickImage 
+                list={
+                    [
+                        {
+                            text: "Surf",
+                            img: imageMain2,
+                            title: "Cook up a feast in the fully equipped kitchen",
+                        },
+                        {
+                            text: "Swim",
+                            img: imageMain1,
+                            title: "Soak up the scenery from the hot tub",
+                        },
+                        {
+                            text: "Fram Walk",
+                            img: imageMain3,
+                            title: "Cook up a feast in thefully equipped kitchen",
+                        },
+                        {
+                            text: "Beach hikes",
+                            img: imageMain4,
+                            title: "Relax in the comfort of the living room",
+                        },
+                        {
+                            text: "Lawn Games",
+                            img: imageContent1,
+                            title: "Soak up the scenery from the hot tub",
+                        },
+                        {
+                            text: "Kayak",
+                            img: imageContent2,
+                            title: "Cook up a feast in the fully equipped kitchen",
+                        },
+                        {
+                            text: "Mountain Bike Park",
+                            img: imageContent1,
+                            title: "Relax in the comfort of the living room",
+                        },
+                    ]
+                }
+            />
 
             <div className="container mb-5">
                 <section className="image_container">
@@ -232,7 +195,7 @@ function TheHouse() {
                     }}
                 ></div>
             </section>
-            <div className="container vh-50">
+            <div className="container">
                 <section className="image_container">
                     <ContentWrapper
                         name="Scottish Mansion"
@@ -240,12 +203,39 @@ function TheHouse() {
                Hillbrook Estate offers a wealth of activities, from beach exploration to scenic farm walks. For those seeking even more adventure, we are delighted to arrange additional activities to enhance your stay.
                     "
                         option="VIEW ALL SERVICES"
+                        textPosition
                     />
                 </section>
             </div>
 
             <section>
-                <ImageHover />
+                <ImageHover 
+                    listImage={
+                        [
+                              { text: "Surf", img: imageMain2 },
+                              { text: "Swim", img: imageMain1 },
+                              { text: "Fram Walk", img: imageMain3 },
+                              { text: "Beach hikes", img: imageMain4 },
+                              { text: "Lawn Games", img: imageContent1 },
+                              { text: "Kayak", img: imageContent2 },
+                              { text: "Mountain Bike Park", img: imageContent1 },
+                              { text: "Surf", img: imageMain2 },
+                              { text: "Swim", img: imageMain1 },
+                              { text: "Fram Walk", img: imageMain3 },
+                              { text: "Beach hikes", img: imageMain4 },
+                              { text: "Lawn Games", img: imageContent1 },
+                              { text: "Kayak", img: imageContent2 },
+                              { text: "Mountain Bike Park", img: imageContent1 },
+                              { text: "Surf", img: imageMain2 },
+                              { text: "Swim", img: imageMain1 },
+                              { text: "Fram Walk", img: imageMain3 },
+                              { text: "Beach hikes", img: imageMain4 },
+                              { text: "Lawn Games", img: imageContent1 },
+                              { text: "Kayak", img: imageContent2 },
+                              { text: "Mountain Bike Park", img: imageContent1 },
+                        ]
+                    }
+                />
             </section>
             <section>
                 <ImageSlide

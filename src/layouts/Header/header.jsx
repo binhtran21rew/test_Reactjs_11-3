@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Nav, Button } from "react-bootstrap";
 import { faBars, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -27,53 +27,33 @@ const Header = ({ ...props }) => {
     const { textPosition, imageHeader } = props;
     const headerRef = useRef(null);
     const [scrollUp, setScrollUp] = useState(false);
-    let lastScrollTop = 0;
 
-    useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: headerRef.current,
-                start: "bottom top",
-                scrub: 2,
-            },
-        });
+    useEffect(() => {
+        const shrinkHeader = () => {
+          const position1 = document.body.scrollTop;
+          const position2 = document.documentElement.scrollTop;
+          if( (position1 > 500) || (position2 >  500)){
+            headerRef.current.classList.remove('shrink');
+            setScrollUp(true)
+          } else{        
+            headerRef.current.classList.add('shrink');        
+            setScrollUp(false)
+    
+          }
+        }
 
-        tl.fromTo(
-            headerRef.current,
-            { autoAlpha: 1, y: 50 },
-            { autoAlpha: 0, y: 0, duration: 0.8, ease: "power2.out" }
-        );
-        const handleScroll = () => {
-            const position1 = document.body.scrollTop;
-            const position2 = document.documentElement.scrollTop;
-            let scrollTop =
-                window.pageYOffset || document.documentElement.scrollTop;
-
-            if (
-                scrollTop < lastScrollTop &&
-                (position1 > 600 || position2 > 600)
-            ) {
-                setScrollUp(true);
-            } else {
-                setScrollUp(false);
-            }
-
-            lastScrollTop = scrollTop;
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
+        window.addEventListener('scroll', shrinkHeader);
+    
         return () => {
+            window.removeEventListener('scroll', shrinkHeader);
             setScrollUp(false);
-            window.removeEventListener("scroll", handleScroll);
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
+        }
     }, []);
 
     return (
-        <div className="Header shrink">
-            {scrollUp && <NavTop />}
-            <div className={`Header_top`} ref={headerRef}>
+        <div ref={headerRef} className="Header shrink">
+            { scrollUp && <NavTop/>}
+            <div className={`Header_top`} >
                 <Link to={"/"} className="Header_logo">
                     <img src={logoImg} />
                 </Link>
@@ -91,24 +71,7 @@ const Header = ({ ...props }) => {
                         book now
                     </Link>
                 </div>
-                {/* {scrollUp ? (
-                    <NavTop />
-                ) : (
-                    <div className="Header_top_link">
-                        <Link to={linkTheHouse} className="header_top_link_item">
-                            the house
-                        </Link>
-                        <Link to={linkTheFarm} className="header_top_link_item">
-                            the farm
-                        </Link>
-                        <Link to={linkContact} className="header_top_link_item">
-                            contact
-                        </Link>
-                        <Link to={linkBookNow} className="header_top_link_item">
-                            book now
-                        </Link>
-                    </div>
-                )} */}
+
             </div>
         </div>
     );
@@ -119,36 +82,53 @@ const NavTop = ({ ...props }) => {
     const navRef = useRef();
     const tlRef = useRef(null);
     const listRef = useRef(null);
+    const windowScreen = window.innerWidth;
 
+
+    const [isVisible, setIsVisible] = useState(true);
+    let lastScrollY = window.scrollY;
     useGSAP(() => {
         const nav = navRef.current;
-        const links = listRef.current.children; // Get all <Link> elements inside listRef
+        const links = listRef.current.children;
 
         tlRef.current = gsap.timeline({ paused: true })
-            .set(".NavTop_wrapper", { visibility: "hidden" }) // Make nav visible on open
-            .to(nav, { width: "200px", duration: 0.1, ease: "power2.out" })
-            .to(nav, { height: "8%", duration: 0.1, ease: "power2.out" })
-            // .from(links,
-            // { 
-            //     opacity: 0, 
-            //     y: 50, 
-            //     duration: 2, 
-            //     stagger: 1, // Animate one by one
-            //     ease: "power2.out" 
-            // }); // Overlap with previous animation
-
+            .set(".NavTop_wrapper", { visibility: "visible"})
+            .fromTo(nav, 
+                { height: "8%", width: windowScreen < 420 && '100%' || '200px', duration: 0.1, ease: "power2.out" },
+                { height: "100%", width: windowScreen < 420 && '100%' || '500px', duration: 0.1, ease: "power2.out" },
+            )
     }, []);
 
     useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > lastScrollY) {
+              setIsVisible(false);
+            } else {
+              setIsVisible(true);
+            }
+            lastScrollY = window.scrollY;
+          };
+      
+          window.addEventListener("scroll", handleScroll);
+          
+        
         if (isOpen) {
             tlRef.current.play(); // Play animation forward
+            document.body.style.overflow = "hidden"; // Disable scrolling
         } else {
             tlRef.current.reverse(); // Reverse animation when closing
+            document.body.style.overflow = ""; // Enable scrolling
         }
-    }, [isOpen]); // Runs when `isOpen` changes
+
+        return () => {
+            document.body.style.overflow = ""; 
+            window.removeEventListener("scroll", handleScroll);
+
+        };
+    }, [isOpen]);
 
     return (
-        <div className="NavTop_nav">
+        <div className={`NavTop_nav ${!isVisible && 'd-none' } `}>
             <div
                 ref={navRef}
                 className="NavTop position-fixed top-0 end-0 d-flex flex-column"
@@ -176,8 +156,8 @@ const NavTop = ({ ...props }) => {
                         </div>
 
                         <div className="col-md-12">
-                            <div ref={listRef} className="row text-end NavTopLink d-flex flex-column g-3">
-                                <Link to={linkTheHouse} className="fw-bold text-dark">THE HOUSE</Link>
+                            <div ref={listRef} className={`row text-end NavTopLink d-flex flex-column g-3`}>
+                                <Link to={linkTheHouse} className={"fw-bold text-dark"}>THE HOUSE</Link>
                                 <Link to={linkTheFarm} className="text-dark">THE FARM</Link>
                                 <Link to={linkGallery} className="text-dark">GALLERY</Link>
                                 <Link to={linkCuratedServices} className="text-dark">CURATED SERVICES</Link>

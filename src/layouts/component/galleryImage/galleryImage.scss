@@ -125,12 +125,16 @@
                         }
                     }
                     .Gallery_item_tags {
+                        @include screen_medium{
+                            top: 8px;
+                        }
                         @include screen_small{
                             top: 25px;
                         }
                         position: absolute;
                         left: 2;
-                        padding: 0 20px;
+                            top: 8px;
+                            padding: 0 20px;
 
                         .item_tags:first-child {
 

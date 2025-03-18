@@ -8,7 +8,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { FontAwesome } from "../../../component/FontAwesome";
 
-import "./scrollImage.scss";
+import "./scrollViewImage.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 const getY = (element) => {
@@ -21,7 +21,7 @@ const getY = (element) => {
     
     return speedFactor;
 }
-function ScrollImage({ ...props }) {
+function ScrollViewImage({ ...props }) {
     const { images, listPosition, text, option, textHightlight } = props;
     const [positions, setPositions] = useState([]);
     const imageRef= useRef([]);
@@ -154,4 +154,4 @@ function ScrollImage({ ...props }) {
     );
 }
 
-export default ScrollImage;
+export default ScrollViewImage;

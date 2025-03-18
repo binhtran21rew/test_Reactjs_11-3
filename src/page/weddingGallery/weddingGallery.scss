@@ -20,6 +20,10 @@
             @include screen_mobile{
                 font-size: 50px;
             }
+            @include screen_small{
+                font-size: 50px;
+    
+            }
         }
     }
 

@@ -6,7 +6,6 @@ import { useGSAP } from "@gsap/react";
 
 import { FontAwesome } from "../../../component/FontAwesome";
 
-import { customFade, markers } from "../../../constant";
 
 import "./itemScroll.scss";
 
@@ -17,7 +16,6 @@ function ItemScroll({ ...props }) {
     const { adress, name, detail, option, images } = props;
     const sections = useRef([]);
     
-    const contentItem = useRef([]);
     
     useGSAP(() => {
         sections.current.forEach((section, index) => {
@@ -25,7 +23,24 @@ function ItemScroll({ ...props }) {
             if(section.clientWidth > 780){
                 const contentLeft = section.querySelectorAll(".ItemScroll_content_left");
                 const contentItem = section.querySelectorAll('.ItemScroll_wrapper_item');
-                
+                const contentImage = section.querySelectorAll('.image');
+                gsap.fromTo(
+                    contentImage,
+                    {
+                      scale: 1,
+
+                    },
+                    { 
+                        scale: 1.3,
+                        scrollTrigger: {
+                            trigger: contentImage,
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: true,
+                        },
+
+                    }
+                  );
                 const tl = gsap.timeline({
                     
                     scrollTrigger: {
@@ -53,7 +68,6 @@ function ItemScroll({ ...props }) {
                 
             }else{
                 const contentImage = section.querySelectorAll('.image');
-                console.log(contentImage, 'binh');
                 gsap.fromTo(
                     contentImage,
                     {

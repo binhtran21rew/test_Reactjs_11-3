@@ -10,6 +10,7 @@
   justify-content: center;
   transition: opacity 1s ease-in-out;
   z-index: 9999;
+  background-color: $backgroundMainColor;
 
   &.hidden {
     opacity: 0;

@@ -30,7 +30,7 @@ function Home() {
     return (
         <main className="Main">
             <section className="first">
-                <HeroImage image={imageMain2} title="the houses" />
+                <HeroImage image={imageMain2}/>
             </section>
             <section>
                 <BoxContent
@@ -91,7 +91,10 @@ function Home() {
                 />
             </section>
             <section>
-                <MapMarker map={map} />
+
+                    <MapMarker map={map} />
+
+               
             </section>
             <section>
                 <ContentWrapper
@@ -105,7 +108,33 @@ function Home() {
             </section>
             <section>
                 <div className="">
-                    <ImageHover />
+                    <ImageHover 
+                        listImage={
+                            [
+                                { text: "Surf", img: imageMain2 },
+                                { text: "Swim", img: imageMain1 },
+                                { text: "Fram Walk", img: imageMain3 },
+                                { text: "Beach hikes", img: imageMain4 },
+                                { text: "Lawn Games", img: imageContent1 },
+                                { text: "Kayak", img: imageContent2 },
+                                { text: "Mountain Bike Park", img: imageContent1 },
+                                { text: "Surf", img: imageMain2 },
+                                { text: "Swim", img: imageMain1 },
+                                { text: "Fram Walk", img: imageMain3 },
+                                { text: "Beach hikes", img: imageMain4 },
+                                { text: "Lawn Games", img: imageContent1 },
+                                { text: "Kayak", img: imageContent2 },
+                                { text: "Mountain Bike Park", img: imageContent1 },
+                                { text: "Surf", img: imageMain2 },
+                                { text: "Swim", img: imageMain1 },
+                                { text: "Fram Walk", img: imageMain3 },
+                                { text: "Beach hikes", img: imageMain4 },
+                                { text: "Lawn Games", img: imageContent1 },
+                                { text: "Kayak", img: imageContent2 },
+                                { text: "Mountain Bike Park", img: imageContent1 },
+                            ]
+                        }
+                    />
                 </div>
             </section>
             <section>

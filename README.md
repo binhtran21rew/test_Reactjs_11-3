@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+Cắt Web HillBrookState
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tổng Quan
 
-## Available Scripts
+Dự án này bao gồm việc cắt toàn bộ bố cục và animation của trang web HillBrookState.
 
-In the project directory, you can run:
+Cấu Trúc Thư Mục
 
-### `npm start`
+Thư Mục Chính src/:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+&nbsp;&nbsp;components/: Chứa các component có thể tái sử dụng, bao gồm cả icon từ thư viện bên ngoài.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+&nbsp;&nbsp;layout/: Chứa các layout và component tái sử dụng cho trang web, bao gồm header, footer, slide ảnh, hộp chứa nội dung, form, và thanh điều hướng.
 
-### `npm test`
+&nbsp;&nbsp;pages/: Chứa các trang hiển thị cho trang web.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+&nbsp;&nbsp;scss/: Chứa các file SCSS cấu hình cho dự án, bao gồm biến, breakpoint, và frame.
 
-### `npm run build`
+Bên trong layout/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+&nbsp;&nbsp;Chứa thư mục components/, nơi lưu các component được tái sử dụng.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Mỗi component bao gồm:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+&nbsp;&nbsp;Một file .jsx để xử lý logic và cấu trúc.
 
-### `npm run eject`
+&nbsp;&nbsp;Một file .scss để định dạng giao diện.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Mô Tả Các Component
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ContentWrapper
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+&nbsp;Tạo một bố cục chứa hình ảnh và nội dung với vị trí và chữ có thể tùy chỉnh.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+&nbsp;Thuộc tính:
 
-## Learn More
+&nbsp;&nbsp;text, textHighlight, detail, option, image, moreImage, rotate, flexEnd, textPosition
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+&nbsp;&nbsp;&nbsp;textHighlight: Xác định các từ cần làm nổi bật trong text.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+&nbsp;&nbsp;&nbsp;moreImage: Hiển thị hình ảnh bổ sung trong block.
 
-### Code Splitting
+&nbsp;&nbsp;&nbsp;rotate: Đảo ngược vị trí nội dung.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+f&nbsp;&nbsp;&nbsp;lexEnd: Căn chỉnh block về phía đầu hoặc cuối.
 
-### Analyzing the Bundle Size
+ScrollViewImage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+&nbsp;Tạo hiệu ứng parallax cho hình ảnh với nội dung và chữ có thể tùy chỉnh.
 
-### Making a Progressive Web App
+&nbsp;Thuộc tính:
+&nbsp;&nbsp;text, textHightLight, images, listPosition, option
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+&nbsp;&nbsp;&nbsp;textHightLight: Xác định các từ cần làm nổi bật trong text.
 
-### Advanced Configuration
+&nbsp;&nbsp;&nbsp;images: danh sách image hiển thị
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+&nbsp;&nbsp;&nbsp;listPosition: vị trí mà ảnh tương ứng sẽ hiển thị
 
-### Deployment
+ImageHover
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+&nbsp;Hiển thị hình ảnh khi người dùng di chuột qua đoạn văn bản tương ứng.
 
-### `npm run build` fails to minify
+&nbsp;Thuộc tính:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+&nbsp;&nbsp;&nbsp; Một mảng text và image.
+
+&nbsp;&nbsp;&nbsp;Ánh xạ từng đoạn văn bản với một hình ảnh, hiển thị khi hover.
+
+DropDown
+
+&nbsp;Hiển thị nội dung có thể mở rộng.
+
+&nbsp;Thuộc tính:
+
+&nbsp;&nbsp;Mảng nội dung chính.
+
+&nbsp;&nbsp;Mảng nội dung phụ chứa câu hỏi và câu trả lời.
+
+&nbsp;&nbsp;Nhấn vào nút để hiển thị thêm nội dung nếu có.
+
+GalleryImage
+
+&nbsp;Tạo danh sách ảnh thay đổi dựa trên nội dung được chọn.
+
+&nbsp;&nbsp;Thuộc tính:
+
+&nbsp;&nbsp;&nbsp;list (mảng nội dung và hình ảnh)
+
+&nbsp;&nbsp;&nbsp;gridPosition (số lượng ảnh trong một hàng)
+
+&nbsp;&nbsp;&nbsp;position (true/false - xác định ảnh có nội dung hay không)
+
+&nbsp;&nbsp;Nếu ảnh không có nội dung, chúng sẽ được sắp xếp ngẫu nhiên dựa trên số lượng ảnh.
+
+&nbsp;&nbsp;Nếu ảnh có nội dung, chúng sẽ được hiển thị theo bố cục dạng lưới.
+
+&nbsp;&nbsp;Mảng list cần có các thuộc tính như name, detail, và tags.
+
+MapMarker
+
+&nbsp;Tạo các điểm đánh dấu trên bản đồ, hiển thị nội dung khi nhấp vào.
+
+ImageShowScroll
+
+&nbsp;Hiển thị danh sách hình ảnh, cho phép người dùng nhấp vào để xem ở chế độ toàn màn hình.
+
+ImageScroll
+
+&nbsp;Tạo slide ảnh với nội dung hiển thị theo hiệu ứng cuộn trang.
+
+&nbsp;Sử dụng GSAP để xử lý animation cuộn trang.
+
+
+
+Các component khác được sử dụng để tạo bố cục form cho nội dung hiển thị.

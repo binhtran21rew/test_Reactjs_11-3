@@ -1,6 +1,42 @@
 @use '../../../scss/' as *;
 
 .ContentWrapper{
+    .CustomContent{
+        .CustomContent_text{
+            @include screen_medium{
+                font-size: 28px;
+            }
+            @include screen_mobile{
+                font-size: 18px;
+            }
+            font-size: 40px;
+        }
+        .CustomContent_detail{
+            span{
+                font-size: 16px ;
+                @include screen_medium{
+                    font-size: 10px;
+                }
+                @include screen_mobile{
+                    font-size: 12px;
+                }
+    
+            }
+        }
+        .CustomContent_option{
+            a{
+                font-style: 12px;
+                @include screen_medium{
+                    font-size: 10px;
+                }
+                @include screen_mobile{
+                    font-size: 12px;
+                }
+    
+            }
+        }
+    }
+
     .Content_title{
         justify-content: center;
         @include screen_medium{
@@ -8,6 +44,10 @@
             text-align: center;
             align-items: center;
         }
+        
+
+
+        
         .ContentWrapper_left{
 
             .CustomContent_wrapper{
@@ -29,7 +69,7 @@
     }
     .CustomContent_detail{
         span{
-            font-style: 20px;
+            font-style: 80px;
             @include screen_medium{
                 font-size: 10px;
             }

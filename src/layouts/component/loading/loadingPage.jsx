@@ -3,19 +3,12 @@ import "./loadingPage.scss";
 import {logoImg} from '../../../constant'; 
 
 const LoadingPage = ({ onLoadingComplete }) => {
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoading(false);
-      onLoadingComplete();
-    }, 3000);
-
-    return () => clearTimeout(timeout); 
+    window.scrollTo(0, 0)
   }, []);
-
   return (
-    <div className={`loading ${loading ? "visible" : "hidden"}`}>
+    <div className={`loading`}>
       <img src={logoImg} alt="Logo" className="logo" />
     </div>
   );
