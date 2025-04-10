@@ -1,116 +1,110 @@
-Cắt Web HillBrookState
+# HillBrookState Web - Layout & Animation Cut
 
-Tổng Quan
+## 📌 Tổng Quan
 
-Dự án này bao gồm việc cắt toàn bộ bố cục và animation của trang web HillBrookState.
+Dự án này bao gồm việc **cắt toàn bộ bố cục và animation** của trang web **HillBrookState**, với các component được tối ưu để tái sử dụng, cùng hiệu ứng tương tác nâng cao.
 
-Cấu Trúc Thư Mục
+---
 
-Thư Mục Chính src/:
+## 🗂 Cấu Trúc Thư Mục
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components/: Chứa các component có thể tái sử dụng, bao gồm cả icon từ thư viện bên ngoài.
+### Thư Mục Chính `src/`
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layout/: Chứa các layout và component tái sử dụng cho trang web, bao gồm header, footer, slide ảnh, hộp chứa nội dung, form, và thanh điều hướng.
+- **components/**  
+  Chứa các component tái sử dụng, bao gồm cả icon từ thư viện bên ngoài.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pages/: Chứa các trang hiển thị cho trang web.
+- **layout/**  
+  Gồm các layout chính như `header`, `footer`, `slider`, `form`, `navigation`, và các block bố cục nội dung.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scss/: Chứa các file SCSS cấu hình cho dự án, bao gồm biến, breakpoint, và frame.
+- **pages/**  
+  Chứa các trang hiển thị đầy đủ nội dung website.
 
-Bên trong layout/
+- **scss/**  
+  Bao gồm các file SCSS cấu hình toàn cục:
+  - Biến (`variables`)
+  - Điểm gãy (`breakpoints`)
+  - Frame & hiệu ứng (`frames`)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chứa thư mục components/, nơi lưu các component được tái sử dụng.
+#### Bên trong `layout/`
 
-Mỗi component bao gồm:
+- **components/**  
+  Chứa các component tái sử dụng trong layout.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Một file .jsx để xử lý logic và cấu trúc.
+> Mỗi component bao gồm:
+> - `*.jsx`: Xử lý logic và cấu trúc hiển thị.
+> - `*.scss`: Định dạng giao diện và hiệu ứng.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Một file .scss để định dạng giao diện.
+---
 
-Mô Tả Các Component
+## 🧩 Mô Tả Các Component Chính
 
-ContentWrapper
+### `ContentWrapper`
+- Tạo bố cục chứa hình ảnh và nội dung.
+- **Props:**
+  - `text`, `textHighlight`, `detail`
+  - `option`, `image`, `moreImage`
+  - `rotate`, `flexEnd`, `textPosition`
 
-&nbsp;Tạo một bố cục chứa hình ảnh và nội dung với vị trí và chữ có thể tùy chỉnh.
+> `textHighlight`: làm nổi bật từ khóa  
+> `rotate`: đảo vị trí hình ảnh và nội dung  
+> `moreImage`: hiển thị thêm ảnh minh họa  
 
-&nbsp;Thuộc tính:
+---
 
-&nbsp;&nbsp;&nbsp;&nbsp;text, textHighlight, detail, option, image, moreImage, rotate, flexEnd, textPosition
+### `ScrollViewImage`
+- Hiệu ứng **parallax** cho hình ảnh và nội dung.
+- **Props:**
+  - `text`, `textHighlight`, `images`
+  - `listPosition`, `option`
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textHighlight: Xác định các từ cần làm nổi bật trong text.
+---
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moreImage: Hiển thị hình ảnh bổ sung trong block.
+### `ImageHover`
+- Hiển thị ảnh khi người dùng **hover** vào văn bản.
+- **Props:**
+  - Mảng `{ text, image }` để ánh xạ giữa văn bản và ảnh.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rotate: Đảo ngược vị trí nội dung.
+---
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flexEnd: Căn chỉnh block về phía đầu hoặc cuối.
+### `DropDown`
+- Hiển thị các **câu hỏi - câu trả lời** hoặc nội dung mở rộng.
+- **Props:**
+  - Mảng nội dung chính.
+  - Mảng câu hỏi - câu trả lời phụ.
 
-ScrollViewImage
+---
 
-&nbsp;Tạo hiệu ứng parallax cho hình ảnh với nội dung và chữ có thể tùy chỉnh.
+### `GalleryImage`
+- Hiển thị ảnh dạng **grid có filter nội dung** hoặc **ngẫu nhiên**.
+- **Props:**
+  - `list`: Mảng `{ name, detail, tags }`
+  - `gridPosition`: Số ảnh mỗi hàng
+  - `position`: Bật/tắt hiển thị nội dung ảnh
 
-&nbsp;Thuộc tính:
-&nbsp;&nbsp;&nbsp;&nbsp;text, textHightLight, images, listPosition, option
+---
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;textHightLight: Xác định các từ cần làm nổi bật trong text.
+### `MapMarker`
+- Hiển thị các điểm đánh dấu trên bản đồ.
+- **Tính năng:** Nhấp vào marker để xem thông tin chi tiết.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;images: danh sách image hiển thị
+---
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listPosition: vị trí mà ảnh tương ứng sẽ hiển thị
+### `ImageShowScroll`
+- Slide ảnh có thể **phóng to toàn màn hình** khi click.
 
-ImageHover
+---
 
-&nbsp;&nbsp;&nbsp;&nbsp;Hiển thị hình ảnh khi người dùng di chuột qua đoạn văn bản tương ứng.
+### `ImageScroll`
+- Slide ảnh kết hợp với **hiệu ứng cuộn GSAP**.
+- **Tính năng:** Đồng bộ chuyển động nội dung và hình ảnh theo scroll.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Thuộc tính:
+---
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Một mảng text và image.
+## ✨ Các Component Khác
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ánh xạ từng đoạn văn bản với một hình ảnh, hiển thị khi hover.
+- Dùng để dựng bố cục form, hộp nội dung, xử lý tương tác nâng cao,...
+- Các hiệu ứng chính được xây dựng bằng **GSAP** và các thư viện scroll animation hiện đại.
 
-DropDown
+---
 
-&nbsp;Hiển thị nội dung có thể mở rộng.
-
-&nbsp;Thuộc tính:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;Mảng nội dung chính.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;Mảng nội dung phụ chứa câu hỏi và câu trả lời.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;Nhấn vào nút để hiển thị thêm nội dung nếu có.
-
-GalleryImage
-
-&nbsp;Tạo danh sách ảnh thay đổi dựa trên nội dung được chọn.
-
-&nbsp;&nbsp;Thuộc tính:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list (mảng nội dung và hình ảnh)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gridPosition (số lượng ảnh trong một hàng)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position (true/false - xác định ảnh có nội dung hay không)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nếu ảnh không có nội dung, chúng sẽ được sắp xếp ngẫu nhiên dựa trên số lượng ảnh.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nếu ảnh có nội dung, chúng sẽ được hiển thị theo bố cục dạng lưới.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mảng list cần có các thuộc tính như name, detail, và tags.
-
-MapMarker
-
-&nbsp;&nbsp;&nbsp;&nbsp;Tạo các điểm đánh dấu trên bản đồ, hiển thị nội dung khi nhấp vào.
-
-ImageShowScroll
-
-&nbsp;&nbsp;&nbsp;&nbsp;Hiển thị danh sách hình ảnh, cho phép người dùng nhấp vào để xem ở chế độ toàn màn hình.
-
-ImageScroll
-
-&nbsp;&nbsp;&nbsp;&nbsp;Tạo slide ảnh với nội dung hiển thị theo hiệu ứng cuộn trang.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Sử dụng GSAP để xử lý animation cuộn trang.
-
-
-
-Các component khác được sử dụng để tạo bố cục form cho nội dung hiển thị.
+> Nếu bạn cần mình tạo thêm mục hướng dẫn cài đặt, phát triển hoặc đóng góp (Contribution Guide), mình có thể thêm vào file này.
